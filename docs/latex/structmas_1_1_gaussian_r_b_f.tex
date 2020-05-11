@@ -1,0 +1,73 @@
+\hypertarget{structmas_1_1_gaussian_r_b_f}{}\doxysection{mas\+::Gaussian\+R\+BF$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_gaussian_r_b_f}\index{mas::GaussianRBF$<$ REAL\_T $>$@{mas::GaussianRBF$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::Gaussian\+R\+BF$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structmas_1_1_gaussian_r_b_f}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_a6aa7c2aa04e8a70a63c751cf240b37ab}\label{structmas_1_1_gaussian_r_b_f_a6aa7c2aa04e8a70a63c751cf240b37ab}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_add49065f4c597720e164588d5eece123}\label{structmas_1_1_gaussian_r_b_f_add49065f4c597720e164588d5eece123}} 
+const variable {\bfseries Distance} (const variable \&a)
+\item 
+virtual const variable \mbox{\hyperlink{structmas_1_1_gaussian_r_b_f_a29fededb3644678ef80d7c65f601dfae}{Evaluate}} (const variable \&a)
+\item 
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_a7710758db50657d20d5baf403713df87}\label{structmas_1_1_gaussian_r_b_f_a7710758db50657d20d5baf403713df87}} 
+virtual const variable {\bfseries Evaluate} (const std\+::vector$<$ variable $>$ \&ages, size\+\_\+t index)
+\item 
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_a0b07e709655b2c7da7c89dd48491d091}\label{structmas_1_1_gaussian_r_b_f_a0b07e709655b2c7da7c89dd48491d091}} 
+virtual const std\+::string {\bfseries To\+J\+S\+O\+N\+String} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_a41b0813587b13d6b62dc5eedac91cc93}\label{structmas_1_1_gaussian_r_b_f_a41b0813587b13d6b62dc5eedac91cc93}} 
+virtual const std\+::string {\bfseries Name} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_a08856503cb0e77c17f891621aef50d21}\label{structmas_1_1_gaussian_r_b_f_a08856503cb0e77c17f891621aef50d21}} 
+virtual std\+::string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_ac42ac2ea9ca3bcb5c648f9829c34ee45}\label{structmas_1_1_gaussian_r_b_f_ac42ac2ea9ca3bcb5c648f9829c34ee45}} 
+variable {\bfseries centroid} = 1.\+1
+\item 
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_a77f2e2c11d1166255d43e81853bc21a3}\label{structmas_1_1_gaussian_r_b_f_a77f2e2c11d1166255d43e81853bc21a3}} 
+variable {\bfseries epsilon} = 1.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_a47643c5b8933dfaa3c501effbf190639}\label{structmas_1_1_gaussian_r_b_f_a47643c5b8933dfaa3c501effbf190639}} 
+std\+::vector$<$ variable $>$ {\bfseries w}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structmas_1_1_gaussian_r_b_f_a29fededb3644678ef80d7c65f601dfae}\label{structmas_1_1_gaussian_r_b_f_a29fededb3644678ef80d7c65f601dfae}} 
+\index{mas::GaussianRBF$<$ REAL\_T $>$@{mas::GaussianRBF$<$ REAL\_T $>$}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mas::GaussianRBF$<$ REAL\_T $>$@{mas::GaussianRBF$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+virtual const variable \mbox{\hyperlink{structmas_1_1_gaussian_r_b_f}{mas\+::\+Gaussian\+R\+BF}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Evaluate (\begin{DoxyParamCaption}\item[{const variable \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Age based gaussian rbf selectivity 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ age \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{structmas_1_1_selectivity_base}{mas\+::\+Selectivity\+Base$<$ R\+E\+A\+L\+\_\+\+T $>$}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Selectivity.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+\hypertarget{structmas_1_1_beverton_holt}{}\doxysection{mas\+::Beverton\+Holt$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_beverton_holt}\index{mas::BevertonHolt$<$ REAL\_T $>$@{mas::BevertonHolt$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::Beverton\+Holt$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structmas_1_1_beverton_holt}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_af5114ac8a1dceb03a3148bd6ad7ea57a}\label{structmas_1_1_beverton_holt_af5114ac8a1dceb03a3148bd6ad7ea57a}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const variable \mbox{\hyperlink{structmas_1_1_beverton_holt_aa1b3f731e3cc8f459a88e776237cdf35}{Evaluate}} (const int \&pop\+\_\+id, const int \&area\+\_\+id, const variable \&sb)
+\item 
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_a1b2980fffe870deec47af3a9fcbe28db}\label{structmas_1_1_beverton_holt_a1b2980fffe870deec47af3a9fcbe28db}} 
+virtual const R\+E\+A\+L\+\_\+T {\bfseries Get\+Alpha} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_aff39e173a3d5aa964add92e994592482}\label{structmas_1_1_beverton_holt_aff39e173a3d5aa964add92e994592482}} 
+virtual const R\+E\+A\+L\+\_\+T {\bfseries Get\+Beta} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_ac04c562da7bcf1b9d859aed6657b1888}\label{structmas_1_1_beverton_holt_ac04c562da7bcf1b9d859aed6657b1888}} 
+virtual const R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Equilibrium\+Spawning\+Biomass} (R\+E\+A\+L\+\_\+T spawing\+\_\+biomass\+\_\+per\+\_\+recruit)
+\item 
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_a5ef5a75baa5cd3a37602a408b4d1ead5}\label{structmas_1_1_beverton_holt_a5ef5a75baa5cd3a37602a408b4d1ead5}} 
+virtual const R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Equilibrium\+Recruitment} (R\+E\+A\+L\+\_\+T equilibrium\+\_\+spawning\+\_\+biomass)
+\item 
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_a273d2704a4974d3fdbb9287ad0984b69}\label{structmas_1_1_beverton_holt_a273d2704a4974d3fdbb9287ad0984b69}} 
+virtual const std\+::string {\bfseries To\+J\+S\+O\+N\+String} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_aa6e6f7fa8edecf211eedee2d2219c3ce}\label{structmas_1_1_beverton_holt_aa6e6f7fa8edecf211eedee2d2219c3ce}} 
+virtual const std\+::string {\bfseries Name} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_a65bb63b6533d0a0e71d2b38881664d82}\label{structmas_1_1_beverton_holt_a65bb63b6533d0a0e71d2b38881664d82}} 
+variable {\bfseries alpha}
+\item 
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_a7a6d8c56eb129b679ceb6d8a4e566fc4}\label{structmas_1_1_beverton_holt_a7a6d8c56eb129b679ceb6d8a4e566fc4}} 
+variable {\bfseries beta}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structmas_1_1_beverton_holt_aa1b3f731e3cc8f459a88e776237cdf35}\label{structmas_1_1_beverton_holt_aa1b3f731e3cc8f459a88e776237cdf35}} 
+\index{mas::BevertonHolt$<$ REAL\_T $>$@{mas::BevertonHolt$<$ REAL\_T $>$}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mas::BevertonHolt$<$ REAL\_T $>$@{mas::BevertonHolt$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+const variable \mbox{\hyperlink{structmas_1_1_beverton_holt}{mas\+::\+Beverton\+Holt}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Evaluate (\begin{DoxyParamCaption}\item[{const int \&}]{pop\+\_\+id,  }\item[{const int \&}]{area\+\_\+id,  }\item[{const variable \&}]{sb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Beverton-\/\+Holt Spawn-\/\+Recruit relationship
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ spawning biomass or abundance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{structmas_1_1_recruitment_base}{mas\+::\+Recruitment\+Base$<$ R\+E\+A\+L\+\_\+\+T $>$}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Recruitment.\+hpp\end{DoxyCompactItemize}

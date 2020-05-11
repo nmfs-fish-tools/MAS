@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>1</activeConfTypeElem>
+        <activeConfIndexElem>1</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>Information.hpp</url>
+            <bookmark id="1">
+                <name/>
+                <line>8090</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Growth.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Movement.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/NLLComponents.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Options.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Fleet.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Output.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/main.cpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/EnsembleEngine.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Area.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Survey.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Selectivity.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Population.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/ObjectiveFunction.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Common.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Makefile</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/third_party/rapidjson/allocators.h</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Recruitment.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/Information.hpp</file>
+            <file>file:/Users/mattadmin/NetBeansProjects/mas/MAS.hpp</file>
+        </group>
+    </open-files>
+</project-private>

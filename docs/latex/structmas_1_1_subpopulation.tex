@@ -1,0 +1,314 @@
+\hypertarget{structmas_1_1_subpopulation}{}\doxysection{mas\+::Subpopulation$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_subpopulation}\index{mas::Subpopulation$<$ REAL\_T $>$@{mas::Subpopulation$<$ REAL\_T $>$}}
+
+
+{\ttfamily \#include $<$Population.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{mas\+::\+Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries Initialize} ()
+\item 
+void {\bfseries Reset} ()
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_gae01ce4cc3a7de452577db9630882f5dd}{Calculate\+Weight\+At\+Age}} ()
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Unfished\+Spawning\+Biomass\+Per\+Recruit} ()
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Fished\+Spawning\+Biomass\+Per\+Recruit} (R\+E\+A\+L\+\_\+T F)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Yield\+Per\+Recruit} (R\+E\+A\+L\+\_\+T F)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Probability\+Of\+Survival\+To\+Age} (int a, int year, int season)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Probability\+Of\+Capture\+At\+Age} (int a, int year, int season)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Probability\+Of\+Capture\+At\+Age\+A\+Or\+Older} (int a, int year, int season)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+S\+PR} (R\+E\+A\+L\+\_\+T F)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+F\+S\+PR} (R\+E\+A\+L\+\_\+T fraction)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+F\+Max} (const std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ \&f)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Equilibrium\+Spawning\+Biomass} (R\+E\+A\+L\+\_\+T F)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Equilibrium\+Recruitment} (R\+E\+A\+L\+\_\+T F)
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Calculate\+Equilibrium\+Yield} (R\+E\+A\+L\+\_\+T F)
+\item 
+void {\bfseries Calculate\+Maximum\+Sustainable\+Yield} (R\+E\+A\+L\+\_\+T \&msy, R\+E\+A\+L\+\_\+T \&f\+\_\+msy, R\+E\+A\+L\+\_\+T \&s\+\_\+msy)
+\item 
+void {\bfseries InitializeM} ()
+\item 
+void {\bfseries Calculate\+Initial\+Numbers\+Equilibrium} ()
+\item 
+void {\bfseries Calculate\+Initial\+Numbers} ()
+\item 
+void {\bfseries Calculate\+Unfished\+Equil\+Spawning\+Biomass} ()
+\item 
+variable {\bfseries spr\+\_\+unfished} (int year)
+\item 
+variable {\bfseries spr\+\_\+ratio} (const variable \&trial\+\_\+F, int curryr)
+\item 
+variable {\bfseries get\+\_\+spr\+\_\+rates} (const variable \&spr\+\_\+percent, int curryr)
+\item 
+void {\bfseries Calculate\+Biological\+Reference\+Points} (int year, int season)
+\item 
+void {\bfseries Build\+Boot\+Strap\+Numbers} ()
+\item 
+void {\bfseries Increment\+Time} (int \&y, int \&s)
+\item 
+void {\bfseries Decrement\+Time} (int \&y, int \&s)
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_ga428336fb6eea21d305c0ff9ca53260a4}{Fit\+InitialF}} (size\+\_\+t max\+\_\+iterations=1000, R\+E\+A\+L\+\_\+T tolerance=1e-\/5)
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_ga9f385e1d91232a383a6568a9aa9b3a76}{F\+Calc}} ()
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_ga717a50560259058d75519cbf006f3037}{Calculate\+Mortality}} (int year, int season)
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_gaecab6738a0974df33ef347d39f8ad3a4}{Calculate\+Recruitment}} (int year, int season)
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_ga48d2a7d120ef2c251a01f03ca8c959d2}{Calculate\+Numbers\+At\+Age}} (int year, int season)
+\item 
+void {\bfseries Calculate\+M\+SY} (int year, int season, R\+E\+A\+L\+\_\+T maxF=1.\+0, R\+E\+A\+L\+\_\+T step=0.\+01)
+\item 
+void {\bfseries Finalize} ()
+\item 
+void {\bfseries Settle\+Moved\+Fish} (int year, int season)
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_ga084edd66f44f2e348d8060839f5a2a42}{Calculate\+Numbers\+At\+Age\+End\+Year\+Plus\+One}} ()
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_gaece49b9467f47bfd87189299c1607d0f}{Calculate\+Spawning\+Biomass}} (int year, int season)
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_ga2bfb2a90df22f446b7f5aa4c8f740963}{Calculate\+Catch\+At\+Age}} (int year, int season)
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_ga09a13cade3d52466513b5cdf078c717e}{Calculate\+Survey\+Numbers\+At\+Age}} (int year, int season)
+\item 
+void {\bfseries Push\+To\+Area} ()
+\item 
+void {\bfseries Push\+Numbers\+To\+Fleet} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries id}
+\item 
+int {\bfseries uid} = -\/9999
+\item 
+mas\+::\+Fish\+Sex\+Type {\bfseries sex}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries ages}
+\item 
+int {\bfseries spawning\+\_\+season} = 1
+\item 
+variable {\bfseries spawning\+\_\+season\+\_\+offset} = 0.\+0
+\item 
+variable {\bfseries catch\+\_\+season\+\_\+offset} = 1.\+0
+\item 
+variable {\bfseries survey\+\_\+season\+\_\+offset} = 1.\+0
+\item 
+variable {\bfseries kg\+\_\+to\+\_\+tonnes} = 1000.\+0
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries sex\+\_\+fraction\+\_\+value} = 0.\+5
+\item 
+bool {\bfseries males} = true
+\item 
+\mbox{\hyperlink{classmas_1_1_population}{Population}}$<$ R\+E\+A\+L\+\_\+T $>$ $\ast$ {\bfseries natal\+\_\+population}
+\item 
+bool {\bfseries natal\+\_\+homing} = false
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_area}{Area}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries area}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_area}{Area}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries natal\+\_\+area}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_growth_base}{Growth\+Base}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries growth\+\_\+model}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_natural_mortality}{mas\+::\+Natural\+Mortality}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries natural\+\_\+mortality\+\_\+model}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_recruitment_base}{mas\+::\+Recruitment\+Base}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries recruitment\+\_\+model}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_recruitment_base}{mas\+::\+Recruitment\+Base}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries seasonal\+\_\+recruitment\+\_\+models}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries maturity}
+\item 
+variable {\bfseries initialF} = static\+\_\+cast$<$R\+E\+A\+L\+\_\+T$>$ (0.\+0)
+\item 
+std\+::vector$<$ variable $>$ {\bfseries initialS}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries M}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries F}
+\item 
+std\+::unordered\+\_\+set$<$ int $>$ {\bfseries active\+\_\+fleets}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ variable $>$ $>$ {\bfseries F\+\_\+at\+\_\+age}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ variable $>$ $>$ {\bfseries Z\+\_\+at\+\_\+age}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ variable $>$ $>$ {\bfseries S\+N\+\_\+at\+\_\+age}
+\item 
+variable {\bfseries R0}
+\item 
+variable {\bfseries S0}
+\item 
+variable {\bfseries unfished\+\_\+spawning\+\_\+biomass\+\_\+per\+\_\+recruit}
+\item 
+variable {\bfseries unfished\+\_\+spawners\+\_\+per\+\_\+recruit}
+\item 
+variable {\bfseries fished\+\_\+spawning\+\_\+biomass\+\_\+per\+\_\+recruit}
+\item 
+variable {\bfseries fished\+\_\+spawners\+\_\+per\+\_\+recruit}
+\item 
+variable {\bfseries fished\+\_\+yield\+\_\+per\+\_\+recruit}
+\item 
+variable {\bfseries fished\+\_\+max\+\_\+yield\+\_\+per\+\_\+recruit}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries F100}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries S\+B100}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries F40}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries S\+B40}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries F35}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries S\+B35}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries F20}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries S20}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries S\+B\+\_\+target}
+\item 
+variable {\bfseries avgR}
+\item 
+variable {\bfseries S\+B0}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries initial\+\_\+numbers}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries initial\+\_\+equilibrium\+\_\+numbers}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries initial\+\_\+deviations}
+\item 
+int {\bfseries years}
+\item 
+int {\bfseries seasons}
+\item 
+int {\bfseries forecast\+\_\+years} = 5
+\item 
+std\+::vector$<$ variable $>$ {\bfseries length\+\_\+at\+\_\+season\+\_\+start}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries length\+\_\+at\+\_\+spawning}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries length\+\_\+at\+\_\+catch\+\_\+time}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries length\+\_\+at\+\_\+survey\+\_\+time}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries weight\+\_\+at\+\_\+season\+\_\+start}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries weight\+\_\+at\+\_\+spawning}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries weight\+\_\+at\+\_\+catch\+\_\+time}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries weight\+\_\+at\+\_\+survey\+\_\+time}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries equilibrium\+\_\+to\+\_\+survival\+\_\+at\+\_\+spawning}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries fecundity\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries spawning\+\_\+stock\+\_\+biomass}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries imigrants}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries redistributed\+\_\+recruits}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries immigrant\+\_\+recruits}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries emigrant\+\_\+recruits}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries emigrants}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries growth}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries recruitment}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries spawning\+\_\+numbers\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries biomass\+\_\+total}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries fishing\+\_\+mortality\+\_\+total}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries Z}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries P}
+\item 
+variable {\bfseries sum\+\_\+of\+\_\+Z}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries S}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries numbers\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries biomass\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries abundance}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+numbers\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+index\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+biomass\+\_\+total}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+biomass\+\_\+total}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries expected\+\_\+N}
+\item 
+std\+::vector$<$ variable $>$ {\bfseries N\+\_\+proj}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries M\+SY}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Dmsy}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Fmsy}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries S\+S\+Bmsy}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Rmsy}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Bmsy}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries Emsy}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries spr\+\_\+msy}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries S\+P\+Rmsy}
+\item 
+std\+::vector$<$ std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries Boot\+Numbers}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t {\bfseries length\+\_\+weight\+\_\+key\+\_\+carryout} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class R\+E\+A\+L\+\_\+T$>$\newline
+struct mas\+::\+Subpopulation$<$ R\+E\+A\+L\+\_\+\+T $>$}
+
+Run time calculated information for a population in a specific area, by sex. 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Harvest\+Control\+Rule.\+hpp\item 
+Population.\+hpp\end{DoxyCompactItemize}

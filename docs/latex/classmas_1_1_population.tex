@@ -1,0 +1,222 @@
+\hypertarget{classmas_1_1_population}{}\doxysection{mas\+::Population$<$ R\+E\+A\+L\+\_\+T $>$ Class Template Reference}
+\label{classmas_1_1_population}\index{mas::Population$<$ REAL\_T $>$@{mas::Population$<$ REAL\_T $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, int $>$\+::iterator {\bfseries male\+\_\+natural\+\_\+mortality\+\_\+ids\+\_\+iterator}
+\item 
+typedef std\+::map$<$ int, int $>$\+::iterator {\bfseries female\+\_\+natural\+\_\+mortality\+\_\+ids\+\_\+iterator}
+\item 
+typedef std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, int $>$ $>$\+::iterator {\bfseries season\+\_\+area\+\_\+id\+\_\+iterator}
+\item 
+typedef std\+::map$<$ int, int $>$\+::iterator {\bfseries recruitment\+\_\+ids\+\_\+iterator}
+\item 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{mas\+::\+Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\item 
+typedef std\+::unordered\+\_\+map$<$ int, \mbox{\hyperlink{structmas_1_1_subpopulation}{Subpopulation}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$\+::iterator {\bfseries cohort\+\_\+iterator}
+\item 
+typedef std\+::unordered\+\_\+map$<$ int, int $>$\+::iterator {\bfseries movement\+\_\+model\+\_\+id\+\_\+iterator}
+\item 
+typedef std\+::unordered\+\_\+map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_movement}{mas\+::\+Movement}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$\+::iterator {\bfseries movement\+\_\+model\+\_\+iterator}
+\item 
+typedef std\+::unordered\+\_\+map$<$ int, std\+::pair$<$ bool, std\+::vector$<$ variable $>$ $>$ $>$\+::iterator {\bfseries initial\+\_\+deviations\+\_\+iterator}
+\item 
+typedef std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$\+::iterator {\bfseries maturity\+\_\+models\+\_\+iterator}
+\item 
+typedef std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ $>$\+::iterator {\bfseries area\+\_\+maturity\+\_\+model\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Population} (int years, int seasons, int areas, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_area}{Area}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ \&natal\+\_\+area, const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_area}{Area}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ \&areas\+\_\+list)
+\item 
+void {\bfseries Prepare} ()
+\item 
+void {\bfseries Increment\+Time} (int \&y, int \&s)
+\item 
+void {\bfseries Decrement\+Time} (int \&y, int \&s)
+\item 
+void {\bfseries Move\+Fish} (int year, int season)
+\item 
+void {\bfseries Prepare\+Deviations} (std\+::vector$<$ variable $>$ \&deviations)
+\item 
+void {\bfseries Initialize\+Populationin\+Areas} ()
+\item 
+void {\bfseries Initialize} ()
+\item 
+void {\bfseries Show} ()
+\item 
+virtual const std\+::string {\bfseries Name} ()
+\item 
+virtual const std\+::string {\bfseries To\+J\+S\+O\+N\+String} ()
+\item 
+void {\bfseries Evaluate} ()
+\item 
+void \mbox{\hyperlink{group__pop__dynamics_ga7ef68fffab8b2d170feeb2217189a6c3}{Finalize}} ()
+\item 
+void {\bfseries Forecast} ()
+\item 
+void {\bfseries Compute\+Biological\+Reference\+Points} ()
+\item 
+void {\bfseries Push\+To\+Areas\+And\+Fleets} ()
+\item 
+void {\bfseries Push\+To\+Fleets} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries phase} = 1
+\item 
+int {\bfseries previous\+\_\+phase} = 1
+\item 
+std\+::map$<$ int, int $>$ {\bfseries male\+\_\+natural\+\_\+mortality\+\_\+ids}
+\item 
+std\+::map$<$ int, int $>$ {\bfseries female\+\_\+natural\+\_\+mortality\+\_\+ids}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, int $>$ $>$ {\bfseries area\+\_\+season\+\_\+recruitment\+\_\+ids}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_recruitment_base}{mas\+::\+Recruitment\+Base}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ $>$ {\bfseries area\+\_\+season\+\_\+recruitment}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, int $>$ $>$ {\bfseries season\+\_\+area\+\_\+recruitment\+\_\+ids}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_recruitment_base}{mas\+::\+Recruitment\+Base}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ $>$ {\bfseries season\+\_\+area\+\_\+recruitment}
+\item 
+std\+::map$<$ int, int $>$ {\bfseries recruitment\+\_\+ids}
+\item 
+std\+::string {\bfseries name}
+\item 
+int {\bfseries natal\+\_\+area\+\_\+id}
+\item 
+int {\bfseries movement\+\_\+model\+\_\+id}
+\item 
+bool {\bfseries natal\+\_\+homing} = false
+\item 
+bool {\bfseries natal\+\_\+recruitment} = false
+\item 
+bool {\bfseries move\+\_\+fish\+\_\+before\+\_\+lh} = false
+\item 
+int {\bfseries years}
+\item 
+int {\bfseries seasons}
+\item 
+int {\bfseries areas}
+\item 
+int {\bfseries ages}
+\item 
+int {\bfseries growth\+\_\+id}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries female\+\_\+fraction\+\_\+value} = 0.\+5
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries numbers\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+numbers\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+biomass\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+biomass\+\_\+total}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+numbers\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+biomass\+\_\+at\+\_\+age}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+biomass\+\_\+total}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries recruits}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries spawning\+\_\+stock\+\_\+biomass}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries biomass\+\_\+total}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries abundance}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries fishing\+\_\+mortality}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries numbers\+\_\+at\+\_\+age\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+numbers\+\_\+at\+\_\+age\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+biomass\+\_\+at\+\_\+age\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+biomass\+\_\+total\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+numbers\+\_\+at\+\_\+age\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+biomass\+\_\+at\+\_\+age\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+biomass\+\_\+total\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries recruits\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries spawning\+\_\+stock\+\_\+biomass\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries biomass\+\_\+total\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries abundance\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries fishing\+\_\+mortality\+\_\+females}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries numbers\+\_\+at\+\_\+age\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+numbers\+\_\+at\+\_\+age\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+biomass\+\_\+at\+\_\+age\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries survey\+\_\+biomass\+\_\+total\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+numbers\+\_\+at\+\_\+age\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+biomass\+\_\+at\+\_\+age\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries catch\+\_\+biomass\+\_\+total\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries recruits\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries spawning\+\_\+stock\+\_\+biomass\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries biomass\+\_\+total\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries abundance\+\_\+males}
+\item 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries fishing\+\_\+mortality\+\_\+males}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_area}{Area}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries natal\+\_\+area}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_area}{Area}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries areas\+\_\+list}
+\item 
+std\+::unordered\+\_\+map$<$ int, \mbox{\hyperlink{structmas_1_1_subpopulation}{Subpopulation}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries males}
+\item 
+std\+::unordered\+\_\+map$<$ int, \mbox{\hyperlink{structmas_1_1_subpopulation}{Subpopulation}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries females}
+\item 
+std\+::unordered\+\_\+map$<$ int, int $>$ {\bfseries movement\+\_\+models\+\_\+ids}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_movement}{mas\+::\+Movement}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries movement\+\_\+model}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_movement}{mas\+::\+Movement}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries movement\+\_\+models}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::pair$<$ bool, std\+::vector$<$ variable $>$ $>$ $>$ {\bfseries initial\+\_\+deviations\+\_\+males}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::pair$<$ bool, std\+::vector$<$ variable $>$ $>$ $>$ {\bfseries initial\+\_\+deviations\+\_\+females}
+\item 
+std\+::vector$<$ std\+::vector$<$ variable $>$ $>$ {\bfseries movement\+\_\+coefficients}
+\item 
+std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries maturity\+\_\+models}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_h_c_r_base}{mas\+::\+H\+C\+R\+Base}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries harvest\+\_\+control\+\_\+rule}
+\item 
+std\+::unordered\+\_\+set$<$ int $>$ {\bfseries active\+\_\+fleets}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries msy\+\_\+average}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries f\+\_\+msy\+\_\+average}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries s\+\_\+msy\+\_\+average}
+\item 
+R\+E\+A\+L\+\_\+T {\bfseries fmax\+\_\+average}
+\item 
+int {\bfseries forecast\+\_\+years} = 5
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Population.\+hpp\end{DoxyCompactItemize}

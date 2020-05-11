@@ -1,0 +1,58 @@
+\hypertarget{structmas_1_1_fishing_mortality}{}\doxysection{mas\+::Fishing\+Mortality$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_fishing_mortality}\index{mas::FishingMortality$<$ REAL\_T $>$@{mas::FishingMortality$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::Fishing\+Mortality$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{structmas_1_1_fishing_mortality}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_ad7a9ae18fb1cbfe1bf7c2fa0b3e1ee73}\label{structmas_1_1_fishing_mortality_ad7a9ae18fb1cbfe1bf7c2fa0b3e1ee73}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_a9823a3d091ba0f9f5abf6f234d5bbe95}\label{structmas_1_1_fishing_mortality_a9823a3d091ba0f9f5abf6f234d5bbe95}} 
+const variable {\bfseries Evaluate} (const int \&year, const int \&season)
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_a9ee4c943ac5a039e4e99a0f95ecd1b8f}\label{structmas_1_1_fishing_mortality_a9ee4c943ac5a039e4e99a0f95ecd1b8f}} 
+variable \& {\bfseries Get} (const int \&year, const int \&season)
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_a9571f43b68311da0487864c37943bc99}\label{structmas_1_1_fishing_mortality_a9571f43b68311da0487864c37943bc99}} 
+void {\bfseries Average\+Fmethod\+Contributions} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_a584a63c9d45ec427965f2d98c2a88c81}\label{structmas_1_1_fishing_mortality_a584a63c9d45ec427965f2d98c2a88c81}} 
+virtual std\+::string {\bfseries To\+String} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_ac76d1e34d6c062d090bc5265d100395d}\label{structmas_1_1_fishing_mortality_ac76d1e34d6c062d090bc5265d100395d}} 
+virtual const std\+::string {\bfseries To\+J\+S\+O\+N\+String} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_a32f715666745e58a7f24e5537b2ccf19}\label{structmas_1_1_fishing_mortality_a32f715666745e58a7f24e5537b2ccf19}} 
+virtual const std\+::string {\bfseries Name} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_aba52dc6a63a8c8bc895b946cba5a5309}\label{structmas_1_1_fishing_mortality_aba52dc6a63a8c8bc895b946cba5a5309}} 
+Fishing\+Mortality\+Type {\bfseries fishing\+\_\+mortality\+\_\+type} = E\+S\+T\+I\+M\+A\+T\+ED
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_aa5e8bbb289155d313e98aa8349dfdf2c}\label{structmas_1_1_fishing_mortality_aa5e8bbb289155d313e98aa8349dfdf2c}} 
+bool {\bfseries needs\+\_\+delta\+\_\+method\+\_\+update} = false
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_ac9621f8a36e68bd04ff91a0896c4b09d}\label{structmas_1_1_fishing_mortality_ac9621f8a36e68bd04ff91a0896c4b09d}} 
+R\+E\+A\+L\+\_\+T {\bfseries contributions} = 0.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_a8762786de78be37776c371f1a4f46fcc}\label{structmas_1_1_fishing_mortality_a8762786de78be37776c371f1a4f46fcc}} 
+std\+::vector$<$ std\+::vector$<$ variable $>$ $>$ {\bfseries fishing\+\_\+mortality}
+\item 
+\mbox{\Hypertarget{structmas_1_1_fishing_mortality_ad92f2a24fd5a5f26a00ad98a9276af27}\label{structmas_1_1_fishing_mortality_ad92f2a24fd5a5f26a00ad98a9276af27}} 
+std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ std\+::vector$<$ variable $>$ $>$ $>$ $>$ {\bfseries f\+\_\+delta\+\_\+method\+\_\+at\+\_\+age}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Mortality.\+hpp\end{DoxyCompactItemize}

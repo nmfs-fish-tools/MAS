@@ -1,0 +1,377 @@
+\hypertarget{structmas_1_1_area}{}\doxysection{mas\+::Area$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_area}\index{mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a3fb53ebc27c5323de15a81fbfbc7c878}\label{structmas_1_1_area_a3fb53ebc27c5323de15a81fbfbc7c878}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{mas\+::\+Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_afac4316f68a1431235c7d28968655ad7}\label{structmas_1_1_area_afac4316f68a1431235c7d28968655ad7}} 
+typedef std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_fleet}{Fleet}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$\+::iterator {\bfseries active\+\_\+fleets\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a93e43b48e01d6deb544629b9a16df074}\label{structmas_1_1_area_a93e43b48e01d6deb544629b9a16df074}} 
+typedef std\+::map$<$ int, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_fleet}{Fleet}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ $>$\+::iterator {\bfseries seasonal\+\_\+fleet\+\_\+operations\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ae1b22fac7afc3a1cd975eda651a4f635}\label{structmas_1_1_area_ae1b22fac7afc3a1cd975eda651a4f635}} 
+typedef std\+::map$<$ int, std\+::map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_survey}{mas\+::\+Survey}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ $>$\+::iterator {\bfseries survey\+\_\+model\+\_\+iterator}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a406c0cf877a7c6b88586fa6da3108de2}\label{structmas_1_1_area_a406c0cf877a7c6b88586fa6da3108de2}} 
+typedef std\+::map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_survey}{mas\+::\+Survey}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$\+::iterator {\bfseries survey\+\_\+season\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a21fe8830e100359433438c8241eefb01}\label{structmas_1_1_area_a21fe8830e100359433438c8241eefb01}} 
+void {\bfseries Initialize} (size\+\_\+t years, size\+\_\+t seasons, size\+\_\+t ages)
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_afb563772ce57ef8474346f933f8ace19}\label{structmas_1_1_area_afb563772ce57ef8474346f933f8ace19}} 
+void {\bfseries Prepare} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_aa5d27445640c74e6e8e8c72795bfdf90}\label{structmas_1_1_area_aa5d27445640c74e6e8e8c72795bfdf90}} 
+void {\bfseries Push\+Numbers\+And\+Biomass} (const std\+::vector$<$ variable $>$ \&survey\+\_\+numbers\+\_\+at\+\_\+age\+\_\+, const std\+::vector$<$ variable $>$ \&survey\+\_\+biomass\+\_\+at\+\_\+age\+\_\+, const std\+::vector$<$ variable $>$ \&numbers\+\_\+at\+\_\+age\+\_\+, const std\+::vector$<$ variable $>$ \&catch\+\_\+at\+\_\+age\+\_\+, const std\+::vector$<$ variable $>$ \&catch\+\_\+biomass\+\_\+at\+\_\+age\+\_\+, const std\+::vector$<$ variable $>$ \&recruits\+\_\+, const std\+::vector$<$ variable $>$ \&spawning\+\_\+stock\+\_\+biomass\+\_\+, const std\+::vector$<$ variable $>$ \&abundance\+\_\+, const std\+::vector$<$ variable $>$ \&biomass\+\_\+, int population, mas\+::\+Fish\+Sex\+Type sex=mas\+::\+U\+N\+D\+I\+F\+F\+E\+R\+E\+N\+T\+I\+A\+T\+ED)
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a76d23e8841d3359f0ec57b57b1766b97}\label{structmas_1_1_area_a76d23e8841d3359f0ec57b57b1766b97}} 
+void {\bfseries Compute\+Proportions} ()
+\item 
+const variable \& \mbox{\hyperlink{structmas_1_1_area_a53dfddab7e2e70e14b87e4fc25c4c62a}{Get\+Catch\+Biomass\+Component}} () const
+\item 
+const variable \& \mbox{\hyperlink{structmas_1_1_area_ab3957bb0ad3f2a055f7fa3fc1bd6bd35}{Get\+Survey\+Age\+Comp\+Component}} () const
+\item 
+const variable \& \mbox{\hyperlink{structmas_1_1_area_a8b8e9f7f2c50ca8ea8640b75a815b2be}{Get\+Survey\+Biomass\+Component}} () const
+\item 
+const variable \& \mbox{\hyperlink{structmas_1_1_area_a84c391dccdc57e7a20a31e36aecf39e0}{Get\+Fishery\+Age\+Comp\+Component}} () const
+\item 
+const variable \& \mbox{\hyperlink{structmas_1_1_area_a513127fb6bb043edac4f2d7aa129c207}{Get\+Recruitment\+Deviations\+Component}} () const
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a763dda5093e54bf8a83ba61e8b4da078}\label{structmas_1_1_area_a763dda5093e54bf8a83ba61e8b4da078}} 
+virtual const std\+::string {\bfseries To\+J\+S\+O\+N\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a03c8c1768c367f3251dfca8adffeb780}\label{structmas_1_1_area_a03c8c1768c367f3251dfca8adffeb780}} 
+std\+::string {\bfseries name}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a5cb89e458c67e5fcaa967a8c268f2249}\label{structmas_1_1_area_a5cb89e458c67e5fcaa967a8c268f2249}} 
+R\+E\+A\+L\+\_\+T {\bfseries logscale\+\_\+standard\+\_\+deviation\+\_\+catch\+\_\+biomass} = static\+\_\+cast$<$R\+E\+A\+L\+\_\+T$>$ (.\+1)
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_aa2ea154a326396d16d67ae84d39ccb3b}\label{structmas_1_1_area_aa2ea154a326396d16d67ae84d39ccb3b}} 
+R\+E\+A\+L\+\_\+T {\bfseries logscale\+\_\+standard\+\_\+deviation\+\_\+survey\+\_\+biomass} = static\+\_\+cast$<$R\+E\+A\+L\+\_\+T$>$ (.\+3)
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a43732f02d867125feb9ae56e96114619}\label{structmas_1_1_area_a43732f02d867125feb9ae56e96114619}} 
+int {\bfseries id}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a2a4e96c3f8817d242c50655f341083c0}\label{structmas_1_1_area_a2a4e96c3f8817d242c50655f341083c0}} 
+int {\bfseries years}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a45d133239182e8d71e2fd4d1ed1ba04f}\label{structmas_1_1_area_a45d133239182e8d71e2fd4d1ed1ba04f}} 
+int {\bfseries seasons}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a9eec0d816a288d4c8afeb0e2dffa12df}\label{structmas_1_1_area_a9eec0d816a288d4c8afeb0e2dffa12df}} 
+int {\bfseries ages}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ad9a5d453e1aa68aee982bb93738a24b4}\label{structmas_1_1_area_ad9a5d453e1aa68aee982bb93738a24b4}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+total}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a59bb446f6c932a2255fe8093d731e403}\label{structmas_1_1_area_a59bb446f6c932a2255fe8093d731e403}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+biomass\+\_\+total}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ae68e2cf3d18984ac27d377c1cfeaa0b2}\label{structmas_1_1_area_ae68e2cf3d18984ac27d377c1cfeaa0b2}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+total\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a87c205e8c7eb39bc4b50492c7707a310}\label{structmas_1_1_area_a87c205e8c7eb39bc4b50492c7707a310}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+biomass\+\_\+total\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a65e5b1f37aa45c18d0eefcabd88bf504}\label{structmas_1_1_area_a65e5b1f37aa45c18d0eefcabd88bf504}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+total\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ac9e78d0a2d1fbb1d24d2a92205b9ec16}\label{structmas_1_1_area_ac9e78d0a2d1fbb1d24d2a92205b9ec16}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+biomass\+\_\+total\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_aa9febdb0cb6d7832ce2d5f915795a886}\label{structmas_1_1_area_aa9febdb0cb6d7832ce2d5f915795a886}} 
+std\+::vector$<$ variable $>$ {\bfseries numbers\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a2689ddee47c9cece0c78b5f4a20b7bb3}\label{structmas_1_1_area_a2689ddee47c9cece0c78b5f4a20b7bb3}} 
+std\+::vector$<$ variable $>$ {\bfseries abundance}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a86c55cbcf001c3a8ad9eda3f327dc067}\label{structmas_1_1_area_a86c55cbcf001c3a8ad9eda3f327dc067}} 
+std\+::vector$<$ variable $>$ {\bfseries biomass}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a973d245c1b74dc6099d174c3afe5e661}\label{structmas_1_1_area_a973d245c1b74dc6099d174c3afe5e661}} 
+std\+::vector$<$ variable $>$ {\bfseries proportion\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a896fd8fcd47d539873630d45ec818ade}\label{structmas_1_1_area_a896fd8fcd47d539873630d45ec818ade}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+proportion\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_acf32183c88a8bb1979036c7e34340c58}\label{structmas_1_1_area_acf32183c88a8bb1979036c7e34340c58}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+proportion\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a1a1735c4520ba32f042d753486914fe6}\label{structmas_1_1_area_a1a1735c4520ba32f042d753486914fe6}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a7db1d1a4c66e3c535133c2aecbb4cc29}\label{structmas_1_1_area_a7db1d1a4c66e3c535133c2aecbb4cc29}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ab8802451bd599039ee254b6737e8fad9}\label{structmas_1_1_area_ab8802451bd599039ee254b6737e8fad9}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+numbers\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_acaf171532a97cd7cd992779b02cce273}\label{structmas_1_1_area_acaf171532a97cd7cd992779b02cce273}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+biomass\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a4a85aa755774a12a5fa4e7debda4cdad}\label{structmas_1_1_area_a4a85aa755774a12a5fa4e7debda4cdad}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+proportion\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a73ef63706809741b03510ccdf85c5c8b}\label{structmas_1_1_area_a73ef63706809741b03510ccdf85c5c8b}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+biomass\+\_\+proportion\+\_\+at\+\_\+age}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a69811036d19f58a964cc8963232a1bb4}\label{structmas_1_1_area_a69811036d19f58a964cc8963232a1bb4}} 
+std\+::vector$<$ variable $>$ {\bfseries recruits}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_afd279c9103f28833a2c279c9b1b74d46}\label{structmas_1_1_area_afd279c9103f28833a2c279c9b1b74d46}} 
+std\+::vector$<$ variable $>$ {\bfseries spawning\+\_\+stock\+\_\+biomass}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_abd69833d78a921fd8c8b13140e46ad06}\label{structmas_1_1_area_abd69833d78a921fd8c8b13140e46ad06}} 
+std\+::vector$<$ variable $>$ {\bfseries numbers\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ae60b34884b78063140074582a3faae46}\label{structmas_1_1_area_ae60b34884b78063140074582a3faae46}} 
+std\+::vector$<$ variable $>$ {\bfseries abundance\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_aa06a0abc258d4affb4995958d5d45f0e}\label{structmas_1_1_area_aa06a0abc258d4affb4995958d5d45f0e}} 
+std\+::vector$<$ variable $>$ {\bfseries biomass\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ab5ddd76246ce29807ff2143e858b4907}\label{structmas_1_1_area_ab5ddd76246ce29807ff2143e858b4907}} 
+std\+::vector$<$ variable $>$ {\bfseries proportion\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a4c7e17b198774676569c7ab30987fee6}\label{structmas_1_1_area_a4c7e17b198774676569c7ab30987fee6}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+proportion\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_aea1735e78135761b1308da0eaf619338}\label{structmas_1_1_area_aea1735e78135761b1308da0eaf619338}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+proportion\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a3e226c7a59b5840c37917d492ea0b958}\label{structmas_1_1_area_a3e226c7a59b5840c37917d492ea0b958}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a029e7f2d0fccc9acf8e2d5767644d1fa}\label{structmas_1_1_area_a029e7f2d0fccc9acf8e2d5767644d1fa}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ae6160129e74d4b173cb755976835d162}\label{structmas_1_1_area_ae6160129e74d4b173cb755976835d162}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+numbers\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a5ece3cad1dd8083d91747c5aa81b1193}\label{structmas_1_1_area_a5ece3cad1dd8083d91747c5aa81b1193}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+biomass\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ab2207ba2c622fe615b415efa69df5f84}\label{structmas_1_1_area_ab2207ba2c622fe615b415efa69df5f84}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+proportion\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a11cdc9068612b7e08790a2ba50460e53}\label{structmas_1_1_area_a11cdc9068612b7e08790a2ba50460e53}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+biomass\+\_\+proportion\+\_\+at\+\_\+age\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_accc632237fdb759c7ddc650ee5bca91e}\label{structmas_1_1_area_accc632237fdb759c7ddc650ee5bca91e}} 
+std\+::vector$<$ variable $>$ {\bfseries recruits\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a6f6faaceac1350f845a7e9b3dff1d59f}\label{structmas_1_1_area_a6f6faaceac1350f845a7e9b3dff1d59f}} 
+std\+::vector$<$ variable $>$ {\bfseries spawning\+\_\+stock\+\_\+biomass\+\_\+males}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a4ee583e6a3480b7216f38c9ebe8b8f60}\label{structmas_1_1_area_a4ee583e6a3480b7216f38c9ebe8b8f60}} 
+std\+::vector$<$ variable $>$ {\bfseries numbers\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_acc94b856659d301c93119a5b08cb6dad}\label{structmas_1_1_area_acc94b856659d301c93119a5b08cb6dad}} 
+std\+::vector$<$ variable $>$ {\bfseries abundance\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_abfc2e8ef6ed8266939ba970d29473a3e}\label{structmas_1_1_area_abfc2e8ef6ed8266939ba970d29473a3e}} 
+std\+::vector$<$ variable $>$ {\bfseries biomass\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a169ca9a1c03c80c565ef1ca425078fad}\label{structmas_1_1_area_a169ca9a1c03c80c565ef1ca425078fad}} 
+std\+::vector$<$ variable $>$ {\bfseries proportion\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a1e2aa0671666187c26108ef2dc669239}\label{structmas_1_1_area_a1e2aa0671666187c26108ef2dc669239}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+proportion\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ab3e0fc299986b3ce569d3da2c750fb05}\label{structmas_1_1_area_ab3e0fc299986b3ce569d3da2c750fb05}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+proportion\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a6f5963d3731bc788e4ec0c0975ebb9b3}\label{structmas_1_1_area_a6f5963d3731bc788e4ec0c0975ebb9b3}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a77be076c07976d8b8ca1f94e9f9bc00a}\label{structmas_1_1_area_a77be076c07976d8b8ca1f94e9f9bc00a}} 
+std\+::vector$<$ variable $>$ {\bfseries catch\+\_\+biomass\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a5c4aa87c77904d0ea7b60aad5cf5e852}\label{structmas_1_1_area_a5c4aa87c77904d0ea7b60aad5cf5e852}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+numbers\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a903b4c889f85bdbd4804f15a6278c7b0}\label{structmas_1_1_area_a903b4c889f85bdbd4804f15a6278c7b0}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+biomass\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a58a763df34868ff121faabd55c2f9741}\label{structmas_1_1_area_a58a763df34868ff121faabd55c2f9741}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+proportion\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a0f91784fa56884376c4ee3d8a2fc0ec3}\label{structmas_1_1_area_a0f91784fa56884376c4ee3d8a2fc0ec3}} 
+std\+::vector$<$ variable $>$ {\bfseries survey\+\_\+biomass\+\_\+proportion\+\_\+at\+\_\+age\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a8d83afe253276000a8e96b407f90502b}\label{structmas_1_1_area_a8d83afe253276000a8e96b407f90502b}} 
+std\+::vector$<$ variable $>$ {\bfseries recruits\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ac6804fcb4d79041b1669c81ed3b649cd}\label{structmas_1_1_area_ac6804fcb4d79041b1669c81ed3b649cd}} 
+std\+::vector$<$ variable $>$ {\bfseries spawning\+\_\+stock\+\_\+biomass\+\_\+females}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a3489f1ad9f89aa85559a05457afb40c5}\label{structmas_1_1_area_a3489f1ad9f89aa85559a05457afb40c5}} 
+std\+::vector$<$ variable $>$ {\bfseries N\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_aed10a818480665caf15bb1c8ad84150d}\label{structmas_1_1_area_aed10a818480665caf15bb1c8ad84150d}} 
+std\+::vector$<$ variable $>$ {\bfseries N\+\_\+\+Proportion\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a3f51d606be9b45fe96667507434dc690}\label{structmas_1_1_area_a3f51d606be9b45fe96667507434dc690}} 
+std\+::vector$<$ variable $>$ {\bfseries C\+\_\+\+Proportion\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ad0afc58b6fcbd08ddceaa9f1db430bdd}\label{structmas_1_1_area_ad0afc58b6fcbd08ddceaa9f1db430bdd}} 
+std\+::vector$<$ variable $>$ {\bfseries C\+\_\+\+Biomass\+\_\+\+Proportion\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a0144a4142a67be22d63290f836eb3961}\label{structmas_1_1_area_a0144a4142a67be22d63290f836eb3961}} 
+std\+::vector$<$ variable $>$ {\bfseries C\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a48db0d88a1d19d6e6a43fef8c9a2ab0a}\label{structmas_1_1_area_a48db0d88a1d19d6e6a43fef8c9a2ab0a}} 
+std\+::vector$<$ variable $>$ {\bfseries C\+\_\+\+Biomass\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a3107466153d6d6c2970e3666266eb02a}\label{structmas_1_1_area_a3107466153d6d6c2970e3666266eb02a}} 
+std\+::vector$<$ variable $>$ {\bfseries S\+N\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_aea96de5bbac44de13b5e79a75a270cbd}\label{structmas_1_1_area_aea96de5bbac44de13b5e79a75a270cbd}} 
+std\+::vector$<$ variable $>$ {\bfseries S\+N\+\_\+\+Biomass\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a0266b0fefd2b239bd153bd224081011c}\label{structmas_1_1_area_a0266b0fefd2b239bd153bd224081011c}} 
+std\+::vector$<$ variable $>$ {\bfseries S\+N\+\_\+\+Proportion\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a0fb7cac6b986e07c833a1b55b48b8327}\label{structmas_1_1_area_a0fb7cac6b986e07c833a1b55b48b8327}} 
+std\+::vector$<$ variable $>$ {\bfseries S\+N\+\_\+\+Biomass\+\_\+\+Proportion\+\_\+diff2}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ac0d892bff62ae6d168ae9161f5db7cf2}\label{structmas_1_1_area_ac0d892bff62ae6d168ae9161f5db7cf2}} 
+std\+::map$<$ int, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_fleet}{Fleet}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ $>$ {\bfseries seasonal\+\_\+fleet\+\_\+operations}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a513c4bf4e2a1fdd3c63f1bac10e25bc5}\label{structmas_1_1_area_a513c4bf4e2a1fdd3c63f1bac10e25bc5}} 
+std\+::map$<$ int, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_survey}{Survey}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ $>$ {\bfseries seasonal\+\_\+survey\+\_\+operations}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a94bbe58cca17c234df40191bebfef069}\label{structmas_1_1_area_a94bbe58cca17c234df40191bebfef069}} 
+std\+::set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_fleet}{Fleet}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries active\+\_\+fleets}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a06176622d9d6d00ac6725d3f585dad6f}\label{structmas_1_1_area_a06176622d9d6d00ac6725d3f585dad6f}} 
+std\+::map$<$ int, std\+::map$<$ int, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_survey}{mas\+::\+Survey}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ $>$ {\bfseries survey\+\_\+models}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a742a11ec29fd3c8cbba9c4fc2ffb650b}\label{structmas_1_1_area_a742a11ec29fd3c8cbba9c4fc2ffb650b}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries survey\+\_\+biomass\+\_\+data}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a1a00923508e1f489be3f5885c9208a75}\label{structmas_1_1_area_a1a00923508e1f489be3f5885c9208a75}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries survey\+\_\+proportion\+\_\+data\+\_\+N}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_adfe5f97ac7d375c9045b3a17a3c9ccf6}\label{structmas_1_1_area_adfe5f97ac7d375c9045b3a17a3c9ccf6}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries survey\+\_\+proportion\+\_\+data}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a33b8c87411a6eb87d89faf910a6e33d1}\label{structmas_1_1_area_a33b8c87411a6eb87d89faf910a6e33d1}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries survey\+\_\+proportion\+\_\+length\+\_\+data\+\_\+N}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a267134d80dcd5d56d4e63b158ebaacdf}\label{structmas_1_1_area_a267134d80dcd5d56d4e63b158ebaacdf}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries survey\+\_\+proportion\+\_\+length\+\_\+data}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a2710e056d30edc617f3073d3df19f28f}\label{structmas_1_1_area_a2710e056d30edc617f3073d3df19f28f}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries survey\+\_\+mean\+\_\+size\+\_\+data}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ade9dc79427b4c9c46ec5c3ebae967ff0}\label{structmas_1_1_area_ade9dc79427b4c9c46ec5c3ebae967ff0}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries catch\+\_\+biomass\+\_\+data}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a9c253f70d158bb49a41ca2c24d1dbb3b}\label{structmas_1_1_area_a9c253f70d158bb49a41ca2c24d1dbb3b}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries catch\+\_\+proportion\+\_\+data\+\_\+N}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a3a14e9f155e3184451799e8fc8db97ab}\label{structmas_1_1_area_a3a14e9f155e3184451799e8fc8db97ab}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries catch\+\_\+proportion\+\_\+data}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a9bd6774752ab571a166a9c0a5fe169aa}\label{structmas_1_1_area_a9bd6774752ab571a166a9c0a5fe169aa}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries catch\+\_\+proportion\+\_\+length\+\_\+data\+\_\+N}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a323cc7addcbd5afb8c3295150afd7cfb}\label{structmas_1_1_area_a323cc7addcbd5afb8c3295150afd7cfb}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries catch\+\_\+proportion\+\_\+length\+\_\+data}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_af01729bc7ed50ebd5238fc2332e21501}\label{structmas_1_1_area_af01729bc7ed50ebd5238fc2332e21501}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ $>$ {\bfseries catch\+\_\+mean\+\_\+size\+\_\+data}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ac0c9427ab19559cd60bbf26c1ac75c63}\label{structmas_1_1_area_ac0c9427ab19559cd60bbf26c1ac75c63}} 
+variable {\bfseries catch\+\_\+biomass\+\_\+component}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a8b7482442ba3e2008120c09b14343f56}\label{structmas_1_1_area_a8b7482442ba3e2008120c09b14343f56}} 
+variable {\bfseries survey\+\_\+biomass\+\_\+component}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_a21ab68ae7dd85bcae3c3094f08b5ccb9}\label{structmas_1_1_area_a21ab68ae7dd85bcae3c3094f08b5ccb9}} 
+variable {\bfseries fishery\+\_\+age\+\_\+comp\+\_\+component}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_ac9d145e72568af28ce8c973dffab11b3}\label{structmas_1_1_area_ac9d145e72568af28ce8c973dffab11b3}} 
+variable {\bfseries survey\+\_\+age\+\_\+comp\+\_\+component}
+\item 
+\mbox{\Hypertarget{structmas_1_1_area_aaa231bd2abc74fef23bd8fcf4644236a}\label{structmas_1_1_area_aaa231bd2abc74fef23bd8fcf4644236a}} 
+variable {\bfseries recruitment\+\_\+deviations\+\_\+component}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structmas_1_1_area_a53dfddab7e2e70e14b87e4fc25c4c62a}\label{structmas_1_1_area_a53dfddab7e2e70e14b87e4fc25c4c62a}} 
+\index{mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}!GetCatchBiomassComponent@{GetCatchBiomassComponent}}
+\index{GetCatchBiomassComponent@{GetCatchBiomassComponent}!mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{GetCatchBiomassComponent()}{GetCatchBiomassComponent()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+const variable\& \mbox{\hyperlink{structmas_1_1_area}{mas\+::\+Area}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Get\+Catch\+Biomass\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a reference to the catch biomass component for the likelihood function.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structmas_1_1_area_a84c391dccdc57e7a20a31e36aecf39e0}\label{structmas_1_1_area_a84c391dccdc57e7a20a31e36aecf39e0}} 
+\index{mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}!GetFisheryAgeCompComponent@{GetFisheryAgeCompComponent}}
+\index{GetFisheryAgeCompComponent@{GetFisheryAgeCompComponent}!mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{GetFisheryAgeCompComponent()}{GetFisheryAgeCompComponent()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+const variable\& \mbox{\hyperlink{structmas_1_1_area}{mas\+::\+Area}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Get\+Fishery\+Age\+Comp\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a reference to the fishery age composition component for the likelihood function.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structmas_1_1_area_a513127fb6bb043edac4f2d7aa129c207}\label{structmas_1_1_area_a513127fb6bb043edac4f2d7aa129c207}} 
+\index{mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}!GetRecruitmentDeviationsComponent@{GetRecruitmentDeviationsComponent}}
+\index{GetRecruitmentDeviationsComponent@{GetRecruitmentDeviationsComponent}!mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{GetRecruitmentDeviationsComponent()}{GetRecruitmentDeviationsComponent()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+const variable\& \mbox{\hyperlink{structmas_1_1_area}{mas\+::\+Area}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Get\+Recruitment\+Deviations\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a reference to the recruitment deviations component for the likelihood function.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structmas_1_1_area_ab3957bb0ad3f2a055f7fa3fc1bd6bd35}\label{structmas_1_1_area_ab3957bb0ad3f2a055f7fa3fc1bd6bd35}} 
+\index{mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}!GetSurveyAgeCompComponent@{GetSurveyAgeCompComponent}}
+\index{GetSurveyAgeCompComponent@{GetSurveyAgeCompComponent}!mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{GetSurveyAgeCompComponent()}{GetSurveyAgeCompComponent()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+const variable\& \mbox{\hyperlink{structmas_1_1_area}{mas\+::\+Area}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Get\+Survey\+Age\+Comp\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a reference to the survey age composition component for the likelihood function.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{structmas_1_1_area_a8b8e9f7f2c50ca8ea8640b75a815b2be}\label{structmas_1_1_area_a8b8e9f7f2c50ca8ea8640b75a815b2be}} 
+\index{mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}!GetSurveyBiomassComponent@{GetSurveyBiomassComponent}}
+\index{GetSurveyBiomassComponent@{GetSurveyBiomassComponent}!mas::Area$<$ REAL\_T $>$@{mas::Area$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{GetSurveyBiomassComponent()}{GetSurveyBiomassComponent()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+const variable\& \mbox{\hyperlink{structmas_1_1_area}{mas\+::\+Area}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Get\+Survey\+Biomass\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns a reference to the survey biomass component for the likelihood function.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Area.\+hpp\end{DoxyCompactItemize}

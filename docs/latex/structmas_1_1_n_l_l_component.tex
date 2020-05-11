@@ -1,0 +1,82 @@
+\hypertarget{structmas_1_1_n_l_l_component}{}\doxysection{mas\+::N\+L\+L\+Component$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_n_l_l_component}\index{mas::NLLComponent$<$ REAL\_T $>$@{mas::NLLComponent$<$ REAL\_T $>$}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a867afdda641b99341b7ebcbaea001f94}\label{structmas_1_1_n_l_l_component_a867afdda641b99341b7ebcbaea001f94}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a0722b21b60ba301e910d34106fac2534}\label{structmas_1_1_n_l_l_component_a0722b21b60ba301e910d34106fac2534}} 
+{\bfseries N\+L\+L\+Component} (std\+::vector$<$ variable $>$ $\ast$estimated, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ observed, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_n_l_l_functor}{mas\+::\+N\+L\+L\+Functor}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ nll\+\_\+functor)
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_ac8865fe2326ebc453fc69d7c7d0852a5}\label{structmas_1_1_n_l_l_component_ac8865fe2326ebc453fc69d7c7d0852a5}} 
+void {\bfseries Evaluate} (variable \&nll\+\_\+c)
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a2ec9bb63092230350a7fa1088d58fba2}\label{structmas_1_1_n_l_l_component_a2ec9bb63092230350a7fa1088d58fba2}} 
+void {\bfseries Finalize} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a1d5439e34e306b6d3cfabfa7511f4885}\label{structmas_1_1_n_l_l_component_a1d5439e34e306b6d3cfabfa7511f4885}} 
+std\+::vector$<$ variable $>$ $\ast$ {\bfseries estimated}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a82a2b4e08e4b1f9509aae06b0622bcef}\label{structmas_1_1_n_l_l_component_a82a2b4e08e4b1f9509aae06b0622bcef}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries observed}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_aac558bbcbc7a6d23b86b59bde0b2feed}\label{structmas_1_1_n_l_l_component_aac558bbcbc7a6d23b86b59bde0b2feed}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_n_l_l_functor}{mas\+::\+N\+L\+L\+Functor}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries nll\+\_\+functor}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_ae00089e4495dceff480b3e5d757a28c8}\label{structmas_1_1_n_l_l_component_ae00089e4495dceff480b3e5d757a28c8}} 
+size\+\_\+t {\bfseries N}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a6135e0b60bd11a55cb7a2876475b68aa}\label{structmas_1_1_n_l_l_component_a6135e0b60bd11a55cb7a2876475b68aa}} 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries residuals}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a547b098a4875f3cf06b04ce13ba21e25}\label{structmas_1_1_n_l_l_component_a547b098a4875f3cf06b04ce13ba21e25}} 
+size\+\_\+t {\bfseries years}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a40ea4508179afa903a44fcd420b9ac32}\label{structmas_1_1_n_l_l_component_a40ea4508179afa903a44fcd420b9ac32}} 
+size\+\_\+t {\bfseries seasons}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_ab8140fba897a389c90eb96955ce968c8}\label{structmas_1_1_n_l_l_component_ab8140fba897a389c90eb96955ce968c8}} 
+size\+\_\+t {\bfseries ages}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a91b2fed10471f72a1732e2e97b53d53f}\label{structmas_1_1_n_l_l_component_a91b2fed10471f72a1732e2e97b53d53f}} 
+R\+E\+A\+L\+\_\+T {\bfseries chi\+\_\+square} = 0.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a23e5b9ce2bc58283ab742e8610e7e0f5}\label{structmas_1_1_n_l_l_component_a23e5b9ce2bc58283ab742e8610e7e0f5}} 
+R\+E\+A\+L\+\_\+T {\bfseries g\+\_\+test} = 0.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a26665bbbb2eec3bd16a9e945e38f035f}\label{structmas_1_1_n_l_l_component_a26665bbbb2eec3bd16a9e945e38f035f}} 
+R\+E\+A\+L\+\_\+T {\bfseries rmse} = 0.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_ae491fd6b834a4d00a05f150039e21f82}\label{structmas_1_1_n_l_l_component_ae491fd6b834a4d00a05f150039e21f82}} 
+R\+E\+A\+L\+\_\+T {\bfseries rmsle} = 0.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a98c6a614cbc66fe834c5a2b915172693}\label{structmas_1_1_n_l_l_component_a98c6a614cbc66fe834c5a2b915172693}} 
+R\+E\+A\+L\+\_\+T {\bfseries r\+\_\+squared} = 0.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a904a912103bf167c14b9ebee610829b8}\label{structmas_1_1_n_l_l_component_a904a912103bf167c14b9ebee610829b8}} 
+R\+E\+A\+L\+\_\+T {\bfseries A\+IC} = 0.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_ae0e6f20aea6e60dd1570a06ba66f88e3}\label{structmas_1_1_n_l_l_component_ae0e6f20aea6e60dd1570a06ba66f88e3}} 
+R\+E\+A\+L\+\_\+T {\bfseries B\+IC} = 0.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_aaff06732da17465880944f9abfc8d0b6}\label{structmas_1_1_n_l_l_component_aaff06732da17465880944f9abfc8d0b6}} 
+static bool {\bfseries record\+\_\+residuals} = false
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_component_a9d5ff64cbfc0b541a59def27fef2c5cd}\label{structmas_1_1_n_l_l_component_a9d5ff64cbfc0b541a59def27fef2c5cd}} 
+static int {\bfseries k} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+N\+L\+L\+Components.\+hpp\end{DoxyCompactItemize}

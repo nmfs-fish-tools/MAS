@@ -1,0 +1,145 @@
+\hypertarget{structmas_1_1_growth_base}{}\doxysection{mas\+::Growth\+Base$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_growth_base}\index{mas::GrowthBase$<$ REAL\_T $>$@{mas::GrowthBase$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::Growth\+Base$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.952381cm]{structmas_1_1_growth_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a2b2f3559be1ce3134ab0a145fa3a8f43}\label{structmas_1_1_growth_base_a2b2f3559be1ce3134ab0a145fa3a8f43}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_ab4400ca1a491ea4138a4d90a66fae224}\label{structmas_1_1_growth_base_ab4400ca1a491ea4138a4d90a66fae224}} 
+typedef std\+::set$<$ R\+E\+A\+L\+\_\+T $>$\+::iterator {\bfseries ages\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a1865888536e5c1c4b00d91a08d0534f4}\label{structmas_1_1_growth_base_a1865888536e5c1c4b00d91a08d0534f4}} 
+const variable {\bfseries dnorm} (const variable \&x, const variable \&mean, const variable \&sd, int give\+\_\+log=0)
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_ab4a6be0ca80b0d2a12d172ad31797800}\label{structmas_1_1_growth_base_ab4a6be0ca80b0d2a12d172ad31797800}} 
+virtual void {\bfseries Initialize} ()
+\item 
+virtual const variable \mbox{\hyperlink{structmas_1_1_growth_base_a381e3400e22b2739830351acdf4689b5}{Evaluate}} (const variable \&age, const int \&sex)=0
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a7d3116f8ee1b8ac09f775c1fdc6ba033}\label{structmas_1_1_growth_base_a7d3116f8ee1b8ac09f775c1fdc6ba033}} 
+virtual void {\bfseries Get\+Weight} (int year, int season, const variable \&length, const R\+E\+A\+L\+\_\+T \&age, const int \&sex, const int \&id, const mas\+::\+Data\+Object\+Type \&ew\+\_\+type, variable \&ret)
+\item 
+const variable \mbox{\hyperlink{structmas_1_1_growth_base_a6200dcd31b6d06f234ad3ffbef1f16ee}{Weight}} (const variable \&length, const variable \&age, const int \&sex)
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a74588899b86934b281e51b8a4fb15876}\label{structmas_1_1_growth_base_a74588899b86934b281e51b8a4fb15876}} 
+virtual const variable {\bfseries Variance} (const variable \&age, const int \&sex)
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a3645c79a5cd9ed606bcf2f381aef5259}\label{structmas_1_1_growth_base_a3645c79a5cd9ed606bcf2f381aef5259}} 
+virtual const std\+::string {\bfseries Name} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a649887f7da7bee5a7adbe6ad557e96fe}\label{structmas_1_1_growth_base_a649887f7da7bee5a7adbe6ad557e96fe}} 
+static R\+E\+A\+L\+\_\+T {\bfseries Polynomial\+Interpolator} (R\+E\+A\+L\+\_\+T x, const std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ \&xi, const std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ \&yi, int imax)
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a6e59b2839049eeb554294090adc15101}\label{structmas_1_1_growth_base_a6e59b2839049eeb554294090adc15101}} 
+static void {\bfseries Do2\+D\+Interpolation} (int id, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{mas\+::\+Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ \&data, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ R\+E\+A\+L\+\_\+T, R\+E\+A\+L\+\_\+T $>$ $>$ $>$ \&results)
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a211486f778d7f5bc774dbcd22e43cd2a}\label{structmas_1_1_growth_base_a211486f778d7f5bc774dbcd22e43cd2a}} 
+static void {\bfseries Do2\+D\+Interpolation} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{mas\+::\+Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ \&data, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ R\+E\+A\+L\+\_\+T, R\+E\+A\+L\+\_\+T $>$ $>$ $>$ \&results)
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a53982ef325d0885b5a8938a3152f2351}\label{structmas_1_1_growth_base_a53982ef325d0885b5a8938a3152f2351}} 
+static void {\bfseries Do3\+D\+Interpolation} (int id, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{mas\+::\+Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ \&data, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ R\+E\+A\+L\+\_\+T, R\+E\+A\+L\+\_\+T $>$ $>$ $>$ $>$ \&results)
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_ae74a67cff82a5a05c48fb3fcdf78ac6e}\label{structmas_1_1_growth_base_ae74a67cff82a5a05c48fb3fcdf78ac6e}} 
+static void {\bfseries Do3\+D\+Interpolation} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{mas\+::\+Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ \&data, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ R\+E\+A\+L\+\_\+T, R\+E\+A\+L\+\_\+T $>$ $>$ $>$ \&results)
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_afc261e577c1918f16c6f9aedcbc3dd4b}\label{structmas_1_1_growth_base_afc261e577c1918f16c6f9aedcbc3dd4b}} 
+static void {\bfseries Show3\+Interpolated\+Values} (std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ int, std\+::unordered\+\_\+map$<$ R\+E\+A\+L\+\_\+T, R\+E\+A\+L\+\_\+T $>$ $>$ $>$ $>$ \&results)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_aab84c98377a8d04e4dcaaa7e7e19d2e2}\label{structmas_1_1_growth_base_aab84c98377a8d04e4dcaaa7e7e19d2e2}} 
+variable {\bfseries a\+\_\+min}
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_af5003b2a605a0107482b9dd9d368ef2d}\label{structmas_1_1_growth_base_af5003b2a605a0107482b9dd9d368ef2d}} 
+variable {\bfseries a\+\_\+max}
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a412552f9b7d23d1c1f056e826b8981ae}\label{structmas_1_1_growth_base_a412552f9b7d23d1c1f056e826b8981ae}} 
+variable {\bfseries alpha\+\_\+f} = 0.\+000025
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a396354505138367e93a446571e934e9e}\label{structmas_1_1_growth_base_a396354505138367e93a446571e934e9e}} 
+variable {\bfseries alpha\+\_\+m} = 0.\+000025
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_ab24d4baacfb805e7b48db9b74e332658}\label{structmas_1_1_growth_base_ab24d4baacfb805e7b48db9b74e332658}} 
+variable {\bfseries beta\+\_\+f} = 3.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a17b3c2eef24ac82f2feb94119eb4ae64}\label{structmas_1_1_growth_base_a17b3c2eef24ac82f2feb94119eb4ae64}} 
+variable {\bfseries beta\+\_\+m} = 3.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_a0e67db2ac85488a5beea83a916395ac5}\label{structmas_1_1_growth_base_a0e67db2ac85488a5beea83a916395ac5}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_weight_functor_base}{mas\+::\+Weight\+Functor\+Base}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries weight\+\_\+functor}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_af238e9c36772b45a81cf2093c05ef9c0}\label{structmas_1_1_growth_base_af238e9c36772b45a81cf2093c05ef9c0}} 
+static std\+::set$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries ages\+\_\+to\+\_\+intrpolate}
+\item 
+\mbox{\Hypertarget{structmas_1_1_growth_base_aabedbdcb662238ca9eaab2677f133900}\label{structmas_1_1_growth_base_aabedbdcb662238ca9eaab2677f133900}} 
+static std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries ages}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structmas_1_1_growth_base_a381e3400e22b2739830351acdf4689b5}\label{structmas_1_1_growth_base_a381e3400e22b2739830351acdf4689b5}} 
+\index{mas::GrowthBase$<$ REAL\_T $>$@{mas::GrowthBase$<$ REAL\_T $>$}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mas::GrowthBase$<$ REAL\_T $>$@{mas::GrowthBase$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+virtual const variable \mbox{\hyperlink{structmas_1_1_growth_base}{mas\+::\+Growth\+Base}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Evaluate (\begin{DoxyParamCaption}\item[{const variable \&}]{age,  }\item[{const int \&}]{sex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Computes the length of a fish at age by sex or uses a empirical weight at age look up by fleet, year, and season supplied as data from a fleet. If a fleet look up does not exist, the weight is computed by estimated length.
+
+
+\begin{DoxyParams}{Parameters}
+{\em age} & \\
+\hline
+{\em sex} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{structmas_1_1_empirical_growth_ae281d2e5d3f05096c68fe9c79e173df4}{mas\+::\+Empirical\+Growth$<$ R\+E\+A\+L\+\_\+\+T $>$}}, \mbox{\hyperlink{structmas_1_1_schnute_case_i_v_a8100c63161dead550bf517365e355fec}{mas\+::\+Schnute\+Case\+I\+V$<$ R\+E\+A\+L\+\_\+\+T $>$}}, \mbox{\hyperlink{structmas_1_1_schnute_case_i_i_i_a36829dacc125f07c7c9595f1e8ca0d8a}{mas\+::\+Schnute\+Case\+I\+I\+I$<$ R\+E\+A\+L\+\_\+\+T $>$}}, \mbox{\hyperlink{structmas_1_1_schnute_case_i_i_ac582befc654cf955f0afafed8889b0e1}{mas\+::\+Schnute\+Case\+I\+I$<$ R\+E\+A\+L\+\_\+\+T $>$}}, \mbox{\hyperlink{structmas_1_1_schnute_case_i_acc1a2f969120393ef5275ee3f297dfc9}{mas\+::\+Schnute\+Case\+I$<$ R\+E\+A\+L\+\_\+\+T $>$}}, \mbox{\hyperlink{structmas_1_1_von_bertalanffy_modified_ac5e51a32119b7353bb32d64f440416c7}{mas\+::\+Von\+Bertalanffy\+Modified$<$ R\+E\+A\+L\+\_\+\+T $>$}}, and \mbox{\hyperlink{structmas_1_1_von_bertalanffy_ac89c031af93f2baf47d357bca9c37b6a}{mas\+::\+Von\+Bertalanffy$<$ R\+E\+A\+L\+\_\+\+T $>$}}.
+
+\mbox{\Hypertarget{structmas_1_1_growth_base_a6200dcd31b6d06f234ad3ffbef1f16ee}\label{structmas_1_1_growth_base_a6200dcd31b6d06f234ad3ffbef1f16ee}} 
+\index{mas::GrowthBase$<$ REAL\_T $>$@{mas::GrowthBase$<$ REAL\_T $>$}!Weight@{Weight}}
+\index{Weight@{Weight}!mas::GrowthBase$<$ REAL\_T $>$@{mas::GrowthBase$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{Weight()}{Weight()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+const variable \mbox{\hyperlink{structmas_1_1_growth_base}{mas\+::\+Growth\+Base}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Weight (\begin{DoxyParamCaption}\item[{const variable \&}]{length,  }\item[{const variable \&}]{age,  }\item[{const int \&}]{sex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default weight at age functon.
+
+$ waa = alpha * length^{beta} $ 
+\begin{DoxyParams}{Parameters}
+{\em length} & \\
+\hline
+{\em age} & \\
+\hline
+{\em sex} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Growth.\+hpp\end{DoxyCompactItemize}

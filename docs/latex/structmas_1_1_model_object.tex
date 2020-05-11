@@ -1,0 +1,64 @@
+\hypertarget{structmas_1_1_model_object}{}\doxysection{mas\+::Model\+Object$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_model_object}\index{mas::ModelObject$<$ REAL\_T $>$@{mas::ModelObject$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::Model\+Object$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{structmas_1_1_model_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_a4e62fdbb5826f8fac311262b888ab10a}\label{structmas_1_1_model_object_a4e62fdbb5826f8fac311262b888ab10a}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_af95a47b3862d83583751c2d835887697}\label{structmas_1_1_model_object_af95a47b3862d83583751c2d835887697}} 
+typedef std\+::map$<$ variable $\ast$, int $>$\+::iterator {\bfseries estimable\+\_\+parameter\+\_\+iterator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_aefad28a4f78daee1ead3eaa0a44577ae}\label{structmas_1_1_model_object_aefad28a4f78daee1ead3eaa0a44577ae}} 
+void {\bfseries Register} (variable \&var, int phase=1)
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_a8935a1f881201423ff8ee3b03e957176}\label{structmas_1_1_model_object_a8935a1f881201423ff8ee3b03e957176}} 
+void {\bfseries Register\+Random} (variable \&var)
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_a68948da33f7370cfea0f07bbe072a439}\label{structmas_1_1_model_object_a68948da33f7370cfea0f07bbe072a439}} 
+virtual const std\+::string {\bfseries J\+S\+O\+N\+Parameter} (variable \&var, const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_af40b3c89b11919fc5aea21dcf1cd027b}\label{structmas_1_1_model_object_af40b3c89b11919fc5aea21dcf1cd027b}} 
+virtual const std\+::string {\bfseries To\+J\+S\+O\+N\+String} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_a8eaf6c7c52e42ea8869aefa318358cb5}\label{structmas_1_1_model_object_a8eaf6c7c52e42ea8869aefa318358cb5}} 
+virtual std\+::string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_a1455cdfd12f282766b0689f3a345dbb7}\label{structmas_1_1_model_object_a1455cdfd12f282766b0689f3a345dbb7}} 
+int {\bfseries id}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_aaea24720c307701c6c4494088013cc46}\label{structmas_1_1_model_object_aaea24720c307701c6c4494088013cc46}} 
+std\+::map$<$ variable $\ast$, int $>$ {\bfseries estimated\+\_\+parameters\+\_\+map}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_a2506b384900c37c9462267a573d83314}\label{structmas_1_1_model_object_a2506b384900c37c9462267a573d83314}} 
+std\+::vector$<$ variable $\ast$ $>$ {\bfseries random\+\_\+variables}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_ae9b9d70e413f78bf9b566eba16d1e71c}\label{structmas_1_1_model_object_ae9b9d70e413f78bf9b566eba16d1e71c}} 
+std\+::vector$<$ variable $\ast$ $>$ {\bfseries estimated\+\_\+parameters}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_ad31ca1fdf9f20dca67f17c1d2c5f75c7}\label{structmas_1_1_model_object_ad31ca1fdf9f20dca67f17c1d2c5f75c7}} 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries initial\+\_\+parameter\+\_\+values}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_a6e26b63869a25bbe17a8d57e4d4ab77a}\label{structmas_1_1_model_object_a6e26b63869a25bbe17a8d57e4d4ab77a}} 
+std\+::vector$<$ int $>$ {\bfseries estimated\+\_\+phase}
+\item 
+\mbox{\Hypertarget{structmas_1_1_model_object_a47d30dfc08290aebd94cf3096d53ef6a}\label{structmas_1_1_model_object_a47d30dfc08290aebd94cf3096d53ef6a}} 
+bool {\bfseries used} = false
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Common.\+hpp\end{DoxyCompactItemize}

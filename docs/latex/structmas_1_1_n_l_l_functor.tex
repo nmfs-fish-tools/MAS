@@ -1,0 +1,61 @@
+\hypertarget{structmas_1_1_n_l_l_functor}{}\doxysection{mas\+::N\+L\+L\+Functor$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_n_l_l_functor}\index{mas::NLLFunctor$<$ REAL\_T $>$@{mas::NLLFunctor$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::N\+L\+L\+Functor$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.263158cm]{structmas_1_1_n_l_l_functor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_af0af5a53b4f1a30a9cf498e6d284c402}\label{structmas_1_1_n_l_l_functor_af0af5a53b4f1a30a9cf498e6d284c402}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_a47364fea079a116df7f7ad860f977c5a}\label{structmas_1_1_n_l_l_functor_a47364fea079a116df7f7ad860f977c5a}} 
+{\bfseries N\+L\+L\+Functor} (size\+\_\+t years, size\+\_\+t seasons, size\+\_\+t ages)
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_a463977400e35ad46ef60c334d452cd6c}\label{structmas_1_1_n_l_l_functor_a463977400e35ad46ef60c334d452cd6c}} 
+virtual variable {\bfseries Evaluate} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ \&observed, const std\+::vector$<$ variable $>$ \&predicted, size\+\_\+t N)=0
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_af86f7157edbcace46138c9b8cb03ddf0}\label{structmas_1_1_n_l_l_functor_af86f7157edbcace46138c9b8cb03ddf0}} 
+virtual const R\+E\+A\+L\+\_\+T {\bfseries Neff} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_accd55442e1e88b423471b67c40860197}\label{structmas_1_1_n_l_l_functor_accd55442e1e88b423471b67c40860197}} 
+virtual std\+::string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_acdae35cc66d21c65ed4316e50faa1da4}\label{structmas_1_1_n_l_l_functor_acdae35cc66d21c65ed4316e50faa1da4}} 
+N\+L\+L\+\_\+\+Functor\+\_\+\+Type {\bfseries functor\+\_\+type} = B\+A\+SE
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_ac76e5d7e0808486b42ffdaea952dd19f}\label{structmas_1_1_n_l_l_functor_ac76e5d7e0808486b42ffdaea952dd19f}} 
+size\+\_\+t {\bfseries years}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_ac59c36239b1817b5bb357bf90dc4802d}\label{structmas_1_1_n_l_l_functor_ac59c36239b1817b5bb357bf90dc4802d}} 
+size\+\_\+t {\bfseries seasons}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_aa70e461c812bff95770cda5dbb79b6b9}\label{structmas_1_1_n_l_l_functor_aa70e461c812bff95770cda5dbb79b6b9}} 
+size\+\_\+t {\bfseries ages}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_ae5f9632762bdc1d417be791b5d98687a}\label{structmas_1_1_n_l_l_functor_ae5f9632762bdc1d417be791b5d98687a}} 
+variable {\bfseries neff}
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_a7c957647baf66c08ac84e152423c543a}\label{structmas_1_1_n_l_l_functor_a7c957647baf66c08ac84e152423c543a}} 
+R\+E\+A\+L\+\_\+T {\bfseries CV} = .\+2
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_a80cd8e308e942898b9841953c7980dc2}\label{structmas_1_1_n_l_l_functor_a80cd8e308e942898b9841953c7980dc2}} 
+R\+E\+A\+L\+\_\+T {\bfseries epsilon} = static\+\_\+cast$<$R\+E\+A\+L\+\_\+T$>$ (1e-\/8)
+\item 
+\mbox{\Hypertarget{structmas_1_1_n_l_l_functor_a50032d1f03b5743690723c33b62d2b4d}\label{structmas_1_1_n_l_l_functor_a50032d1f03b5743690723c33b62d2b4d}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structmas_1_1_data_object}{mas\+::\+Data\+Object}}$<$ R\+E\+A\+L\+\_\+T $>$ $>$ {\bfseries lambda}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+N\+L\+L\+Components.\+hpp\end{DoxyCompactItemize}

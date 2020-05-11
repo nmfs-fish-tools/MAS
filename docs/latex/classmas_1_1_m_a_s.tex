@@ -1,0 +1,95 @@
+\hypertarget{classmas_1_1_m_a_s}{}\doxysection{mas\+::M\+AS$<$ R\+E\+A\+L\+\_\+T $>$ Class Template Reference}
+\label{classmas_1_1_m_a_s}\index{mas::MAS$<$ REAL\_T $>$@{mas::MAS$<$ REAL\_T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_ad509033342a4fb5c6916e0d9346c610d}\label{classmas_1_1_m_a_s_ad509033342a4fb5c6916e0d9346c610d}} 
+{\bfseries M\+AS} (const \mbox{\hyperlink{classmas_1_1_m_a_s}{M\+AS}}$<$ R\+E\+A\+L\+\_\+T $>$ \&orig)
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_afe6ea578b33a24f7ae7252a9ed5a595b}\label{classmas_1_1_m_a_s_afe6ea578b33a24f7ae7252a9ed5a595b}} 
+void {\bfseries Initialize} (const std\+::string \&config\+\_\+file, const std\+::string \&data\+\_\+file)
+\item 
+void \mbox{\hyperlink{classmas_1_1_m_a_s_ad94002bbb3563647a927f5feef150573}{Run}} (variable \&f)
+\item 
+void \mbox{\hyperlink{classmas_1_1_m_a_s_ad3995a625ff4fb257be5399c66597c29}{Compute\+Goodness\+Of\+Fit}} ()
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_aac0b9279e39863bea02e9b0eb3c3aa67}\label{classmas_1_1_m_a_s_aac0b9279e39863bea02e9b0eb3c3aa67}} 
+void {\bfseries Forecast} ()
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_af79237d1b1a867ada42abc7bdb0455b6}\label{classmas_1_1_m_a_s_af79237d1b1a867ada42abc7bdb0455b6}} 
+void {\bfseries Finalize} ()
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_afd76753b0c33bc0f0dd800c72f23afd5}\label{classmas_1_1_m_a_s_afd76753b0c33bc0f0dd800c72f23afd5}} 
+void {\bfseries Report} ()
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_a29d1994f2052a9c484c687cb9c20f00b}\label{classmas_1_1_m_a_s_a29d1994f2052a9c484c687cb9c20f00b}} 
+void {\bfseries H\+T\+M\+L\+Report} ()
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_a6788fe2a84e78f3aec88174575218e53}\label{classmas_1_1_m_a_s_a6788fe2a84e78f3aec88174575218e53}} 
+void {\bfseries show} (std\+::ostream \&out)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_aa04a0eb973d8f664a6165b73a2e44d1b}\label{classmas_1_1_m_a_s_aa04a0eb973d8f664a6165b73a2e44d1b}} 
+int {\bfseries phase}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_adf64a1ceccb1e52a43bc9ebebd87fd45}\label{classmas_1_1_m_a_s_adf64a1ceccb1e52a43bc9ebebd87fd45}} 
+\mbox{\hyperlink{classmas_1_1_information}{mas\+::\+Information}}$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries info}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_a1307836b50f8e29001bbff2dc1842049}\label{classmas_1_1_m_a_s_a1307836b50f8e29001bbff2dc1842049}} 
+atl\+::\+Real\+Matrix$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries variance\+\_\+covaiance}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_ab1b31b4542c79beedb1a714fabc7662d}\label{classmas_1_1_m_a_s_ab1b31b4542c79beedb1a714fabc7662d}} 
+atl\+::\+Real\+Vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries std\+\_\+dev}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_ac75912cc75b87ae6f3c47c4434b3e1bc}\label{classmas_1_1_m_a_s_ac75912cc75b87ae6f3c47c4434b3e1bc}} 
+variable {\bfseries recruitment\+\_\+likelihood}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_a327ec46b61a7d857ec152afcb71afca8}\label{classmas_1_1_m_a_s_a327ec46b61a7d857ec152afcb71afca8}} 
+variable {\bfseries selectivity\+\_\+likelihood}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_a82c6be499d7989f1bb53aa5b69b53f53}\label{classmas_1_1_m_a_s_a82c6be499d7989f1bb53aa5b69b53f53}} 
+R\+E\+A\+L\+\_\+T {\bfseries chi\+\_\+squared}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_a41dd662ed67f0c44e160c6692d1c3d1f}\label{classmas_1_1_m_a_s_a41dd662ed67f0c44e160c6692d1c3d1f}} 
+R\+E\+A\+L\+\_\+T {\bfseries g\+\_\+test}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_aa972f3367813c824acb634ba70a4e91a}\label{classmas_1_1_m_a_s_aa972f3367813c824acb634ba70a4e91a}} 
+R\+E\+A\+L\+\_\+T {\bfseries rmse}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_a7ec27d6ee8babadeac2d0aa4a0606890}\label{classmas_1_1_m_a_s_a7ec27d6ee8babadeac2d0aa4a0606890}} 
+R\+E\+A\+L\+\_\+T {\bfseries rmsle}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_ae3442c17bc28c9b19248e74fd3a3a45c}\label{classmas_1_1_m_a_s_ae3442c17bc28c9b19248e74fd3a3a45c}} 
+R\+E\+A\+L\+\_\+T {\bfseries A\+IC}
+\item 
+\mbox{\Hypertarget{classmas_1_1_m_a_s_a765d1fc92fe3fc535a4d5fa9c90b9960}\label{classmas_1_1_m_a_s_a765d1fc92fe3fc535a4d5fa9c90b9960}} 
+R\+E\+A\+L\+\_\+T {\bfseries B\+IC}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmas_1_1_m_a_s_ad3995a625ff4fb257be5399c66597c29}\label{classmas_1_1_m_a_s_ad3995a625ff4fb257be5399c66597c29}} 
+\index{mas::MAS$<$ REAL\_T $>$@{mas::MAS$<$ REAL\_T $>$}!ComputeGoodnessOfFit@{ComputeGoodnessOfFit}}
+\index{ComputeGoodnessOfFit@{ComputeGoodnessOfFit}!mas::MAS$<$ REAL\_T $>$@{mas::MAS$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{ComputeGoodnessOfFit()}{ComputeGoodnessOfFit()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+void \mbox{\hyperlink{classmas_1_1_m_a_s}{mas\+::\+M\+AS}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Compute\+Goodness\+Of\+Fit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Pearson\textquotesingle{}s chi-\/squared test on biomass and age comp. \mbox{\Hypertarget{classmas_1_1_m_a_s_ad94002bbb3563647a927f5feef150573}\label{classmas_1_1_m_a_s_ad94002bbb3563647a927f5feef150573}} 
+\index{mas::MAS$<$ REAL\_T $>$@{mas::MAS$<$ REAL\_T $>$}!Run@{Run}}
+\index{Run@{Run}!mas::MAS$<$ REAL\_T $>$@{mas::MAS$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+void \mbox{\hyperlink{classmas_1_1_m_a_s}{mas\+::\+M\+AS}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Run (\begin{DoxyParamCaption}\item[{variable \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Prepare Populations for evaluation. Resets runtime information.
+
+Evaluate each population and push final numbers to \mbox{\hyperlink{structmas_1_1_area}{Area}}, fleet, and survey objects.
+
+Loop through each area and compute proportions for catch, surveys, and numbers.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+M\+A\+S.\+hpp\end{DoxyCompactItemize}

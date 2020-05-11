@@ -1,0 +1,75 @@
+\hypertarget{structmas_1_1_von_bertalanffy_modified}{}\doxysection{mas\+::Von\+Bertalanffy\+Modified$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_von_bertalanffy_modified}\index{mas::VonBertalanffyModified$<$ REAL\_T $>$@{mas::VonBertalanffyModified$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::Von\+Bertalanffy\+Modified$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structmas_1_1_von_bertalanffy_modified}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_von_bertalanffy_modified_af5a89449b12de884a01c34464ba2bae0}\label{structmas_1_1_von_bertalanffy_modified_af5a89449b12de884a01c34464ba2bae0}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const variable \mbox{\hyperlink{structmas_1_1_von_bertalanffy_modified_ac5e51a32119b7353bb32d64f440416c7}{Evaluate}} (const variable \&age, const int \&sex)
+\item 
+\mbox{\Hypertarget{structmas_1_1_von_bertalanffy_modified_a47465618fc2471ad0f47f94fe3974597}\label{structmas_1_1_von_bertalanffy_modified_a47465618fc2471ad0f47f94fe3974597}} 
+virtual const std\+::string {\bfseries To\+J\+S\+O\+N\+String} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_von_bertalanffy_modified_a6c845df6e13d5219cd56614d323aaa79}\label{structmas_1_1_von_bertalanffy_modified_a6c845df6e13d5219cd56614d323aaa79}} 
+virtual const std\+::string {\bfseries Name} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_von_bertalanffy_modified_a45e40092ed15953212d65c406908d708}\label{structmas_1_1_von_bertalanffy_modified_a45e40092ed15953212d65c406908d708}} 
+virtual std\+::string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_von_bertalanffy_modified_a2845686ae982422d40b571cb19712cc9}\label{structmas_1_1_von_bertalanffy_modified_a2845686ae982422d40b571cb19712cc9}} 
+variable {\bfseries lmin}
+\item 
+\mbox{\Hypertarget{structmas_1_1_von_bertalanffy_modified_a841b52d7c02054bb25516558f192a092}\label{structmas_1_1_von_bertalanffy_modified_a841b52d7c02054bb25516558f192a092}} 
+variable {\bfseries lmax}
+\item 
+\mbox{\Hypertarget{structmas_1_1_von_bertalanffy_modified_a474caebe2c9277303d7bdba03101432c}\label{structmas_1_1_von_bertalanffy_modified_a474caebe2c9277303d7bdba03101432c}} 
+variable {\bfseries l\+\_\+inf}
+\item 
+\mbox{\Hypertarget{structmas_1_1_von_bertalanffy_modified_ac1ceb4a5dc583de01c35054eb5034f1d}\label{structmas_1_1_von_bertalanffy_modified_ac1ceb4a5dc583de01c35054eb5034f1d}} 
+variable {\bfseries c}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structmas_1_1_von_bertalanffy_modified_ac5e51a32119b7353bb32d64f440416c7}\label{structmas_1_1_von_bertalanffy_modified_ac5e51a32119b7353bb32d64f440416c7}} 
+\index{mas::VonBertalanffyModified$<$ REAL\_T $>$@{mas::VonBertalanffyModified$<$ REAL\_T $>$}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mas::VonBertalanffyModified$<$ REAL\_T $>$@{mas::VonBertalanffyModified$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+virtual const variable \mbox{\hyperlink{structmas_1_1_von_bertalanffy_modified}{mas\+::\+Von\+Bertalanffy\+Modified}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Evaluate (\begin{DoxyParamCaption}\item[{const variable \&}]{age,  }\item[{const int \&}]{sex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+$ length\_at\_age = lmin + (lmax - lmin)*\frac{(1.0 - c^ {(age - a\_min)}))}{(1.0 - c^{(a\_max - a\_min)})} $
+
+
+\begin{DoxyParams}{Parameters}
+{\em age} & \\
+\hline
+{\em sex} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length\+\_\+at\+\_\+age 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{structmas_1_1_growth_base_a381e3400e22b2739830351acdf4689b5}{mas\+::\+Growth\+Base$<$ R\+E\+A\+L\+\_\+\+T $>$}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Growth.\+hpp\end{DoxyCompactItemize}

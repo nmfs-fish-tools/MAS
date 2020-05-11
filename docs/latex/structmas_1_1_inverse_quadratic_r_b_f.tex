@@ -1,0 +1,73 @@
+\hypertarget{structmas_1_1_inverse_quadratic_r_b_f}{}\doxysection{mas\+::Inverse\+Quadratic\+R\+BF$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_inverse_quadratic_r_b_f}\index{mas::InverseQuadraticRBF$<$ REAL\_T $>$@{mas::InverseQuadraticRBF$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::Inverse\+Quadratic\+R\+BF$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structmas_1_1_inverse_quadratic_r_b_f}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_aa73b147b14646342ba3141b53752cb1b}\label{structmas_1_1_inverse_quadratic_r_b_f_aa73b147b14646342ba3141b53752cb1b}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_a56cc3b331603a6e1df6b861d827bed79}\label{structmas_1_1_inverse_quadratic_r_b_f_a56cc3b331603a6e1df6b861d827bed79}} 
+const variable {\bfseries Distance} (const variable \&a)
+\item 
+virtual const variable \mbox{\hyperlink{structmas_1_1_inverse_quadratic_r_b_f_a4753edb34b33f783ae2c645cc16a607c}{Evaluate}} (const variable \&a)
+\item 
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_a326a1c19949fa3b309fbfc38a4c85dc7}\label{structmas_1_1_inverse_quadratic_r_b_f_a326a1c19949fa3b309fbfc38a4c85dc7}} 
+virtual const variable {\bfseries Evaluate} (const std\+::vector$<$ variable $>$ \&ages, size\+\_\+t index)
+\item 
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_a59195ed8bba6ab30d34fa1d204c264bf}\label{structmas_1_1_inverse_quadratic_r_b_f_a59195ed8bba6ab30d34fa1d204c264bf}} 
+virtual const std\+::string {\bfseries To\+J\+S\+O\+N\+String} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_a2733866b50a4a7ae667f50334fdccc27}\label{structmas_1_1_inverse_quadratic_r_b_f_a2733866b50a4a7ae667f50334fdccc27}} 
+virtual const std\+::string {\bfseries Name} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_a51999c40500b4bedc5bb24a1b0b87bb7}\label{structmas_1_1_inverse_quadratic_r_b_f_a51999c40500b4bedc5bb24a1b0b87bb7}} 
+virtual std\+::string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_a38cd5584cc6b9204720c0d8263095984}\label{structmas_1_1_inverse_quadratic_r_b_f_a38cd5584cc6b9204720c0d8263095984}} 
+variable {\bfseries centroid} = 1.\+1
+\item 
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_af694b194e549a0883ba192dec7bd9923}\label{structmas_1_1_inverse_quadratic_r_b_f_af694b194e549a0883ba192dec7bd9923}} 
+variable {\bfseries epsilon} = 1.\+0
+\item 
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_a1e927c1c6b714eb3ca9e6deece81e60e}\label{structmas_1_1_inverse_quadratic_r_b_f_a1e927c1c6b714eb3ca9e6deece81e60e}} 
+std\+::vector$<$ variable $>$ {\bfseries w}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structmas_1_1_inverse_quadratic_r_b_f_a4753edb34b33f783ae2c645cc16a607c}\label{structmas_1_1_inverse_quadratic_r_b_f_a4753edb34b33f783ae2c645cc16a607c}} 
+\index{mas::InverseQuadraticRBF$<$ REAL\_T $>$@{mas::InverseQuadraticRBF$<$ REAL\_T $>$}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mas::InverseQuadraticRBF$<$ REAL\_T $>$@{mas::InverseQuadraticRBF$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+virtual const variable \mbox{\hyperlink{structmas_1_1_inverse_quadratic_r_b_f}{mas\+::\+Inverse\+Quadratic\+R\+BF}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Evaluate (\begin{DoxyParamCaption}\item[{const variable \&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Age based inverse quadratic rbf selectivity 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ age \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{structmas_1_1_selectivity_base}{mas\+::\+Selectivity\+Base$<$ R\+E\+A\+L\+\_\+\+T $>$}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Selectivity.\+hpp\end{DoxyCompactItemize}

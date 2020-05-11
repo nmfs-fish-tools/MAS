@@ -1,0 +1,76 @@
+\hypertarget{structmas_1_1_schnute_case_i_v}{}\doxysection{mas\+::Schnute\+Case\+IV$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_schnute_case_i_v}\index{mas::SchnuteCaseIV$<$ REAL\_T $>$@{mas::SchnuteCaseIV$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::Schnute\+Case\+IV$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{structmas_1_1_schnute_case_i_v}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_schnute_case_i_v_a80605d34c604eedf01a096cefbd776a5}\label{structmas_1_1_schnute_case_i_v_a80605d34c604eedf01a096cefbd776a5}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const variable \mbox{\hyperlink{structmas_1_1_schnute_case_i_v_a8100c63161dead550bf517365e355fec}{Evaluate}} (const variable \&age, const int \&sex)
+\item 
+\mbox{\Hypertarget{structmas_1_1_schnute_case_i_v_a1f6dc0866ead488d7258b75193305c9b}\label{structmas_1_1_schnute_case_i_v_a1f6dc0866ead488d7258b75193305c9b}} 
+virtual const std\+::string {\bfseries To\+J\+S\+O\+N\+String} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_schnute_case_i_v_a7193145ce124fd855fc7d950a936fc20}\label{structmas_1_1_schnute_case_i_v_a7193145ce124fd855fc7d950a936fc20}} 
+virtual const std\+::string {\bfseries Name} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_schnute_case_i_v_ac95b913d4a28421b37e8c91e76906f2d}\label{structmas_1_1_schnute_case_i_v_ac95b913d4a28421b37e8c91e76906f2d}} 
+virtual std\+::string {\bfseries To\+String} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_schnute_case_i_v_a1ff44a6bb870b3ba1d553b5a4d17bd39}\label{structmas_1_1_schnute_case_i_v_a1ff44a6bb870b3ba1d553b5a4d17bd39}} 
+variable {\bfseries alpha}
+\item 
+\mbox{\Hypertarget{structmas_1_1_schnute_case_i_v_a11a7d5e338909eca6126bd1384a5b0b5}\label{structmas_1_1_schnute_case_i_v_a11a7d5e338909eca6126bd1384a5b0b5}} 
+variable {\bfseries beta}
+\item 
+\mbox{\Hypertarget{structmas_1_1_schnute_case_i_v_a7b4d5a4e32071d80cd213ca5191bd7b1}\label{structmas_1_1_schnute_case_i_v_a7b4d5a4e32071d80cd213ca5191bd7b1}} 
+variable {\bfseries lmin}
+\item 
+\mbox{\Hypertarget{structmas_1_1_schnute_case_i_v_afadfbcde5becffb86f6049bbd59ef09c}\label{structmas_1_1_schnute_case_i_v_afadfbcde5becffb86f6049bbd59ef09c}} 
+variable {\bfseries lmax}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structmas_1_1_schnute_case_i_v_a8100c63161dead550bf517365e355fec}\label{structmas_1_1_schnute_case_i_v_a8100c63161dead550bf517365e355fec}} 
+\index{mas::SchnuteCaseIV$<$ REAL\_T $>$@{mas::SchnuteCaseIV$<$ REAL\_T $>$}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mas::SchnuteCaseIV$<$ REAL\_T $>$@{mas::SchnuteCaseIV$<$ REAL\_T $>$}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily template$<$typename R\+E\+A\+L\+\_\+T $>$ \\
+virtual const variable \mbox{\hyperlink{structmas_1_1_schnute_case_i_v}{mas\+::\+Schnute\+Case\+IV}}$<$ R\+E\+A\+L\+\_\+T $>$\+::Evaluate (\begin{DoxyParamCaption}\item[{const variable \&}]{age,  }\item[{const int \&}]{sex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+$ length\_at\_age = lmin * e^{ln(\frac{lmax }{lmin})*\frac{(1.0- (age - a\_min))}{(1.0 - (a\_max - a\_min)))}} $
+
+
+\begin{DoxyParams}{Parameters}
+{\em age} & \\
+\hline
+{\em sex} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length\+\_\+at\+\_\+age ~\newline
+ 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{structmas_1_1_growth_base_a381e3400e22b2739830351acdf4689b5}{mas\+::\+Growth\+Base$<$ R\+E\+A\+L\+\_\+\+T $>$}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Growth.\+hpp\end{DoxyCompactItemize}

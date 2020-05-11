@@ -1,0 +1,55 @@
+\hypertarget{structmas_1_1_selectivity_base}{}\doxysection{mas\+::Selectivity\+Base$<$ R\+E\+A\+L\+\_\+T $>$ Struct Template Reference}
+\label{structmas_1_1_selectivity_base}\index{mas::SelectivityBase$<$ REAL\_T $>$@{mas::SelectivityBase$<$ REAL\_T $>$}}
+Inheritance diagram for mas\+::Selectivity\+Base$<$ R\+E\+A\+L\+\_\+T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.400000cm]{structmas_1_1_selectivity_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_a72a30a97f46039dc8b2161e4de308fee}\label{structmas_1_1_selectivity_base_a72a30a97f46039dc8b2161e4de308fee}} 
+typedef \mbox{\hyperlink{structmas_1_1_variable_trait}{Variable\+Trait}}$<$ R\+E\+A\+L\+\_\+T $>$\+::variable {\bfseries variable}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_a097746d520369265b16937e8ea560fb2}\label{structmas_1_1_selectivity_base_a097746d520369265b16937e8ea560fb2}} 
+void {\bfseries Update} (const std\+::vector$<$ variable $>$ \&ages)
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_afe1331c058cec9131153468910c8a90c}\label{structmas_1_1_selectivity_base_afe1331c058cec9131153468910c8a90c}} 
+virtual const variable \& {\bfseries Get} (const std\+::vector$<$ variable $>$ \&ages, size\+\_\+t index)
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_a1c26fb2107d380ac4540271280031bf4}\label{structmas_1_1_selectivity_base_a1c26fb2107d380ac4540271280031bf4}} 
+virtual const variable {\bfseries Evaluate} (const variable \&age)=0
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_a52058fc9fe373bcc6deebd43bfc3f402}\label{structmas_1_1_selectivity_base_a52058fc9fe373bcc6deebd43bfc3f402}} 
+virtual const variable {\bfseries Evaluate} (const std\+::vector$<$ variable $>$ \&ages, size\+\_\+t index)=0
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_ad14deefa4cddcc1c93ef17cc0a3e566a}\label{structmas_1_1_selectivity_base_ad14deefa4cddcc1c93ef17cc0a3e566a}} 
+virtual const std\+::string {\bfseries Name} ()
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_a731defb4bbf0d21717e511a05f295775}\label{structmas_1_1_selectivity_base_a731defb4bbf0d21717e511a05f295775}} 
+virtual variable {\bfseries Likelihood\+Component} (int phase)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_a93e14b8963f3a49d4adf6bb9068dcf68}\label{structmas_1_1_selectivity_base_a93e14b8963f3a49d4adf6bb9068dcf68}} 
+std\+::vector$<$ R\+E\+A\+L\+\_\+T $>$ {\bfseries lambdas}
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_a46395d5b2c6fc815773356f0d47ead42}\label{structmas_1_1_selectivity_base_a46395d5b2c6fc815773356f0d47ead42}} 
+variable {\bfseries sigma} = 0.\+85
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_aae2928702ed8e575825655148277bb7f}\label{structmas_1_1_selectivity_base_aae2928702ed8e575825655148277bb7f}} 
+variable {\bfseries sigma2} = 0.\+7225
+\item 
+\mbox{\Hypertarget{structmas_1_1_selectivity_base_af7354f4d5bcebde11ed3bf9b29016214}\label{structmas_1_1_selectivity_base_af7354f4d5bcebde11ed3bf9b29016214}} 
+std\+::vector$<$ variable $>$ {\bfseries selectivity}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Selectivity.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,52 @@
+\hypertarget{classnetcdf__output}{}\doxysection{netcdf\+\_\+output Class Reference}
+\label{classnetcdf__output}\index{netcdf\_output@{netcdf\_output}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetcdf__output_af4474f9a65efa2795955412812a238fa}\label{classnetcdf__output_af4474f9a65efa2795955412812a238fa}} 
+{\bfseries netcdf\+\_\+output} (std\+::string path)
+\item 
+\mbox{\Hypertarget{classnetcdf__output_a3216000bd093a7e80e784f93d625b9ef}\label{classnetcdf__output_a3216000bd093a7e80e784f93d625b9ef}} 
+void {\bfseries add\+\_\+variable} (const std\+::string \&name, const std\+::string \&data\+\_\+type, const std\+::vector$<$ std\+::string $>$ \&dimensions)
+\item 
+\mbox{\Hypertarget{classnetcdf__output_abb18e538b6f4eb054efd58f76dd30bc1}\label{classnetcdf__output_abb18e538b6f4eb054efd58f76dd30bc1}} 
+void {\bfseries add\+\_\+dimension} (const std\+::string \&name, size\+\_\+t size)
+\item 
+\mbox{\Hypertarget{classnetcdf__output_a5323ef8e498baffcaade0e676cd7b794}\label{classnetcdf__output_a5323ef8e498baffcaade0e676cd7b794}} 
+size\+\_\+t {\bfseries dimension\+\_\+size} (const std\+::string \&name)
+\item 
+\mbox{\Hypertarget{classnetcdf__output_ad251a62975375a0be02db1a2b458d014}\label{classnetcdf__output_ad251a62975375a0be02db1a2b458d014}} 
+void {\bfseries add\+\_\+variable\+\_\+attribute} (const std\+::string \&variable\+\_\+name, const std\+::string \&attribute\+\_\+name, const std\+::string \&attribute)
+\item 
+\mbox{\Hypertarget{classnetcdf__output_a6d23e007661a7e5704b77ade20bcd813}\label{classnetcdf__output_a6d23e007661a7e5704b77ade20bcd813}} 
+void {\bfseries add\+\_\+global\+\_\+attribute} (const std\+::string \&name, const std\+::string \&attribute)
+\item 
+\mbox{\Hypertarget{classnetcdf__output_acd3ab83c891f21e15e84c4647ab53b63}\label{classnetcdf__output_acd3ab83c891f21e15e84c4647ab53b63}} 
+void {\bfseries create} ()
+\item 
+\mbox{\Hypertarget{classnetcdf__output_a76dbce9c73302b9671bc58bdc5c04241}\label{classnetcdf__output_a76dbce9c73302b9671bc58bdc5c04241}} 
+void {\bfseries close} ()
+\item 
+\mbox{\Hypertarget{classnetcdf__output_a083d5357edb0148e5279e178252b6fb0}\label{classnetcdf__output_a083d5357edb0148e5279e178252b6fb0}} 
+void {\bfseries write\+\_\+int} (const std\+::string \&variable, const int \&value, size\+\_\+t i, size\+\_\+t j=0, size\+\_\+t k=0, size\+\_\+t l=0, size\+\_\+t m=0, size\+\_\+t n=0)
+\item 
+\mbox{\Hypertarget{classnetcdf__output_aaa407a985dc11b104a01f71f45703d72}\label{classnetcdf__output_aaa407a985dc11b104a01f71f45703d72}} 
+void {\bfseries write\+\_\+long} (const std\+::string \&variable, const long \&value, size\+\_\+t i, size\+\_\+t j=0, size\+\_\+t k=0, size\+\_\+t l=0, size\+\_\+t m=0, size\+\_\+t n=0)
+\item 
+\mbox{\Hypertarget{classnetcdf__output_a10015d97fed8aadbb076cf875cd6795d}\label{classnetcdf__output_a10015d97fed8aadbb076cf875cd6795d}} 
+void {\bfseries write\+\_\+float} (const std\+::string \&variable, const float \&value, size\+\_\+t i, size\+\_\+t j=0, size\+\_\+t k=0, size\+\_\+t l=0, size\+\_\+t m=0, size\+\_\+t n=0)
+\item 
+\mbox{\Hypertarget{classnetcdf__output_ac8834503fc85595aa4bd2689ca25c003}\label{classnetcdf__output_ac8834503fc85595aa4bd2689ca25c003}} 
+void {\bfseries write\+\_\+double} (const std\+::string \&variable, const double \&value, size\+\_\+t i, size\+\_\+t j=0, size\+\_\+t k=0, size\+\_\+t l=0, size\+\_\+t m=0, size\+\_\+t n=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classnetcdf__output_a4666c2e6af050a2bcc648f97cf063dbf}\label{classnetcdf__output_a4666c2e6af050a2bcc648f97cf063dbf}} 
+Nc\+File {\bfseries output\+\_\+file}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Net\+C\+D\+F.\+hpp\end{DoxyCompactItemize}

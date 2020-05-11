@@ -1,0 +1,64 @@
+\hypertarget{classmas_1_1_thread_pool}{}\doxysection{mas\+::Thread\+Pool Class Reference}
+\label{classmas_1_1_thread_pool}\index{mas::ThreadPool@{mas::ThreadPool}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_a998a51176494008a004b0cb3bc8bc90d}\label{classmas_1_1_thread_pool_a998a51176494008a004b0cb3bc8bc90d}} 
+{\bfseries Thread\+Pool} (int threads=std\+::thread\+::hardware\+\_\+concurrency())
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_adb233f77a0223233df65ff93d4266d73}\label{classmas_1_1_thread_pool_adb233f77a0223233df65ff93d4266d73}} 
+void {\bfseries Start} (int threads=std\+::thread\+::hardware\+\_\+concurrency())
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_a708cb76e2e04cbd4e60d091cf41c4b02}\label{classmas_1_1_thread_pool_a708cb76e2e04cbd4e60d091cf41c4b02}} 
+size\+\_\+t {\bfseries Size} ()
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_af17fcfd1493ec7701b6c5b9d3f1c8cd9}\label{classmas_1_1_thread_pool_af17fcfd1493ec7701b6c5b9d3f1c8cd9}} 
+void {\bfseries Do\+Job} (std\+::function$<$ void(void) $>$ func)
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_ae72b5b3eec0b250913e2258ce1bdee53}\label{classmas_1_1_thread_pool_ae72b5b3eec0b250913e2258ce1bdee53}} 
+void {\bfseries Do\+Job} (std\+::function$<$ void(void) $>$ func, \mbox{\hyperlink{classmas_1_1_wait_variable}{Wait\+Variable}} \&wait)
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_a74e8c3a26b648485e3a89fd7d49642b2}\label{classmas_1_1_thread_pool_a74e8c3a26b648485e3a89fd7d49642b2}} 
+{\footnotesize template$<$class Input\+It , typename Function $>$ }\\void {\bfseries For\+Each} (Input\+It first, const size\+\_\+t \&elements, const Function \&function)
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_a570cdbcc54ce762741f4c0b26544c217}\label{classmas_1_1_thread_pool_a570cdbcc54ce762741f4c0b26544c217}} 
+{\footnotesize template$<$class Input\+It , typename Function $>$ }\\void {\bfseries For\+Each} (Input\+It first, const size\+\_\+t \&elements, const Function \&function, \mbox{\hyperlink{classmas_1_1_wait_variable}{Wait\+Variable}} \&wait)
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_ac65fc8a658c95356abd72a1506dc74cc}\label{classmas_1_1_thread_pool_ac65fc8a658c95356abd72a1506dc74cc}} 
+void {\bfseries Wait} (\mbox{\hyperlink{classmas_1_1_wait_variable}{Wait\+Variable}} \&wait)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_ac835204fe6727182c09c9660df5d0d04}\label{classmas_1_1_thread_pool_ac835204fe6727182c09c9660df5d0d04}} 
+void {\bfseries thread\+Entry} (int i)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_aa5731410511500215316dfcb867da937}\label{classmas_1_1_thread_pool_aa5731410511500215316dfcb867da937}} 
+std\+::mutex {\bfseries lock\+\_\+}
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_a8a0ba497a334ca9107c1925bbb380fbe}\label{classmas_1_1_thread_pool_a8a0ba497a334ca9107c1925bbb380fbe}} 
+std\+::condition\+\_\+variable {\bfseries cond\+Var\+\_\+}
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_acfad0274ea87fdb8a308f1797375401b}\label{classmas_1_1_thread_pool_acfad0274ea87fdb8a308f1797375401b}} 
+bool {\bfseries shutdown\+\_\+}
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_ade7e910b5ff594a59eac9e351dda8ccb}\label{classmas_1_1_thread_pool_ade7e910b5ff594a59eac9e351dda8ccb}} 
+bool {\bfseries started\+\_\+}
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_a5cd471f0c5c9457b42d76d0b84bea21e}\label{classmas_1_1_thread_pool_a5cd471f0c5c9457b42d76d0b84bea21e}} 
+size\+\_\+t {\bfseries thread\+\_\+count}
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_a650277a4bb117f7edc7230709d3af937}\label{classmas_1_1_thread_pool_a650277a4bb117f7edc7230709d3af937}} 
+std\+::queue$<$ std\+::function$<$ void(void) $>$ $>$ {\bfseries jobs\+\_\+}
+\item 
+\mbox{\Hypertarget{classmas_1_1_thread_pool_ae3f3ad42c9e80519e504f7d8f11f6be1}\label{classmas_1_1_thread_pool_ae3f3ad42c9e80519e504f7d8f11f6be1}} 
+std\+::vector$<$ std\+::thread $>$ {\bfseries threads\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Thread\+Pool.\+hpp\end{DoxyCompactItemize}
