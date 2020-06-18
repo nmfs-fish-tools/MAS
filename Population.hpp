@@ -136,6 +136,7 @@ namespace mas {
         std::vector<variable> spawning_numbers_at_age;
         std::vector<variable> biomass_total;
         std::vector<variable> fishing_mortality_total;
+        std::vector<variable> sum_selectivity;
 
         std::vector<variable> Z;
         std::vector<variable> P; //selectivity at age.
@@ -218,7 +219,7 @@ namespace mas {
             initialS.resize(this->ages.size(), 1.0); //fixed
             M.resize(this->ages.size()); //estimated
             initial_deviations.resize(this->ages.size()); //fixed
-
+            this->sum_selectivity.resize(years * seasons * this->ages.size());
             this->fishing_mortality_total.resize(years * seasons);
             //            F_at_age.resize(years * seasons * ages.size());
 #warning needs to be more efficient, possibly allocating unused memory
@@ -293,6 +294,11 @@ namespace mas {
                 mas::VariableTrait<REAL_T>::SetValue(initial_equilibrium_numbers[i], static_cast<REAL_T> (0.0));
 
             }
+
+            for (int i = 0; i < this->sum_selectivity.size(); i++) {
+                mas::VariableTrait<REAL_T>::SetValue(this->sum_selectivity[i], static_cast<REAL_T> (0.0));
+            }
+
             for (int i = 0; i < this->length_at_spawning.size(); i++) {
                 mas::VariableTrait<REAL_T>::SetValue(weight_at_season_start[i], static_cast<REAL_T> (0.0));
                 mas::VariableTrait<REAL_T>::SetValue(length_at_season_start[i], static_cast<REAL_T> (0.0));
@@ -503,114 +509,43 @@ namespace mas {
 
             REAL_T ret;
             for (int i = 0; i < this->ages.size(); i++) {
-                ret += this->CalculateProbabilityOfCaptureAtAge(i, this->years - 1, this->seasons - 1, F) *
-                        this->CalculateProbabilityOfSurvivalToAge(i, this->years - 1, this->seasons - 1, F) +
-                        this->CalculateProbabilityOfCaptureAtAgeAOrOlder(this->ages.size() - 1, this->years - 1, this->seasons - 1, F) *
+                size_t index = (this->years - 1) * this->seasons * this->ages.size() + (this->seasons - 1) * this->ages.size() + i;
+                ret += ((this->weight_at_catch_time[index].GetValue() * F * this->sum_selectivity[index].GetValue()) /
+                        (F * this->sum_selectivity[index].GetValue() + this->M[i].GetValue())) * this->CalculateProbabilityOfCaptureAtAge(i, this->years - 1, this->seasons - 1, F) *
                         this->CalculateProbabilityOfSurvivalToAge(i, this->years - 1, this->seasons - 1, F);
+
+
+                std::cout << ((this->weight_at_catch_time[index].GetValue() * F * this->sum_selectivity[index].GetValue()) /
+                        (F * this->sum_selectivity[index].GetValue() + this->M[i].GetValue())) << " * " << this->CalculateProbabilityOfCaptureAtAge(i, this->years - 1, this->seasons - 1, F) << " * " <<
+                        this->CalculateProbabilityOfSurvivalToAge(i, this->years - 1, this->seasons - 1, F) << std::endl;
+                //                        +
+                //                        this->CalculateProbabilityOfCaptureAtAgeAOrOlder(this->ages.size() - 1, this->years - 1, this->seasons - 1, F) *
+                //                        this->CalculateProbabilityOfSurvivalToAge(i, this->years - 1, this->seasons - 1, F);
             }
-            //            /*
-            //                YPR = 0.0;
-            //                ntemp = 1.0;
-            //                for (iage = 1; iage < nages; iage++) {
-            //                    f = YPR_Fmult * proj_dir_sel(iage);
-            //                    z = M(nyears, iage) + f + proj_nondir_F(iage) + YPR_Fmult * proj_Discard_sel(iage);
-            //                    YPR += ntemp * f * WAAcatchall(nyears, iage)*(1.0 - mfexp(-1.0 * z)) / z;
-            //                    ntemp *= mfexp(-1.0 * z);
-            //                }
-            //                f = YPR_Fmult * proj_dir_sel(nages);
-            //                z = M(nyears, nages) + f + proj_nondir_F(nages) + YPR_Fmult * proj_Discard_sel(nages);
-            //                ntemp /= (1.0 - mfexp(-1.0 * z));
-            //                YPR += ntemp * f * WAAcatchall(nyears, nages)*(1.0 - mfexp(-1.0 * z)) / z;
-            // 
-            // 
-            //             */
-            //            std::vector<variable> faa(this->F.size());
-            //            variable z_sum;
-            //
-            //            //            for (int y = 0; y < this->years; y++) {
-            //            //                for (int s = 0; s < this->seasons; s++) {
-            //            //                    for (int a = 0; a < ages.size() - 1; a++) {
-            //            //                        size_t index = y * this->seasons * this->ages.size() + (s) * this->ages.size() + a;
-            //            //                        faa[index] = P[index] * F;
-            //            //                        z_sum += faa[index] + M[a];
-            //            //                    }
-            //            //                }
-            //            //            }
-            //
-            //            std::vector<variable > s_per_recruit(this->years);
-            //            variable ypr;
-            //            variable YPR;
-            //            variable f;
-            //            variable z;
-            //            variable ntemp = 1.0;
-            //            for (int y = this->years - 1; y < this->years; y++) {
-            //                variable ntemp0 = 1.0;
-            //                for (int s = 0; s < this->seasons; s++) {
-            //                    z_sum = 0.0;
-            //                    for (int a = 0; a < ages.size(); a++) {
-            //                        size_t index = y * this->seasons * this->ages.size() + (s) * this->ages.size() + a;
-            //                        z_sum += F + M[a];
-            //                    }
-            //
-            //                    for (int a = 0; a < ages.size(); a++) {
-            //                        size_t index = y * this->seasons * this->ages.size() + (s) * this->ages.size() + a;
-            //                        f = F * P[index];
-            //                        z = M[a] * f; // + this->F[index];
-            //                        YPR += ntemp * f * this->weight_at_catch_time[index] *(1.0 - mas::mfexp(-1.0 * z)) / z;
-            //                        ntemp *= mas::mfexp(-1.0 * z);
-            //
-            //
-            //                        variable wf_z = (this->weight_at_catch_time[index] * F) / this->Z[index];
-            //
-            //                        ypr += (wf_z * (1.0 - mas::exp(1.0 * this->Z[index])) * mas::exp(-1.0 * z_sum)) + wf_z * mas::exp(-1.0 * z_sum);
-            //
-            //                        s_per_recruit[y] += ntemp0 * ((this->weight_at_catch_time[index] * F) / (F
-            //                                + M[a]))*(1.0 - mas::mfexp(-1.0 * (F + M[a]))) * mas::mfexp(-1.0 * z_sum);
-            //
-            //                        ntemp0 *= mas::mfexp(-1.0 * this->catch_season_offset * M[a]);
-            //
-            //                    }
-            //
-            //                    size_t plus_index = this->ages.size() - 1;
-            //                    size_t index = y * this->seasons * this->ages.size() + (s) * this->ages.size() + plus_index;
-            //
-            //                    f = F * P[index];
-            //                    z = M[plus_index] + f; // + this->F[index];
-            //
-            //                    ntemp /= (1.0 - mfexp(-1.0 * z));
-            //                    YPR += ntemp * f * this->weight_at_catch_time[index] *(1.0 - mas::mfexp(-1.0 * z)) / z;
-            //
-            //                    variable wf_z = (this->weight_at_catch_time[index] * F) / this->Z[index];
-            //                    ntemp0 /= (1.0 - mas::mfexp(-1.0 * this->catch_season_offset * M[plus_index]));
-            //                    s_per_recruit[y] += ntemp0 * (this->weight_at_catch_time[index] * F) * mas::mfexp(-1.0 * z_sum);
-            //                    //                     ypr += (wf_z*(1.0- mas::exp(1.0*this->Z[index]))*mas::exp(-1.0*z_sum))+wf_z*mas::exp(-1.0*z_sum);
-            //                }
-            //            }
-            //
-            //            this->fished_yield_per_recruit = YPR * this->sex_fraction_value; //s_per_recruit[this->years - 1]; //* this->sex_fraction_value;
-            //            variable ret = s_per_recruit[this->years - 1]; // * this->sex_fraction_value;
-            //            return YPR.GetValue();
-            return ret;
+
+            return ret + this->CalculateProbabilityOfCaptureAtAgeAOrOlder(this->ages.size() - 1, this->years - 1, this->seasons - 1, F) *
+                    this->CalculateProbabilityOfSurvivalToAge(this->ages.size() - 1, this->years - 1, this->seasons - 1, F);
+
         }
 
         inline REAL_T CalculateProbabilityOfSurvivalToAge(int a, int year, int season, REAL_T F) {
             REAL_T sum_z = 0;
             for (int i = 0; i < a; i++) {
                 size_t index = year * this->seasons * this->ages.size() + (season) * this->ages.size() + i;
-                sum_z += F * this->S[index].GetValue() + this->M[i].GetValue();
+                sum_z += F * this->sum_selectivity[index].GetValue() + this->M[i].GetValue();
             }
             return std::exp(-1.0 * sum_z);
         }
 
         inline REAL_T CalculateProbabilityOfCaptureAtAge(int a, int year, int season, REAL_T F) {
             size_t index = year * this->seasons * this->ages.size() + (season) * this->ages.size() + a;
-            return (F / this->Z[index].GetValue())*(1.0 - std::exp(-1.0 * this->Z[index].GetValue()));
+            return (1.0 - std::exp(-1.0 * F * this->Z[index].GetValue()));
         }
 
         inline REAL_T CalculateProbabilityOfCaptureAtAgeAOrOlder(int a, int year, int season, REAL_T F) {
             size_t index = year * this->seasons * this->ages.size() + (season) * this->ages.size() + a;
-            //            return (F / (this->M[index] + this->F[index])).GetValue();
-            return (this->weight_at_catch_time[index].GetValue() * F * this->S[index].GetValue()) / (F * this->S[index].GetValue() + this->M[a].GetValue());
+            return (this->weight_at_catch_time[index].GetValue() * F * this->sum_selectivity[index].GetValue()) /
+                    (F * this->sum_selectivity[index].GetValue() + this->M[a].GetValue());
         }
 
         inline REAL_T CalculateSPR(REAL_T F) {
@@ -692,6 +627,58 @@ namespace mas {
             msy = max_yield;
             f_msy = f_max;
             s_msy = s_max;
+        }
+
+        void CalcMSY(REAL_T maxF = 1.0, REAL_T step = 0.01) {
+            //
+            //            int nages = this->ages.size();
+            //            REAL_T MSY; // maximum sustainable yield
+            //            REAL_T Dmsy; // dead discards at MSY
+            //            REAL_T Fmsy; // fishing rate at MSY
+            //            REAL_T SSBmsy; // spawning stock biomass at msy
+            //            REAL_T Rmsy; // equilibrium recruitment at msy
+            //            REAL_T Bmsy; // total biomass (male and female) at msy
+            //            REAL_T Emsy; // exploitation rate at msy (total catch / number of fish)
+            //            REAL_T spr_msy; // spawners per recruit at msy
+            //            REAL_T SPRmsy; // spawning potential ratio (spr_msy/spr_virgin)
+            //
+            //
+            //            REAL_T steep = this->recruitment_model->h.GetValue();
+            //            REAL_T R0 = std::exp(this->recruitment_model->log_R0.GetValue());
+            //            REAL_T sigma = this->recruitment_model->sigma_r.GetValue();
+            //            REAL_T BC = std::exp::exp(std::pow(sigma, 2) / 2.0);
+            //
+            //            std::vector<REAL_T> F;
+            //            for (REAL_T i = 0; i <= maxF; i += step) {
+            //                F.push_back(i);
+            //            }
+            //
+            //            this->spawning_stock_biomass
+            //
+            //            std::vector<REAL_T> reprod;
+            //
+            //            std::vector<REAL_T> spr(F.size()); //#equilibrium spr at F
+            //            std::vector<REAL_T> S_eq(F.size()); //#equilibrium SSB at F
+            //            std::vector<REAL_T> R_eq(F.size()); //#equilibrium recruitment at F
+            //            std::vector<REAL_T> B_eq(F.size()); //#equilibrium biomass at F
+            //            std::vector<REAL_T> L_eq(F.size()); //#equilibrium landings at F
+            //            std::vector<REAL_T> D_eq(F.size()); //#equilibrium dead discards at F
+            //            std::vector<REAL_T> E_eq(F.size()); //#equilibrium exploitation rate at F (landings only)
+            //
+            //            std::vector<REAL_T> L_age(nages); //#landings at age
+            //            std::vector<REAL_T> D_age(nages); //#dead discards at age
+            //            std::vector<REAL_T> F_age(nages); //#F at age
+            //            std::vector<REAL_T> Z_age(nages); //#Z at age
+            //
+            //            // Compute virgin spr
+            //            std::vector<REAL_T> N0(nages, 1.0);
+            //            for (int iage = 2; iage < nages; iage++) {
+            //                N0[iage] = N0[iage - 1] * std::exp(-1.0 * this->M[iage - 1]);
+            //            }
+            //            N0[nages - 1] = N0[nages - 2] * std::exp(-1.0 * this->M[nages - 2]) / (1.0 - std::exp(-1.0 * this->M[nages - 1]));
+
+
+
         }
 
         void InitializeM() {
@@ -937,62 +924,62 @@ namespace mas {
             }
         }
 
-//        /**
-//         *  Calculate the F required to harvest the observed catch biomass
-//         *  by 1 fleet in one time period (year) in 1 area with 1 population 
-//         *  using bisection search*/
-//        inline void FitInitialF(size_t max_iterations = 1000, REAL_T tolerance = 1e-5) {
-//            bool recording = variable::tape.recording;
-//            variable::tape.recording = false;
-//            mas::Tape<REAL_T> tape_l; //local tape
-//            tape_l.derivative_trace_level = atl::SECOND_ORDER_REVERSE;
-//            atl::Variable<REAL_T> f_l;
-//            atl::Variable<REAL_T> c_biomass;
-//            atl::Variable<REAL_T> sum;
-//            this->initialF.SetValue(static_cast<REAL_T> (0.0));
-//            tape_l.recording = true;
-//            REAL_T previous = 0;
-//            for (size_t iter = 0; iter < max_iterations; iter++) {
-//                f_l.SetValue(0.0);
-//                c_biomass.SetValue(0.0);
-//                sum.SetValue(0.0);
-//                std::vector< std::shared_ptr<mas::Fleet<REAL_T> > >& fleets = this->area->seasonal_fleet_operations[1];
-//                for (int f = 0; f < fleets.size(); f++) {
-//                    for (int a = 0; a < this->ages.size(); a++) {
-//                        //                        variable length_at_catch = this->growth_model->Evaluate(this->ages[a].GetValue() + this->catch_season_offset, this->sex);
-//                        //                        variable wct =  this->weight_at_catch_time[a];
-//
-//                        c_biomass.Assign(tape_l, c_biomass + this->weight_at_catch_time[a] *
-//                                fleets[f]->season_area_selectivity[1][this->area->id]->Evaluate(this->ages[a]) *
-//                                this->initialF * this->initial_equilibrium_numbers[a] *
-//                                (1.0 - atl::exp(-this->M[a] - this->initialF)) /
-//                                (this->M[a] + this->initialF), tape_l.NextIndex());
-//
-//                    }
-//                    REAL_T C_B = fleets[f]->catch_biomass_data->get(0, 0); //*1000.0;
-//
-//                    f_l.Assign(tape_l, f_l + ((C_B) - (c_biomass))*((C_B) - (c_biomass)));
-//                }
-//                std::cout << tape_l.Value(this->initialF.info->id) << "   " << tape_l.stack_current << "---->\n";
-//                tape_l.AccumulateSecondOrder();
-//                REAL_T deltaX = tape_l.Value(this->initialF.info->id) / tape_l.Value(this->initialF.info->id, this->initialF.info->id);
-//                if (std::fabs(tape_l.Value(this->initialF.info->id)) <= tolerance ||
-//                        deltaX != deltaX) {
-//                    tape_l.Reset();
-//                    break;
-//                }
-//                this->initialF.SetValue(this->initialF.GetValue() - deltaX);
-//                if (iter) {
-//                    if (std::fabs(previous - this->initialF.GetValue()) < 1e-5) {
-//                        tape_l.Reset();
-//                        break;
-//                    }
-//                }
-//                previous = this->initialF.GetValue();
-//                tape_l.Reset();
-//            }
-//            variable::tape.recording = recording;
-//        }
+        //        /**
+        //         *  Calculate the F required to harvest the observed catch biomass
+        //         *  by 1 fleet in one time period (year) in 1 area with 1 population 
+        //         *  using bisection search*/
+        //        inline void FitInitialF(size_t max_iterations = 1000, REAL_T tolerance = 1e-5) {
+        //            bool recording = variable::tape.recording;
+        //            variable::tape.recording = false;
+        //            mas::Tape<REAL_T> tape_l; //local tape
+        //            tape_l.derivative_trace_level = atl::SECOND_ORDER_REVERSE;
+        //            atl::Variable<REAL_T> f_l;
+        //            atl::Variable<REAL_T> c_biomass;
+        //            atl::Variable<REAL_T> sum;
+        //            this->initialF.SetValue(static_cast<REAL_T> (0.0));
+        //            tape_l.recording = true;
+        //            REAL_T previous = 0;
+        //            for (size_t iter = 0; iter < max_iterations; iter++) {
+        //                f_l.SetValue(0.0);
+        //                c_biomass.SetValue(0.0);
+        //                sum.SetValue(0.0);
+        //                std::vector< std::shared_ptr<mas::Fleet<REAL_T> > >& fleets = this->area->seasonal_fleet_operations[1];
+        //                for (int f = 0; f < fleets.size(); f++) {
+        //                    for (int a = 0; a < this->ages.size(); a++) {
+        //                        //                        variable length_at_catch = this->growth_model->Evaluate(this->ages[a].GetValue() + this->catch_season_offset, this->sex);
+        //                        //                        variable wct =  this->weight_at_catch_time[a];
+        //
+        //                        c_biomass.Assign(tape_l, c_biomass + this->weight_at_catch_time[a] *
+        //                                fleets[f]->season_area_selectivity[1][this->area->id]->Evaluate(this->ages[a]) *
+        //                                this->initialF * this->initial_equilibrium_numbers[a] *
+        //                                (1.0 - atl::exp(-this->M[a] - this->initialF)) /
+        //                                (this->M[a] + this->initialF), tape_l.NextIndex());
+        //
+        //                    }
+        //                    REAL_T C_B = fleets[f]->catch_biomass_data->get(0, 0); //*1000.0;
+        //
+        //                    f_l.Assign(tape_l, f_l + ((C_B) - (c_biomass))*((C_B) - (c_biomass)));
+        //                }
+        //                std::cout << tape_l.Value(this->initialF.info->id) << "   " << tape_l.stack_current << "---->\n";
+        //                tape_l.AccumulateSecondOrder();
+        //                REAL_T deltaX = tape_l.Value(this->initialF.info->id) / tape_l.Value(this->initialF.info->id, this->initialF.info->id);
+        //                if (std::fabs(tape_l.Value(this->initialF.info->id)) <= tolerance ||
+        //                        deltaX != deltaX) {
+        //                    tape_l.Reset();
+        //                    break;
+        //                }
+        //                this->initialF.SetValue(this->initialF.GetValue() - deltaX);
+        //                if (iter) {
+        //                    if (std::fabs(previous - this->initialF.GetValue()) < 1e-5) {
+        //                        tape_l.Reset();
+        //                        break;
+        //                    }
+        //                }
+        //                previous = this->initialF.GetValue();
+        //                tape_l.Reset();
+        //            }
+        //            variable::tape.recording = recording;
+        //        }
 
         /**
          *  Calculate the F required to harvest the observed catch biomass
@@ -1090,6 +1077,7 @@ namespace mas {
 
                     variable ff = fleets[f]->area_season_fishing_mortality[this->area->id][season]->Evaluate(year, (season - 1));
                     variable s = fleets[f]->season_area_selectivity[season][this->area->id]->Evaluate(this->ages, a);
+                    this->sum_selectivity[index] += s;
                     variable f_a_fleet = ff * s;
 
                     fleets[f]->f_at_age[this->area->id][this->id][index]
@@ -1209,12 +1197,40 @@ namespace mas {
 
         }
 
-        void CalculateMSY(int year, int season, REAL_T maxF = 1.0, REAL_T step = 0.01) {
+        REAL_T sum(const std::valarray<REAL_T>& val) {
+            REAL_T ret;
+            for (int i = 0; i < val.size(); i++) {
+                ret += val[i];
+            }
+            return ret;
+        }
+
+        struct MaxSustainableYield {
+            std::map<REAL_T, REAL_T> spr; //equilibrium spr at F
+            std::map<REAL_T, REAL_T> S_eq; //equilibrium SSB at F
+            std::map<REAL_T, REAL_T> R_eq; //equilibrium recruitment at F
+            std::map<REAL_T, REAL_T> B_eq; //equilibrium biomass at F
+            std::map<REAL_T, REAL_T> L_eq; //equilibrium landings at F
+            std::map<REAL_T, REAL_T> D_eq; //equilibrium dead discards at F
+            std::map<REAL_T, REAL_T> E_eq; //equilibrium exploitation rate at F (landings only)
+        };
+
+        void CalculateMSY(REAL_T maxF = 1.0, REAL_T step = 0.001) {
+
+            bool recording = mas::VariableTrait<REAL_T>::IsRecording();
+
+            mas::VariableTrait<REAL_T>::SetRecording(false);
+
+            int year = this->years - 1;
+            int season = this->seasons - 1;
             int nages = ages.size();
+
             std::vector<REAL_T> F;
-            for (REAL_T f = 0.0; f < maxF; f += step) {
+            for (REAL_T f = 0.0; f <= maxF; f += step) {
                 F.push_back(f);
             }
+
+            MaxSustainableYield msy;
 
             std::vector<REAL_T> spr(F.size()); //equilibrium spr at F
             std::vector<REAL_T> S_eq(F.size()); //equilibrium SSB at F
@@ -1224,17 +1240,120 @@ namespace mas {
             std::vector<REAL_T> D_eq(F.size()); //equilibrium dead discards at F
             std::vector<REAL_T> E_eq(F.size()); //equilibrium exploitation rate at F (landings only)
             REAL_T spr_F0;
+            REAL_T steep = this->recruitment_model->h;
+            REAL_T sigma = this->recruitment_model->sigma_r;
+            REAL_T R0 = std::exp(this->recruitment_model->log_R0) * this->sex_fraction_value;
+            REAL_T BC = std::exp(std::pow(sigma, 2.0) / 2.0);
 
             std::vector<REAL_T> N0(this->ages.size(), 1.0);
             for (int iage = 1; iage < nages; iage++) {
-                N0[iage] = N0[iage - 1] * mas::exp(-1.0 * M[iage - 1]);
+                N0[iage] = N0[iage - 1] * std::exp(-1.0 * M[iage - 1].GetValue());
             }
-            N0[nages] = N0[nages - 1] * exp(-1. * M[nages - 1]) / (1. - exp(-1.0 * M[nages]));
+            N0[nages - 1] = N0[nages - 2] * std::exp(-1.0 * M[nages - 2].GetValue()) / (1.0 - std::exp(-1.0 * M[nages - 1].GetValue()));
 
-            for (int iage = 1; iage < nages; iage++) {
-                size_t index = year * seasons * nages + season * nages + iage;
-                spr_F0 += this->survey_numbers_at_age[index] * this->weight_at_spawning[index] * N0[iage];
+
+            std::valarray<REAL_T> reprod(nages);
+            std::valarray<REAL_T> selL(nages);
+            std::valarray<REAL_T> selZ(nages);
+            std::valarray<REAL_T> M_age(nages);
+            std::valarray<REAL_T> wgt(nages);
+
+            for (int a = 0; a < ages.size(); a++) {
+                //dimension folded index
+                size_t index = year * this->seasons * this->ages.size() + (season) * this->ages.size() + a;
+
+                reprod[a] = this->weight_at_spawning[index].GetValue() * (this->maturity[a] * this->sex_fraction_value);
+                spr_F0 += N0[a] * reprod[a];
+                selL[a] = this->sum_selectivity[index].GetValue();
+                selZ[a] = this->sum_selectivity[index].GetValue();
+                M_age[a] = this->M[a].GetValue();
+                wgt[a] = this->weight_at_catch_time[index].GetValue();
             }
+
+
+
+            std::valarray<REAL_T> L_age(nages); //#landings at age
+            std::valarray<REAL_T> D_age(nages); //#dead discards at age
+            std::valarray<REAL_T> F_age(nages); //#F at age
+            std::valarray<REAL_T> Z_age(nages); //#Z at age
+
+            // BEGIN ALGORITHM
+            for (int i = 0; i < F.size(); i++) {
+
+                std::valarray<REAL_T> FL_age = F[i] * selL;
+                //std::valarray<REAL_T> FD_age = F[i] * selD;
+                std::valarray<REAL_T> Z_age = M_age + F[i] * selZ;
+
+                std::valarray<REAL_T> N_age(1.0, nages);
+                for (int iage = 1; iage < nages; iage++) {
+                    N_age[iage] = N_age[iage - 1] * std::exp(-1.0 * Z_age[iage - 1]);
+                }
+
+                //last age is pooled
+                N_age[nages - 1] = N_age[nages - 2] * std::exp(-1.0 * Z_age[nages - 2]) /
+                        (1.0 - std::exp(-1.0 * Z_age[nages - 1]));
+
+
+                spr[i] = sum(N_age * reprod);
+                msy.spr[F[i]] = spr[i];
+                //                                                R_eq[i] = (R0 / ((5.0 * steep - 1.0) * spr[i]))*
+                //                                                        (BC * 4.0 * steep * spr[i] - spr_F0 * (1.0 - steep));
+                R_eq[i] = this->recruitment_model->CalculateEquilibriumRecruitment(
+                        this->recruitment_model->CalculateEquilibriumSpawningBiomass(spr[i]));
+
+                if (R_eq[i] < 0.0000001) {
+                    R_eq[i] = 0.0000001;
+                }
+
+                msy.R_eq[F[i]] = R_eq[i];
+
+                N_age = R_eq[i] * N_age;
+
+                S_eq[i] = sum(N_age * reprod);
+                msy.S_eq[F[i]] = S_eq[i];
+
+                B_eq[i] = sum(N_age * wgt);
+                msy.B_eq[F[i]] = B_eq[i];
+
+                for (int iage = 0; iage < nages; iage++) {
+                    L_age[iage] = N_age[iage]*
+                            (FL_age[iage] / Z_age[iage])*(1. - std::exp(-1.0 * Z_age[iage]));
+                    //                            D_age[iage] = N_age[iage]*
+                    //                                              (FD_age[iage] / Z_age[iage])*(1. - exp(-1.0 * Z_age[iage]))
+                }
+                L_eq[i] = sum(L_age * wgt);
+                msy.L_eq[F[i]] = L_eq[i];
+                //                        D_eq[i] = sum(D_age * wgt);
+                E_eq[i] = sum(L_age) / sum(N_age);
+                msy.E_eq[F[i]] = E_eq[i];
+
+
+            }
+
+            int max_index = 0;
+            REAL_T max = std::numeric_limits<REAL_T>::min();
+            for (int i = 0; i < L_eq.size(); i++) {
+                if (L_eq[i] >= max) {
+                    max = L_eq[i];
+                    max_index = i;
+                }
+            }
+
+            //            std::cout<<std::scientific;
+
+            std::cout << "\n\nFmax: " << maxF << "\n";
+            std::cout << "Step: " << step << "\n";
+            std::cout << "\n\nF_msy: " << F[max_index] << "\n";
+            REAL_T spr_msy_out = spr[max_index];
+            std::cout << "spr_msy: " << spr[max_index] << "\n";
+            std::cout << "SR_msy: " << spr_msy_out / spr_F0 << "\n";
+            //            std::cout << "D_msy_out" << D_eq[max_index] << "\n";
+            std::cout << "R_msy: " << R_eq[max_index] << "\n";
+            std::cout << "SSB_msy: " << S_eq[max_index] << "\n";
+            std::cout << "B_msy: " << B_eq[max_index] << "\n";
+            std::cout << "E_msy: " << E_eq[max_index] << "\n\n";
+
+            mas::VariableTrait<REAL_T>::SetRecording(recording);
 
         }
 
@@ -2866,65 +2985,67 @@ namespace mas {
             REAL_T s_msy;
             REAL_T fmax;
             for (int a = 0; a < areas_list.size(); a++) {
+                males[areas_list[a]->id].CalculateMSY();
+                females[areas_list[a]->id].CalculateMSY();
 
-                msy = 0.0;
-                f_msy = 0.0;
-                s_msy = 0.0;
-
-                //                males[areas_list[a]->id].CalculateBiologicalReferencePoints(this->years - 1, 0);
-                //                females[areas_list[a]->id].CalculateBiologicalReferencePoints(this->years - 1, 0);
-                /******************************************
-                 * Push info to areas
-                 *****************************************/
-                males[areas_list[a]->id].CalculateMaximumSustainableYield(msy, f_msy, s_msy);
-
-                this->msy_average += msy;
-                this->f_msy_average += f_msy;
-                this->s_msy_average += s_msy;
-
-                std::cout << "Male MSY:\n";
-                std::cout << "alpha = " << males[areas_list[a]->id].recruitment_model->GetAlpha() << "\n";
-                std::cout << "beta = " << males[areas_list[a]->id].recruitment_model->GetBeta() << "\n";
-                std::cout << "F30 = " << males[areas_list[a]->id].CalculateFSPR(0.30) << "\n";
-                std::cout << "F40 = " << males[areas_list[a]->id].CalculateFSPR(0.40) << "\n";
-                std::cout << "Fmax = " << males[areas_list[a]->id].CalculateFMax(fs) << "\n";
-                std::cout << "msy = " << msy << "\n";
-                std::cout << "f_msy = " << f_msy << "\n";
-                std::cout << "s_msy = " << s_msy << "\n";
-                std::cout << "R0 = " << males[areas_list[a]->id].R0 << "\n";
-                std::cout << "SB0 = " << males[areas_list[a]->id].SB0 << "\n";
-                std::cout << "S0 = " << males[areas_list[a]->id].S0 << "\n\n";
-
-                msy = 0.0;
-                f_msy = 0.0;
-                s_msy = 0.0;
-
-                females[areas_list[a]->id].CalculateMaximumSustainableYield(msy, f_msy, s_msy);
-                this->msy_average += msy;
-                this->f_msy_average += f_msy;
-                this->s_msy_average += s_msy;
-                std::cout << "Female MSY:\n";
-                std::cout << "unfished_spr = " << females[areas_list[a]->id].unfished_spawners_per_recruit << "\n";
-                std::cout << "alpha = " << females[areas_list[a]->id].recruitment_model->GetAlpha() << "\n";
-                std::cout << "beta = " << females[areas_list[a]->id].recruitment_model->GetBeta() << "\n";
-                std::cout << "F30 = " << females[areas_list[a]->id].CalculateFSPR(0.30) << "\n";
-                std::cout << "F40 = " << females[areas_list[a]->id].CalculateFSPR(0.40) << "\n";
-                std::cout << "Fmax = " << females[areas_list[a]->id].CalculateFMax(fs) << "\n";
-                std::cout << "msy = " << msy << "\n";
-                std::cout << "f_msy = " << f_msy << "\n";
-                std::cout << "s_msy = " << s_msy << "\n";
-                std::cout << "R0 = " << females[areas_list[a]->id].R0 << "\n";
-                std::cout << "SB0 = " << females[areas_list[a]->id].SB0 << "\n";
-                std::cout << "S0 = " << females[areas_list[a]->id].S0 << "\n\n";
+                //                msy = 0.0;
+                //                f_msy = 0.0;
+                //                s_msy = 0.0;
+                //
+                //                //                males[areas_list[a]->id].CalculateBiologicalReferencePoints(this->years - 1, 0);
+                //                //                females[areas_list[a]->id].CalculateBiologicalReferencePoints(this->years - 1, 0);
+                //                /******************************************
+                //                 * Push info to areas
+                //                 *****************************************/
+                //                males[areas_list[a]->id].CalculateMaximumSustainableYield(msy, f_msy, s_msy);
+                //
+                //                this->msy_average += msy;
+                //                this->f_msy_average += f_msy;
+                //                this->s_msy_average += s_msy;
+                //
+                //                std::cout << "Male MSY:\n";
+                //                std::cout << "alpha = " << males[areas_list[a]->id].recruitment_model->GetAlpha() << "\n";
+                //                std::cout << "beta = " << males[areas_list[a]->id].recruitment_model->GetBeta() << "\n";
+                //                std::cout << "F30 = " << males[areas_list[a]->id].CalculateFSPR(0.30) << "\n";
+                //                std::cout << "F40 = " << males[areas_list[a]->id].CalculateFSPR(0.40) << "\n";
+                //                std::cout << "Fmax = " << males[areas_list[a]->id].CalculateFMax(fs) << "\n";
+                //                std::cout << "msy = " << msy << "\n";
+                //                std::cout << "f_msy = " << f_msy << "\n";
+                //                std::cout << "s_msy = " << s_msy << "\n";
+                //                std::cout << "R0 = " << males[areas_list[a]->id].R0 << "\n";
+                //                std::cout << "SB0 = " << males[areas_list[a]->id].SB0 << "\n";
+                //                std::cout << "S0 = " << males[areas_list[a]->id].S0 << "\n\n";
+                //
+                //                msy = 0.0;
+                //                f_msy = 0.0;
+                //                s_msy = 0.0;
+                //
+                //                females[areas_list[a]->id].CalculateMaximumSustainableYield(msy, f_msy, s_msy);
+                //                this->msy_average += msy;
+                //                this->f_msy_average += f_msy;
+                //                this->s_msy_average += s_msy;
+                //                std::cout << "Female MSY:\n";
+                //                std::cout << "unfished_spr = " << females[areas_list[a]->id].unfished_spawners_per_recruit << "\n";
+                //                std::cout << "alpha = " << females[areas_list[a]->id].recruitment_model->GetAlpha() << "\n";
+                //                std::cout << "beta = " << females[areas_list[a]->id].recruitment_model->GetBeta() << "\n";
+                //                std::cout << "F30 = " << females[areas_list[a]->id].CalculateFSPR(0.30) << "\n";
+                //                std::cout << "F40 = " << females[areas_list[a]->id].CalculateFSPR(0.40) << "\n";
+                //                std::cout << "Fmax = " << females[areas_list[a]->id].CalculateFMax(fs) << "\n";
+                //                std::cout << "msy = " << msy << "\n";
+                //                std::cout << "f_msy = " << f_msy << "\n";
+                //                std::cout << "s_msy = " << s_msy << "\n";
+                //                std::cout << "R0 = " << females[areas_list[a]->id].R0 << "\n";
+                //                std::cout << "SB0 = " << females[areas_list[a]->id].SB0 << "\n";
+                //                std::cout << "S0 = " << females[areas_list[a]->id].S0 << "\n\n";
 
                 //                males[areas_list[a]->id].BuildBootStrapNumbers();
                 //                females[areas_list[a]->id].BuildBootStrapNumbers();
 
             }
-
-            this->msy_average /= (this->areas_list.size() * 2.0);
-            this->f_msy_average /= (this->areas_list.size() * 2.0);
-            this->s_msy_average /= (this->areas_list.size() * 2.0);
+            //
+            //            this->msy_average /= (this->areas_list.size() * 2.0);
+            //            this->f_msy_average /= (this->areas_list.size() * 2.0);
+            //            this->s_msy_average /= (this->areas_list.size() * 2.0);
         }
 
         void PushToAreasAndFleets() {
