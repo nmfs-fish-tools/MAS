@@ -21,6 +21,7 @@
 #include "Movement.hpp"
 #include "Recruitment.hpp"
 #include "HarvestControlRule.hpp"
+#include "MaximumSustainableYield.hpp"
 #include "third_party/ATL/lib/Variable.hpp"
 namespace mas {
 
@@ -163,6 +164,7 @@ namespace mas {
 
         static uint32_t length_weight_key_carryout;
 
+        MaximumSustainableYield<REAL_T> msy;
 
         REAL_T MSY; //     maximum sustainable yield
         REAL_T Dmsy; //    dead discards at MSY
@@ -629,58 +631,6 @@ namespace mas {
             s_msy = s_max;
         }
 
-        void CalcMSY(REAL_T maxF = 1.0, REAL_T step = 0.01) {
-            //
-            //            int nages = this->ages.size();
-            //            REAL_T MSY; // maximum sustainable yield
-            //            REAL_T Dmsy; // dead discards at MSY
-            //            REAL_T Fmsy; // fishing rate at MSY
-            //            REAL_T SSBmsy; // spawning stock biomass at msy
-            //            REAL_T Rmsy; // equilibrium recruitment at msy
-            //            REAL_T Bmsy; // total biomass (male and female) at msy
-            //            REAL_T Emsy; // exploitation rate at msy (total catch / number of fish)
-            //            REAL_T spr_msy; // spawners per recruit at msy
-            //            REAL_T SPRmsy; // spawning potential ratio (spr_msy/spr_virgin)
-            //
-            //
-            //            REAL_T steep = this->recruitment_model->h.GetValue();
-            //            REAL_T R0 = std::exp(this->recruitment_model->log_R0.GetValue());
-            //            REAL_T sigma = this->recruitment_model->sigma_r.GetValue();
-            //            REAL_T BC = std::exp::exp(std::pow(sigma, 2) / 2.0);
-            //
-            //            std::vector<REAL_T> F;
-            //            for (REAL_T i = 0; i <= maxF; i += step) {
-            //                F.push_back(i);
-            //            }
-            //
-            //            this->spawning_stock_biomass
-            //
-            //            std::vector<REAL_T> reprod;
-            //
-            //            std::vector<REAL_T> spr(F.size()); //#equilibrium spr at F
-            //            std::vector<REAL_T> S_eq(F.size()); //#equilibrium SSB at F
-            //            std::vector<REAL_T> R_eq(F.size()); //#equilibrium recruitment at F
-            //            std::vector<REAL_T> B_eq(F.size()); //#equilibrium biomass at F
-            //            std::vector<REAL_T> L_eq(F.size()); //#equilibrium landings at F
-            //            std::vector<REAL_T> D_eq(F.size()); //#equilibrium dead discards at F
-            //            std::vector<REAL_T> E_eq(F.size()); //#equilibrium exploitation rate at F (landings only)
-            //
-            //            std::vector<REAL_T> L_age(nages); //#landings at age
-            //            std::vector<REAL_T> D_age(nages); //#dead discards at age
-            //            std::vector<REAL_T> F_age(nages); //#F at age
-            //            std::vector<REAL_T> Z_age(nages); //#Z at age
-            //
-            //            // Compute virgin spr
-            //            std::vector<REAL_T> N0(nages, 1.0);
-            //            for (int iage = 2; iage < nages; iage++) {
-            //                N0[iage] = N0[iage - 1] * std::exp(-1.0 * this->M[iage - 1]);
-            //            }
-            //            N0[nages - 1] = N0[nages - 2] * std::exp(-1.0 * this->M[nages - 2]) / (1.0 - std::exp(-1.0 * this->M[nages - 1]));
-
-
-
-        }
-
         void InitializeM() {
             for (int a = 0; a < this->ages.size(); a++) {
                 this->M[a] = this->natural_mortality_model->Evaluate(a);
@@ -829,24 +779,6 @@ namespace mas {
                 F1 -= (dyld / dyldp);
             }
             return F1;
-        }
-
-        void CalculateBiologicalReferencePoints(int year, int season) {
-            variable::tape.recording = false;
-            if (this->sex == FEMALE) {
-                std::cout << "Females:\n";
-            } else {
-                std::cout << "Males:\n";
-            }
-
-            //            SB100(curr_yr) = SBcurr;
-            std::cout << "F40  = " << get_spr_rates(0.40, year) << std::endl;
-            //            SB40(curr_yr) = SBcurr;
-            std::cout << "F35  = " << get_spr_rates(0.35, year) << std::endl;
-            //            SB35(curr_yr) = SBcurr;
-            std::cout << "F20  = " << get_spr_rates(0.20, year) << std::endl;
-            //            SB20(curr_yr) = SBcurr;
-            //            SBtarget(curr_yr) = SB40(curr_yr) * (F35(curr_yr) / F40(curr_yr));
         }
 
         void BuildBootStrapNumbers() {
@@ -1205,17 +1137,26 @@ namespace mas {
             return ret;
         }
 
-        struct MaxSustainableYield {
-            std::map<REAL_T, REAL_T> spr; //equilibrium spr at F
-            std::map<REAL_T, REAL_T> S_eq; //equilibrium SSB at F
-            std::map<REAL_T, REAL_T> R_eq; //equilibrium recruitment at F
-            std::map<REAL_T, REAL_T> B_eq; //equilibrium biomass at F
-            std::map<REAL_T, REAL_T> L_eq; //equilibrium landings at F
-            std::map<REAL_T, REAL_T> D_eq; //equilibrium dead discards at F
-            std::map<REAL_T, REAL_T> E_eq; //equilibrium exploitation rate at F (landings only)
-        };
+        REAL_T min(const std::valarray<REAL_T>& val) {
+            REAL_T ret = std::numeric_limits<REAL_T>::max();
+            for (int i = 0; i < val.size(); i++) {
+                if (val[i] < ret) {
+                    ret = val[i];
+                }
+            }
+            return ret;
+        }
 
-        void CalculateMSY(REAL_T maxF = 1.0, REAL_T step = 0.001) {
+        std::valarray<REAL_T> fabs(const std::valarray<REAL_T>& val) {
+            std::valarray<REAL_T> ret(val.size());
+            for (int i = 0; i < val.size(); i++) {
+                ret[i] = std::fabs(val[i]);
+
+            }
+            return ret;
+        }
+
+        void CalculateMSY(REAL_T maxF = 1.0, REAL_T step = 0.0001) {
 
             bool recording = mas::VariableTrait<REAL_T>::IsRecording();
 
@@ -1230,20 +1171,22 @@ namespace mas {
                 F.push_back(f);
             }
 
-            MaxSustainableYield msy;
 
-            std::vector<REAL_T> spr(F.size()); //equilibrium spr at F
+
+
+            std::valarray<REAL_T> spr(F.size()); //equilibrium spr at F
+            std::valarray<REAL_T> spr_ratio(F.size()); //equilibrium spr at F
             std::vector<REAL_T> S_eq(F.size()); //equilibrium SSB at F
             std::vector<REAL_T> R_eq(F.size()); //equilibrium recruitment at F
             std::vector<REAL_T> B_eq(F.size()); //equilibrium biomass at F
             std::vector<REAL_T> L_eq(F.size()); //equilibrium landings at F
             std::vector<REAL_T> D_eq(F.size()); //equilibrium dead discards at F
             std::vector<REAL_T> E_eq(F.size()); //equilibrium exploitation rate at F (landings only)
-            REAL_T spr_F0;
-            REAL_T steep = this->recruitment_model->h;
-            REAL_T sigma = this->recruitment_model->sigma_r;
-            REAL_T R0 = std::exp(this->recruitment_model->log_R0) * this->sex_fraction_value;
-            REAL_T BC = std::exp(std::pow(sigma, 2.0) / 2.0);
+            REAL_T spr_F0 = 0.0;
+            //            REAL_T steep = this->recruitment_model->h;
+            //            REAL_T sigma = this->recruitment_model->sigma_r;
+            //            REAL_T R0 = std::exp(this->recruitment_model->log_R0) * this->sex_fraction_value;
+            //            REAL_T BC = std::exp(std::pow(sigma, 2.0) / 2.0);
 
             std::vector<REAL_T> N0(this->ages.size(), 1.0);
             for (int iage = 1; iage < nages; iage++) {
@@ -1262,6 +1205,7 @@ namespace mas {
                 //dimension folded index
                 size_t index = year * this->seasons * this->ages.size() + (season) * this->ages.size() + a;
 
+                //is this ssb_unfished?
                 reprod[a] = this->weight_at_spawning[index].GetValue() * (this->maturity[a] * this->sex_fraction_value);
                 spr_F0 += N0[a] * reprod[a];
                 selL[a] = this->sum_selectivity[index].GetValue();
@@ -1295,7 +1239,6 @@ namespace mas {
 
 
                 spr[i] = sum(N_age * reprod);
-                msy.spr[F[i]] = spr[i];
                 //                                                R_eq[i] = (R0 / ((5.0 * steep - 1.0) * spr[i]))*
                 //                                                        (BC * 4.0 * steep * spr[i] - spr_F0 * (1.0 - steep));
                 R_eq[i] = this->recruitment_model->CalculateEquilibriumRecruitment(
@@ -1305,15 +1248,12 @@ namespace mas {
                     R_eq[i] = 0.0000001;
                 }
 
-                msy.R_eq[F[i]] = R_eq[i];
 
                 N_age = R_eq[i] * N_age;
 
                 S_eq[i] = sum(N_age * reprod);
-                msy.S_eq[F[i]] = S_eq[i];
 
                 B_eq[i] = sum(N_age * wgt);
-                msy.B_eq[F[i]] = B_eq[i];
 
                 for (int iage = 0; iage < nages; iage++) {
                     L_age[iage] = N_age[iage]*
@@ -1322,28 +1262,91 @@ namespace mas {
                     //                                              (FD_age[iage] / Z_age[iage])*(1. - exp(-1.0 * Z_age[iage]))
                 }
                 L_eq[i] = sum(L_age * wgt);
-                msy.L_eq[F[i]] = L_eq[i];
                 //                        D_eq[i] = sum(D_age * wgt);
                 E_eq[i] = sum(L_age) / sum(N_age);
-                msy.E_eq[F[i]] = E_eq[i];
 
 
             }
 
             int max_index = 0;
             REAL_T max = std::numeric_limits<REAL_T>::min();
+            spr_ratio = spr / spr_F0;
+            REAL_T F01_dum = min(fabs(spr_ratio - 0.001));
+            REAL_T F30_dum = min(fabs(spr_ratio - 0.3));
+            REAL_T F35_dum = min(fabs(spr_ratio - 0.35));
+            REAL_T F40_dum = min(fabs(spr_ratio - 0.4));
+            size_t F01_out;
+            size_t F30_out;
+            size_t F35_out;
+            size_t F40_out;
+            //            std::cout << "F30_dum " << F30_dum << "\n";
+            //            std::cout << "F35_dum " << F35_dum << "\n";
+            //            std::cout << "F40_dum " << F40_dum << "\n";
+
             for (int i = 0; i < L_eq.size(); i++) {
+
                 if (L_eq[i] >= max) {
                     max = L_eq[i];
                     max_index = i;
                 }
+
+                //                if (std::fabs(spr_ratio[i] - 0.001) == F01_dum) {
+                //                    F01_out = F[i];
+                //                }
+
+
+                if (std::fabs(spr_ratio[i] - 0.3) == F30_dum) {
+                    F30_out = i;
+                }
+                if (std::fabs(spr_ratio[i] - 0.35) == F35_dum) {
+                    F35_out = i;
+                }
+                if (std::fabs(spr_ratio[i] - 0.4) == F40_dum) {
+                    F40_out = i;
+                }
             }
+
+            msy.spr_F0 = spr_F0;
+            msy.F_msy = F[max_index];
+            msy.spr_msy = spr[max_index];
+            msy.SR_msy = spr[max_index] / spr_F0;
+            msy.R_msy = R_eq[max_index];
+            msy.SSB_msy = S_eq[max_index];
+            msy.B_msy = B_eq[max_index];
+            msy.E_msy = E_eq[max_index];
+
+            msy.F30 = F[F30_out];
+            msy.spr_F30_msy = spr[F30_out];
+            msy.SR_F30_msy = spr[F30_out] / spr_F0;
+            msy.R_F30_msy = R_eq[F30_out];
+            msy.SSB_F30_msy = S_eq[F30_out];
+            msy.B_F30_msy = B_eq[F30_out];
+            msy.E_F30_msy = E_eq[F30_out];
+
+            msy.F35 = F[F35_out];
+            msy.spr_F35_msy = spr[F35_out];
+            msy.SR_F35_msy = spr[F35_out] / spr_F0;
+            msy.R_F35_msy = R_eq[F35_out];
+            msy.SSB_F35_msy = S_eq[F35_out];
+            msy.B_F35_msy = B_eq[F35_out];
+            msy.E_F35_msy = E_eq[F35_out];
+
+            msy.F40 = F[F40_out];
+            msy.spr_F40_msy = spr[F40_out];
+            msy.SR_F40_msy = spr[F40_out] / spr_F0;
+            msy.R_F40_msy = R_eq[F40_out];
+            msy.SSB_F40_msy = S_eq[F40_out];
+            msy.B_F40_msy = B_eq[F40_out];
+            msy.E_F40_msy = E_eq[F40_out];
 
             //            std::cout<<std::scientific;
 
             std::cout << "\n\nFmax: " << maxF << "\n";
             std::cout << "Step: " << step << "\n";
             std::cout << "\n\nF_msy: " << F[max_index] << "\n";
+            std::cout << "F30: " << F[F30_out] << "\n";
+            std::cout << "F35: " << F[F35_out] << "\n";
+            std::cout << "F40: " << F[F40_out] << "\n";
             REAL_T spr_msy_out = spr[max_index];
             std::cout << "spr_msy: " << spr[max_index] << "\n";
             std::cout << "SR_msy: " << spr_msy_out / spr_F0 << "\n";
@@ -1351,7 +1354,12 @@ namespace mas {
             std::cout << "R_msy: " << R_eq[max_index] << "\n";
             std::cout << "SSB_msy: " << S_eq[max_index] << "\n";
             std::cout << "B_msy: " << B_eq[max_index] << "\n";
-            std::cout << "E_msy: " << E_eq[max_index] << "\n\n";
+            std::cout << "E_msy: " << E_eq[max_index] << "\n";
+            std::cout << "R0: " << this->R0 << "\n";
+            std::cout << "S0: " << this->S0 << "\n";
+            std::cout << "E_msy: " << E_eq[max_index] << "\n";
+            std::cout << "Alpha: " << this->recruitment_model->GetAlpha() << "\n";
+            std::cout << "Beta: " << this->recruitment_model->GetBeta() << "\n\n";
 
             mas::VariableTrait<REAL_T>::SetRecording(recording);
 
@@ -2282,6 +2290,7 @@ namespace mas {
         std::unordered_set<int> active_fleets;
 
         //averages across all subpopulations
+        MaximumSustainableYield<REAL_T> msy;
         REAL_T msy_average;
         REAL_T f_msy_average;
         REAL_T s_msy_average;
@@ -2987,6 +2996,7 @@ namespace mas {
             for (int a = 0; a < areas_list.size(); a++) {
                 males[areas_list[a]->id].CalculateMSY();
                 females[areas_list[a]->id].CalculateMSY();
+
 
                 //                msy = 0.0;
                 //                f_msy = 0.0;
