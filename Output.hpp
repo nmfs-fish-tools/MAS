@@ -542,6 +542,77 @@ namespace mas {
 
         }
 
+        void GenerateReferencePoints(rapidjson::Value& popobject,
+                const mas::Population<REAL_T> & popinfo) {
+            popobject.AddMember("note", "these values represent the mean across all subpopulations", this->document.GetAllocator());
+            popobject.AddMember("spr_F0", popinfo.msy.spr_F0, this->document.GetAllocator());
+            popobject.AddMember("F_msy", popinfo.msy.F_msy, this->document.GetAllocator());
+            popobject.AddMember("spr_msy", popinfo.msy.spr_msy, this->document.GetAllocator());
+            popobject.AddMember("SR_msy", popinfo.msy.SR_msy, this->document.GetAllocator());
+            popobject.AddMember("R_msy", popinfo.msy.R_msy, this->document.GetAllocator());
+            popobject.AddMember("SSB_msy", popinfo.msy.SSB_msy, this->document.GetAllocator());
+            popobject.AddMember("B_msy", popinfo.msy.B_msy, this->document.GetAllocator());
+            popobject.AddMember("E_msy", popinfo.msy.E_msy, this->document.GetAllocator());
+            popobject.AddMember("F30", popinfo.msy.F30, this->document.GetAllocator());
+            popobject.AddMember("spr_F30_msy", popinfo.msy.spr_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("SR_F30_msy", popinfo.msy.SR_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("R_F30_msy", popinfo.msy.R_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("SSB_F30_msy", popinfo.msy.SSB_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("B_F30_msy", popinfo.msy.B_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("E_F30_msy", popinfo.msy.E_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("F35", popinfo.msy.F35, this->document.GetAllocator());
+            popobject.AddMember("spr_F35_msy", popinfo.msy.spr_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("SR_F35_msy", popinfo.msy.SR_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("R_F35_msy", popinfo.msy.R_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("SSB_F35_msy", popinfo.msy.SSB_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("B_F35_msy", popinfo.msy.B_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("E_F35_msy", popinfo.msy.E_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("F40", popinfo.msy.F40, this->document.GetAllocator());
+            popobject.AddMember("spr_F40_msy", popinfo.msy.spr_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("SR_F40_msy", popinfo.msy.SR_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("R_F40_msy", popinfo.msy.R_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("SSB_F40_msy", popinfo.msy.SSB_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("B_F40_msy", popinfo.msy.B_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("E_F40_msy", popinfo.msy.E_F40_msy, this->document.GetAllocator());
+
+
+        }
+
+        void GenerateReferencePoints(rapidjson::Value& popobject,
+                const mas::Subpopulation<REAL_T> & popinfo) {
+            popobject.AddMember("spr_F0", popinfo.msy.spr_F0, this->document.GetAllocator());
+            popobject.AddMember("F_msy", popinfo.msy.F_msy, this->document.GetAllocator());
+            popobject.AddMember("spr_msy", popinfo.msy.spr_msy, this->document.GetAllocator());
+            popobject.AddMember("SR_msy", popinfo.msy.SR_msy, this->document.GetAllocator());
+            popobject.AddMember("R_msy", popinfo.msy.R_msy, this->document.GetAllocator());
+            popobject.AddMember("SSB_msy", popinfo.msy.SSB_msy, this->document.GetAllocator());
+            popobject.AddMember("B_msy", popinfo.msy.B_msy, this->document.GetAllocator());
+            popobject.AddMember("E_msy", popinfo.msy.E_msy, this->document.GetAllocator());
+            popobject.AddMember("F30", popinfo.msy.F30, this->document.GetAllocator());
+            popobject.AddMember("spr_F30_msy", popinfo.msy.spr_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("SR_F30_msy", popinfo.msy.SR_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("R_F30_msy", popinfo.msy.R_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("SSB_F30_msy", popinfo.msy.SSB_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("B_F30_msy", popinfo.msy.B_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("E_F30_msy", popinfo.msy.E_F30_msy, this->document.GetAllocator());
+            popobject.AddMember("F35", popinfo.msy.F35, this->document.GetAllocator());
+            popobject.AddMember("spr_F35_msy", popinfo.msy.spr_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("SR_F35_msy", popinfo.msy.SR_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("R_F35_msy", popinfo.msy.R_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("SSB_F35_msy", popinfo.msy.SSB_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("B_F35_msy", popinfo.msy.B_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("E_F35_msy", popinfo.msy.E_F35_msy, this->document.GetAllocator());
+            popobject.AddMember("F40", popinfo.msy.F40, this->document.GetAllocator());
+            popobject.AddMember("spr_F40_msy", popinfo.msy.spr_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("SR_F40_msy", popinfo.msy.SR_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("R_F40_msy", popinfo.msy.R_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("SSB_F40_msy", popinfo.msy.SSB_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("B_F40_msy", popinfo.msy.B_F40_msy, this->document.GetAllocator());
+            popobject.AddMember("E_F40_msy", popinfo.msy.E_F40_msy, this->document.GetAllocator());
+
+
+        }
+
         void GenerateAreaSurveyBiomass(rapidjson::Value& popobject,
                 const mas::Area<REAL_T> & popinfo, const mas::FishSexType & sex) {
             rapidjson::Value obj(rapidjson::kArrayType);
@@ -1306,6 +1377,7 @@ namespace mas {
             popdyn.AddMember("nsurveys", (int) mas.info.survey_models.size(), allocator);
             popdyn.AddMember("ages", ages_array, allocator);
             rapidjson::Value pops_array(rapidjson::kArrayType);
+
             for (pit = info->populations.begin(); pit != info->populations.end(); ++pit) {
                 rapidjson::Value Popobject(rapidjson::kObjectType);
                 Popobject.AddMember("id", (*pit).second->id, allocator);
@@ -1414,6 +1486,7 @@ namespace mas {
                 this->GeneratePopulationFishingMortality(mfmort, *(*pit).second, mas::MALE);
                 males.AddMember("fishing_mortality", mfmort, allocator);
 
+
                 Popobject.AddMember("males", males, allocator);
 
                 rapidjson::Value urecruits(rapidjson::kObjectType);
@@ -1465,8 +1538,13 @@ namespace mas {
                 this->GeneratePopulationFishingMortality(ufmort, *(*pit).second, mas::UNDIFFERENTIATED);
                 undiff.AddMember("fishing_mortality", ufmort, allocator);
 
+
+
                 Popobject.AddMember("undifferentiated", undiff, allocator);
 
+                rapidjson::Value msy(rapidjson::kObjectType);
+                this->GenerateReferencePoints(msy, *(*pit).second);
+                Popobject.AddMember("MSY", msy, allocator);
 
                 rapidjson::Value pops_area_array(rapidjson::kArrayType);
                 for (int i = 0; i < (*pit).second->areas_list.size(); i++) {
@@ -1486,11 +1564,11 @@ namespace mas {
                     rapidjson::Value init_numbers_eq(rapidjson::kObjectType);
                     rapidjson::Value init_numbers(rapidjson::kObjectType);
 
-                    
+
                     females.AddMember("initial_f",
                             (*pit).second->females[(*pit).second->areas_list[i]->id].initialF, allocator);
 
-                    
+
                     rapidjson::Value fnvalues(rapidjson::kArrayType);
                     this->GenerateLengthAtSeasonStart(flengthseasonstart,
                             (*pit).second->females[(*pit).second->areas_list[i]->id]);
@@ -1585,6 +1663,10 @@ namespace mas {
                     this->GeneratePopulationFishingMortality(ffmort, (*pit).second->females[(*pit).second->areas_list[i]->id]);
                     females.AddMember("fishing_mortality", ffmort, allocator);
 
+                    rapidjson::Value fmsy(rapidjson::kObjectType);
+                    this->GenerateReferencePoints(fmsy, (*pit).second->females[(*pit).second->areas_list[i]->id]);
+                    females.AddMember("MSY", fmsy, allocator);
+
                     area.AddMember("females", females, allocator);
 
 
@@ -1603,12 +1685,12 @@ namespace mas {
                     rapidjson::Value mminit_numbers_eq(rapidjson::kObjectType);
                     rapidjson::Value minit_numbers(rapidjson::kObjectType);
 
-                    
+
                     males.AddMember("initial_f",
                             (*pit).second->males[(*pit).second->areas_list[i]->id].initialF, allocator);
 
 
-                    
+
                     rapidjson::Value mnvalues(rapidjson::kArrayType);
                     this->GenerateLengthAtSeasonStart(mlengthseasonstart,
                             (*pit).second->males[(*pit).second->areas_list[i]->id]);
@@ -1704,6 +1786,9 @@ namespace mas {
                     this->GeneratePopulationFishingMortality(mfmort, (*pit).second->males[(*pit).second->areas_list[i]->id]);
                     males.AddMember("fishing_mortality", mfmort, allocator);
 
+                    rapidjson::Value mmsy(rapidjson::kObjectType);
+                    this->GenerateReferencePoints(mmsy, (*pit).second->males[(*pit).second->areas_list[i]->id]);
+                    males.AddMember("MSY", mmsy, allocator);
 
                     area.AddMember("males", males, allocator);
 
