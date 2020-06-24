@@ -1306,38 +1306,38 @@ namespace mas {
                 }
             }
 
-            msy.spr_F0 = spr_F0;
-            msy.F_msy = F[max_index];
-            msy.spr_msy = spr[max_index];
-            msy.SR_msy = spr[max_index] / spr_F0;
-            msy.R_msy = R_eq[max_index];
-            msy.SSB_msy = S_eq[max_index];
-            msy.B_msy = B_eq[max_index];
-            msy.E_msy = E_eq[max_index];
+            this->msy.spr_F0 = spr_F0;
+            this->msy.F_msy = F[max_index];
+            this->msy.spr_msy = spr[max_index];
+            this->msy.SR_msy = spr[max_index] / spr_F0;
+            this->msy.R_msy = R_eq[max_index];
+            this->msy.SSB_msy = S_eq[max_index];
+            this->msy.B_msy = B_eq[max_index];
+            this->msy.E_msy = E_eq[max_index];
 
-            msy.F30 = F[F30_out];
-            msy.spr_F30_msy = spr[F30_out];
-            msy.SR_F30_msy = spr[F30_out] / spr_F0;
-            msy.R_F30_msy = R_eq[F30_out];
-            msy.SSB_F30_msy = S_eq[F30_out];
-            msy.B_F30_msy = B_eq[F30_out];
-            msy.E_F30_msy = E_eq[F30_out];
+            this->msy.F30 = F[F30_out];
+            this->msy.spr_F30_msy = spr[F30_out];
+            this->msy.SR_F30_msy = spr[F30_out] / spr_F0;
+            this->msy.R_F30_msy = R_eq[F30_out];
+            this->msy.SSB_F30_msy = S_eq[F30_out];
+            this->msy.B_F30_msy = B_eq[F30_out];
+            this->msy.E_F30_msy = E_eq[F30_out];
 
-            msy.F35 = F[F35_out];
-            msy.spr_F35_msy = spr[F35_out];
-            msy.SR_F35_msy = spr[F35_out] / spr_F0;
-            msy.R_F35_msy = R_eq[F35_out];
-            msy.SSB_F35_msy = S_eq[F35_out];
-            msy.B_F35_msy = B_eq[F35_out];
-            msy.E_F35_msy = E_eq[F35_out];
+            this->msy.F35 = F[F35_out];
+            this->msy.spr_F35_msy = spr[F35_out];
+            this->msy.SR_F35_msy = spr[F35_out] / spr_F0;
+            this->msy.R_F35_msy = R_eq[F35_out];
+            this->msy.SSB_F35_msy = S_eq[F35_out];
+            this->msy.B_F35_msy = B_eq[F35_out];
+            this->msy.E_F35_msy = E_eq[F35_out];
 
-            msy.F40 = F[F40_out];
-            msy.spr_F40_msy = spr[F40_out];
-            msy.SR_F40_msy = spr[F40_out] / spr_F0;
-            msy.R_F40_msy = R_eq[F40_out];
-            msy.SSB_F40_msy = S_eq[F40_out];
-            msy.B_F40_msy = B_eq[F40_out];
-            msy.E_F40_msy = E_eq[F40_out];
+            this->msy.F40 = F[F40_out];
+            this->msy.spr_F40_msy = spr[F40_out];
+            this->msy.SR_F40_msy = spr[F40_out] / spr_F0;
+            this->msy.R_F40_msy = R_eq[F40_out];
+            this->msy.SSB_F40_msy = S_eq[F40_out];
+            this->msy.B_F40_msy = B_eq[F40_out];
+            this->msy.E_F40_msy = E_eq[F40_out];
 
             //            std::cout<<std::scientific;
 
@@ -2997,7 +2997,71 @@ namespace mas {
                 males[areas_list[a]->id].CalculateMSY();
                 females[areas_list[a]->id].CalculateMSY();
 
+                this->msy.spr_F0 += males[areas_list[a]->id].msy.spr_F0 / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.F_msy += males[areas_list[a]->id].msy.F_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.spr_msy += males[areas_list[a]->id].msy.spr_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SR_msy += males[areas_list[a]->id].msy.SR_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.R_msy += males[areas_list[a]->id].msy.R_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SSB_msy += males[areas_list[a]->id].msy.SSB_msy;
+                this->msy.B_msy += males[areas_list[a]->id].msy.B_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.E_msy += males[areas_list[a]->id].msy.E_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
 
+                this->msy.F30 += males[areas_list[a]->id].msy.F30 / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.spr_F30_msy += males[areas_list[a]->id].msy.spr_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SR_F30_msy += males[areas_list[a]->id].msy.SR_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.R_F30_msy += males[areas_list[a]->id].msy.R_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SSB_F30_msy += males[areas_list[a]->id].msy.SSB_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.B_F30_msy += males[areas_list[a]->id].msy.B_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.E_F30_msy += males[areas_list[a]->id].msy.E_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+
+                this->msy.F35 += males[areas_list[a]->id].msy.F35 / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.spr_F35_msy += males[areas_list[a]->id].msy.spr_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SR_F35_msy += males[areas_list[a]->id].msy.SR_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.R_F35_msy += males[areas_list[a]->id].msy.R_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SSB_F35_msy += males[areas_list[a]->id].msy.SSB_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.B_F35_msy += males[areas_list[a]->id].msy.B_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.E_F35_msy += males[areas_list[a]->id].msy.E_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+
+                this->msy.F40 += males[areas_list[a]->id].msy.F40 / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.spr_F40_msy += males[areas_list[a]->id].msy.spr_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SR_F40_msy += males[areas_list[a]->id].msy.SR_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.R_F40_msy += males[areas_list[a]->id].msy.R_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SSB_F40_msy += males[areas_list[a]->id].msy.SSB_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.B_F40_msy += males[areas_list[a]->id].msy.B_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.E_F40_msy += males[areas_list[a]->id].msy.E_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+
+                this->msy.spr_F0 += females[areas_list[a]->id].msy.spr_F0 / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.F_msy += females[areas_list[a]->id].msy.F_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.spr_msy += females[areas_list[a]->id].msy.spr_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SR_msy += females[areas_list[a]->id].msy.SR_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.R_msy += females[areas_list[a]->id].msy.R_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SSB_msy += females[areas_list[a]->id].msy.SSB_msy;
+                this->msy.B_msy += females[areas_list[a]->id].msy.B_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.E_msy += females[areas_list[a]->id].msy.E_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+
+                this->msy.F30 += females[areas_list[a]->id].msy.F30 / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.spr_F30_msy += females[areas_list[a]->id].msy.spr_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SR_F30_msy += females[areas_list[a]->id].msy.SR_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.R_F30_msy += females[areas_list[a]->id].msy.R_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SSB_F30_msy += females[areas_list[a]->id].msy.SSB_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.B_F30_msy += females[areas_list[a]->id].msy.B_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.E_F30_msy += females[areas_list[a]->id].msy.E_F30_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+
+                this->msy.F35 += females[areas_list[a]->id].msy.F35 / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.spr_F35_msy += females[areas_list[a]->id].msy.spr_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SR_F35_msy += females[areas_list[a]->id].msy.SR_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.R_F35_msy += females[areas_list[a]->id].msy.R_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SSB_F35_msy += females[areas_list[a]->id].msy.SSB_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.B_F35_msy += females[areas_list[a]->id].msy.B_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.E_F35_msy += females[areas_list[a]->id].msy.E_F35_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+
+                this->msy.F40 += females[areas_list[a]->id].msy.F40 / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.spr_F40_msy += females[areas_list[a]->id].msy.spr_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SR_F40_msy += females[areas_list[a]->id].msy.SR_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.R_F40_msy += females[areas_list[a]->id].msy.R_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.SSB_F40_msy += females[areas_list[a]->id].msy.SSB_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.B_F40_msy += females[areas_list[a]->id].msy.B_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+                this->msy.E_F40_msy += females[areas_list[a]->id].msy.E_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
                 //                msy = 0.0;
                 //                f_msy = 0.0;
                 //                s_msy = 0.0;
