@@ -260,7 +260,6 @@ mas_model$Reset()
   
   
   # print(x)
-  postr<- paste(c("EM Outputs/Fig",i), collapse = "")
   plot_file<- "Fig_true_estimate_timeseries.jpg"
   jpeg(toString(plot_file), width = 6, height = 4, units = 'in', res = 300)
   x<-seq(1,30, 1)
