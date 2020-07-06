@@ -345,7 +345,6 @@ namespace mas {
             this->weight_functor->Evaluate(year, season, length, age, sex, ew_type, ret);
         }
 
-        
         /**
          * Default weight at age functon.
          * 
@@ -517,6 +516,7 @@ namespace mas {
             ss << "Von Bertalanffy Growth:\n";
             ss << "k = " << k << "\n";
             ss << "l_inf = " << l_inf << "\n";
+             ss << "a_min = " << this->a_min << "\n";
             return ss.str();
         }
     };
@@ -529,7 +529,6 @@ namespace mas {
         variable l_inf;
         variable c;
 
-        
         /**
          * \f$
          * 
@@ -545,6 +544,7 @@ namespace mas {
         virtual const variable Evaluate(const variable& age, const int& sex) {
             variable ret = lmin + (lmax - lmin)*((static_cast<REAL_T> (1.0) -
                     (mas::pow(c, age - this->a_min))) / (static_cast<REAL_T> (1.0) - mas::pow(c, this->a_max - this->a_min)));
+
             return ret < variable(0.0) ? variable(0.0) : ret;
         }
 
@@ -712,8 +712,7 @@ namespace mas {
         variable lmin;
         variable lmax;
 
-        
-         /**
+        /**
          * \f$
          * 
          * length\_at\_age = ((lmin + (lmax - lmin)*\frac{(1.0- ( (age - a\_min)))}{(1.0 - ((a\_max - a\_min)))})^{\frac{1.0}{beta}}
