@@ -356,6 +356,8 @@ namespace mas {
                 length_at_spawning_temp[i] = this->growth_model->Evaluate(a + this->spawning_season_offset, this->sex);
                 length_at_catch_time_temp[i] = this->growth_model->Evaluate(a + this->catch_season_offset, this->sex);
                 length_at_survey_time_temp[i] = this->growth_model->Evaluate(a + this->survey_season_offset, this->sex);
+
+
             }
 
             for (int y = 0; y < this->years; y++) {
@@ -370,6 +372,7 @@ namespace mas {
                         length_at_spawning[index] = length_at_spawning_temp[a];
                         length_at_catch_time[index] = length_at_catch_time_temp[a];
                         length_at_survey_time[index] = length_at_survey_time_temp[a];
+
 
                         //weight at season start
                         this->growth_model->GetWeight(y, s,
@@ -1340,26 +1343,26 @@ namespace mas {
             this->msy.E_F40_msy = E_eq[F40_out];
 
             //            std::cout<<std::scientific;
-
-            std::cout << "\n\nFmax: " << maxF << "\n";
-            std::cout << "Step: " << step << "\n";
-            std::cout << "\n\nF_msy: " << F[max_index] << "\n";
-            std::cout << "F30: " << F[F30_out] << "\n";
-            std::cout << "F35: " << F[F35_out] << "\n";
-            std::cout << "F40: " << F[F40_out] << "\n";
-            REAL_T spr_msy_out = spr[max_index];
-            std::cout << "spr_msy: " << spr[max_index] << "\n";
-            std::cout << "SR_msy: " << spr_msy_out / spr_F0 << "\n";
-            //            std::cout << "D_msy_out" << D_eq[max_index] << "\n";
-            std::cout << "R_msy: " << R_eq[max_index] << "\n";
-            std::cout << "SSB_msy: " << S_eq[max_index] << "\n";
-            std::cout << "B_msy: " << B_eq[max_index] << "\n";
-            std::cout << "E_msy: " << E_eq[max_index] << "\n";
-            std::cout << "R0: " << this->R0 << "\n";
-            std::cout << "S0: " << this->S0 << "\n";
-            std::cout << "E_msy: " << E_eq[max_index] << "\n";
-            std::cout << "Alpha: " << this->recruitment_model->GetAlpha() << "\n";
-            std::cout << "Beta: " << this->recruitment_model->GetBeta() << "\n\n";
+//
+//            std::cout << "\n\nFmax: " << maxF << "\n";
+//            std::cout << "Step: " << step << "\n";
+//            std::cout << "\n\nF_msy: " << F[max_index] << "\n";
+//            std::cout << "F30: " << F[F30_out] << "\n";
+//            std::cout << "F35: " << F[F35_out] << "\n";
+//            std::cout << "F40: " << F[F40_out] << "\n";
+//            REAL_T spr_msy_out = spr[max_index];
+//            std::cout << "spr_msy: " << spr[max_index] << "\n";
+//            std::cout << "SR_msy: " << spr_msy_out / spr_F0 << "\n";
+//            //            std::cout << "D_msy_out" << D_eq[max_index] << "\n";
+//            std::cout << "R_msy: " << R_eq[max_index] << "\n";
+//            std::cout << "SSB_msy: " << S_eq[max_index] << "\n";
+//            std::cout << "B_msy: " << B_eq[max_index] << "\n";
+//            std::cout << "E_msy: " << E_eq[max_index] << "\n";
+//            std::cout << "R0: " << this->R0 << "\n";
+//            std::cout << "S0: " << this->S0 << "\n";
+//            std::cout << "E_msy: " << E_eq[max_index] << "\n";
+//            std::cout << "Alpha: " << this->recruitment_model->GetAlpha() << "\n";
+//            std::cout << "Beta: " << this->recruitment_model->GetBeta() << "\n\n";
 
             mas::VariableTrait<REAL_T>::SetRecording(recording);
 
@@ -2291,6 +2294,10 @@ namespace mas {
 
         //averages across all subpopulations
         MaximumSustainableYield<REAL_T> msy;
+        MaximumSustainableYield<REAL_T> msy_females;
+        MaximumSustainableYield<REAL_T> msy_males;
+
+
         REAL_T msy_average;
         REAL_T f_msy_average;
         REAL_T s_msy_average;
@@ -2403,13 +2410,13 @@ namespace mas {
                                         mas::exp(static_cast<REAL_T> (-1.0) * male_info_from.Z[index]);
 
                                 male_info_from.emigrants[index] += emigrantsm;
-                                male_info_from.emigrants_biomass[index] = emigrantsm * male_info_from.weight_at_season_start[index];
+                                male_info_from.emigrants_biomass[index] += emigrantsm * male_info_from.weight_at_season_start[index];
 
                                 variable imigrantsm = male_fractions[i][j] * male_info_from.numbers_at_age[index] *
                                         mas::exp(static_cast<REAL_T> (-1.0) * male_info_from.Z[index]);
 
                                 male_info_to.imigrants[index] += imigrantsm;
-                                male_info_to.imigrants_biomass[index] = imigrantsm * male_info_from.weight_at_season_start[index];
+                                male_info_to.imigrants_biomass[index] += imigrantsm * male_info_from.weight_at_season_start[index];
 
                                 variable emigrantsf = female_fractions[i][j] * female_info_from.numbers_at_age[index] *
                                         mas::exp(static_cast<REAL_T> (-1.0) * female_info_from.Z[index]);
@@ -2420,7 +2427,7 @@ namespace mas {
                                         mas::exp(static_cast<REAL_T> (-1.0) * female_info_from.Z[index]);
 
                                 female_info_to.imigrants[index] += imigrantsf;
-                                female_info_to.imigrants_biomass[index] = imigrantsf * female_info_from.weight_at_season_start[index];
+                                female_info_to.imigrants_biomass[index] += imigrantsf * female_info_from.weight_at_season_start[index];
 
 #warning need to move biomass also
                             }
@@ -2765,11 +2772,20 @@ namespace mas {
                          *****************************************/
                         males[areas_list[area]->id].CalculateSpawningBiomass(y, s); //not needed until Finalize
                         females[areas_list[area]->id].CalculateSpawningBiomass(y, s); //not needed until Finalize
+
+
                         /******************************************
                          * Recruitment
                          *****************************************/
                         males[areas_list[area]->id].CalculateRecruitment(y, s);
                         females[areas_list[area]->id].CalculateRecruitment(y, s);
+
+
+                        /******************************************
+                         * Apply Movement
+                         *****************************************/
+                        this->MoveFish(y, s);
+
                         /******************************************
                          * Catch Numbers at Age
                          *****************************************/
@@ -2782,10 +2798,7 @@ namespace mas {
                         females[areas_list[area]->id].CalculateSurveyNumbersAtAge(y, s);
                     }// end area
 
-                    /******************************************
-                     * Apply Movement
-                     *****************************************/
-                    this->MoveFish(y, s);
+
 
 
                     /******************************************
@@ -3062,6 +3075,74 @@ namespace mas {
                 this->msy.SSB_F40_msy += females[areas_list[a]->id].msy.SSB_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
                 this->msy.B_F40_msy += females[areas_list[a]->id].msy.B_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
                 this->msy.E_F40_msy += females[areas_list[a]->id].msy.E_F40_msy / static_cast<REAL_T> ((areas_list.size()*2.0));
+
+
+                this->msy_males.spr_F0 += males[areas_list[a]->id].msy.spr_F0 / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.F_msy += males[areas_list[a]->id].msy.F_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.spr_msy += males[areas_list[a]->id].msy.spr_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.SR_msy += males[areas_list[a]->id].msy.SR_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.R_msy += males[areas_list[a]->id].msy.R_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.SSB_msy += males[areas_list[a]->id].msy.SSB_msy;
+                this->msy_males.B_msy += males[areas_list[a]->id].msy.B_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.E_msy += males[areas_list[a]->id].msy.E_msy / static_cast<REAL_T> ((areas_list.size()));
+
+                this->msy_males.F30 += males[areas_list[a]->id].msy.F30 / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.spr_F30_msy += males[areas_list[a]->id].msy.spr_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.SR_F30_msy += males[areas_list[a]->id].msy.SR_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.R_F30_msy += males[areas_list[a]->id].msy.R_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.SSB_F30_msy += males[areas_list[a]->id].msy.SSB_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.B_F30_msy += males[areas_list[a]->id].msy.B_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.E_F30_msy += males[areas_list[a]->id].msy.E_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+
+                this->msy_males.F35 += males[areas_list[a]->id].msy.F35 / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.spr_F35_msy += males[areas_list[a]->id].msy.spr_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.SR_F35_msy += males[areas_list[a]->id].msy.SR_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.R_F35_msy += males[areas_list[a]->id].msy.R_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.SSB_F35_msy += males[areas_list[a]->id].msy.SSB_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.B_F35_msy += males[areas_list[a]->id].msy.B_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.E_F35_msy += males[areas_list[a]->id].msy.E_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+
+                this->msy_males.F40 += males[areas_list[a]->id].msy.F40 / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.spr_F40_msy += males[areas_list[a]->id].msy.spr_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.SR_F40_msy += males[areas_list[a]->id].msy.SR_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.R_F40_msy += males[areas_list[a]->id].msy.R_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.SSB_F40_msy += males[areas_list[a]->id].msy.SSB_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.B_F40_msy += males[areas_list[a]->id].msy.B_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_males.E_F40_msy += males[areas_list[a]->id].msy.E_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+
+                this->msy_females.spr_F0 += females[areas_list[a]->id].msy.spr_F0 / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.F_msy += females[areas_list[a]->id].msy.F_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.spr_msy += females[areas_list[a]->id].msy.spr_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.SR_msy += females[areas_list[a]->id].msy.SR_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.R_msy += females[areas_list[a]->id].msy.R_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.SSB_msy += females[areas_list[a]->id].msy.SSB_msy;
+                this->msy_females.B_msy += females[areas_list[a]->id].msy.B_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.E_msy += females[areas_list[a]->id].msy.E_msy / static_cast<REAL_T> ((areas_list.size()));
+
+                this->msy_females.F30 += females[areas_list[a]->id].msy.F30 / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.spr_F30_msy += females[areas_list[a]->id].msy.spr_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.SR_F30_msy += females[areas_list[a]->id].msy.SR_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.R_F30_msy += females[areas_list[a]->id].msy.R_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.SSB_F30_msy += females[areas_list[a]->id].msy.SSB_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.B_F30_msy += females[areas_list[a]->id].msy.B_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.E_F30_msy += females[areas_list[a]->id].msy.E_F30_msy / static_cast<REAL_T> ((areas_list.size()));
+
+                this->msy_females.F35 += females[areas_list[a]->id].msy.F35 / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.spr_F35_msy += females[areas_list[a]->id].msy.spr_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.SR_F35_msy += females[areas_list[a]->id].msy.SR_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.R_F35_msy += females[areas_list[a]->id].msy.R_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.SSB_F35_msy += females[areas_list[a]->id].msy.SSB_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.B_F35_msy += females[areas_list[a]->id].msy.B_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.E_F35_msy += females[areas_list[a]->id].msy.E_F35_msy / static_cast<REAL_T> ((areas_list.size()));
+
+                this->msy_females.F40 += females[areas_list[a]->id].msy.F40 / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.spr_F40_msy += females[areas_list[a]->id].msy.spr_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.SR_F40_msy += females[areas_list[a]->id].msy.SR_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.R_F40_msy += females[areas_list[a]->id].msy.R_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.SSB_F40_msy += females[areas_list[a]->id].msy.SSB_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.B_F40_msy += females[areas_list[a]->id].msy.B_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+                this->msy_females.E_F40_msy += females[areas_list[a]->id].msy.E_F40_msy / static_cast<REAL_T> ((areas_list.size()));
+
                 //                msy = 0.0;
                 //                f_msy = 0.0;
                 //                s_msy = 0.0;
