@@ -14,7 +14,11 @@
 #ifndef COMMON_HPP
 #define COMMON_HPP
 
+#define USE_ATL_AS_ESTIMATION_ENGINE
+
+#ifdef USE_ATL_AS_ESTIMATION_ENGINE
 #include "third_party/ATL/ATL.hpp"
+#endif
 
 #include <vector>
 #include <map>
@@ -24,6 +28,16 @@
 namespace mas {
 
     std::ofstream mas_log("mas.log");
+
+
+
+    /**
+     * 
+     * We are using The Analytics Template Library as the estimation engine, 
+     * this can be swapped out by defining the wrapper functions below.
+     * 
+     */
+#ifdef USE_ATL_AS_ESTIMATION_ENGINE
 
     template<typename REAL_T>
     struct VariableTrait {
@@ -45,6 +59,13 @@ namespace mas {
             var.SetMaxBoundary(value);
         }
 
+        static void SetRecording(bool record) {
+            variable::tape.SetRecording(record);
+        }
+
+        static bool IsRecording() {
+            return variable::tape.recording;
+        }
 
     };
 
@@ -145,6 +166,7 @@ namespace mas {
             const atl::ExpressionBase<REAL_T, RHS>& b) {
         return atl::pow(a, b.Cast());
     }
+#endif
 
     template<typename REAL_T>
     struct ModelObject {
