@@ -20,6 +20,7 @@
 
 namespace mas {
 
+    
     enum Minimizer {
         LBFGS,
         LBFGS2,

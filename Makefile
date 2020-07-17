@@ -11,6 +11,7 @@ CCC = g++
 CXX = g++
 
 
+
 BASICOPTS =   -O3  -s -m64
 CCFLAGS = -std=c++14
 CXXFLAGS = -w -DMAS_COMMAND_TOOL -O3  -pthread -std=c++14 $(EXTRA_CXXFLAGS)
