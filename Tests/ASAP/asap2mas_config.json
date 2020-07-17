@@ -50,7 +50,7 @@
                 "phase": 1,
                 "min": -15.0,
                 "max": 15.0,
-                "values": [
+                "value": [
                     0.0,
                     0.0,
                     0.0,
@@ -123,8 +123,8 @@
                 "data_object_type": "catch_empirical_weight_at_age",
                 "sex": "undifferentiated",
                 "units": "KG",
-                "missing_values": -999,
-                "values": [
+                "missing_value": -999,
+                "value": [
                     [
                         [
                             0.134,
@@ -412,8 +412,8 @@
                 "data_object_type": "survey_empirical_weight_at_age",
                 "sex": "undifferentiated",
                 "units": "KG",
-                "missing_values": -999,
-                "values": [
+                "missing_value": -999,
+                "value": [
                     [
                         [
                             0.134,
@@ -701,8 +701,8 @@
                 "data_object_type": "empirical_weight_at_age_spawning",
                 "sex": "undifferentiated",
                 "units": "KG",
-                "missing_values": -999,
-                "values": [
+                "missing_value": -999,
+                "value": [
                     [
                         0.134,
                         0.686,
@@ -949,8 +949,8 @@
                 "data_object_type": "empirical_weight_at_age_season_start",
                 "sex": "undifferentiated",
                 "units": "KG",
-                "missing_values": -999,
-                "values": [
+                "missing_value": -999,
+                "value": [
                     [
                         0.134,
                         0.686,
@@ -1240,7 +1240,7 @@
         "id": 3,
         "parameters": {
             "s": {
-                "values": [
+                "value": [
                     1.0,
                     0.0,
                     0.0,
@@ -1344,7 +1344,7 @@
                 "estimated": "true"
             },
             "w": {
-                "values": [0.01, 0.01, 0.02, 0.4, 0.9, 1.0, 1.0, 1.0, 1.0, 1.0],
+                "value": [0.01, 0.01, 0.02, 0.4, 0.9, 1.0, 1.0, 1.0, 1.0, 1.0],
                 "estimated": "true",
                 "phase": 1
             }
@@ -1361,7 +1361,7 @@
                 "estimated": "true"
             },
             "w": {
-                "values": [0.01, 0.01, 0.02, 0.4, 0.9, 1.0, 1.0, 1.0, 1.0, 1.0],
+                "value": [0.01, 0.01, 0.02, 0.4, 0.9, 1.0, 1.0, 1.0, 1.0, 1.0],
                 "estimated": "true",
                 "phase": 1
             }
@@ -1370,9 +1370,9 @@
     "natural_mortality": {
         "id": 1,
         "parameters": {
-            "comment": "These values are the average across all years from ASAP input",
+            "comment": "These value are the average across all years from ASAP input",
             "estimated": "false",
-            "values": [
+            "value": [
                 0.3,
                 0.3,
                 0.3,
@@ -1418,7 +1418,7 @@
         "phase":1,
             "min": 1e-8,
         "max": 30.0,
-            "values": [
+            "value": [
                 [
                     0.3
                 ],
@@ -1596,7 +1596,7 @@
             {
                 "sex": "males",
                 "area": 1,
-                "values": [
+                "value": [
                     0.018000000000000003,
                     0.11920000000000002,
                     0.5,
@@ -1612,7 +1612,7 @@
             {
                 "sex": "females",
                 "area": 1,
-                "values": [
+                "value": [
                     0.018000000000000003,
                     0.11920000000000002,
                     0.5,
@@ -1656,7 +1656,7 @@
                     "estimated": "true",
                     "random_effect": "false",
                     "phase": 1,
-                    "values": [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+                    "value": [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 
                 },
 
@@ -1666,7 +1666,7 @@
                     "estimated": "true",
                     "random_effect": "false",
                     "phase": 1,
-                    "values": [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
+                    "value": [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
                 }
 
             ]

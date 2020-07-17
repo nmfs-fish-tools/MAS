@@ -1167,7 +1167,7 @@
             }
         ],
         "standard_deviation": {
-            "values": [
+            "value": [
                 5.0224430036032029e-11,
                 0.00005519810473764179,
                 1.4918246976412704,
@@ -1233,7 +1233,7 @@
             ]
         },
         "variance_covariance": {
-            "values": [
+            "value": [
                 [
                     2.5224933724442758e-21,
                     0.0,
@@ -5232,7 +5232,7 @@
                 "females": {
                     "recruits": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 487.27333236712328
                             ],
@@ -5327,7 +5327,7 @@
                     },
                     "spawning_stock_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 5005.247522051382
                             ],
@@ -5422,7 +5422,7 @@
                     },
                     "numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     488.0192446049108,
@@ -5907,7 +5907,7 @@
                     },
                     "abundance": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 2692.234082126772
                             ],
@@ -6002,7 +6002,7 @@
                     },
                     "biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 10656.85100624122
                             ],
@@ -6097,7 +6097,7 @@
                     },
                     "catch_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     1.0588589149682999,
@@ -6582,7 +6582,7 @@
                     },
                     "catch_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.5618893316311094,
@@ -7067,7 +7067,7 @@
                     },
                     "survey_numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -7552,7 +7552,7 @@
                     },
                     "survey_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -8036,7 +8036,7 @@
                         ]
                     },
                     "fishing_mortality": {
-                        "values": [
+                        "value": [
                             [
                                 0.008911530769239236
                             ],
@@ -8133,7 +8133,7 @@
                 "males": {
                     "recruits": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 487.27333236712328
                             ],
@@ -8228,7 +8228,7 @@
                     },
                     "spawning_stock_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 5005.247522051382
                             ],
@@ -8323,7 +8323,7 @@
                     },
                     "numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     488.0192446049108,
@@ -8808,7 +8808,7 @@
                     },
                     "abundance": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 2692.234082126772
                             ],
@@ -8903,7 +8903,7 @@
                     },
                     "biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 10656.85100624122
                             ],
@@ -8998,7 +8998,7 @@
                     },
                     "catch_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     1.0588589149682999,
@@ -9483,7 +9483,7 @@
                     },
                     "catch_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.5618893316311094,
@@ -9968,7 +9968,7 @@
                     },
                     "survey_numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -10453,7 +10453,7 @@
                     },
                     "survey_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -10937,7 +10937,7 @@
                         ]
                     },
                     "fishing_mortality": {
-                        "values": [
+                        "value": [
                             [
                                 0.008911530769239236
                             ],
@@ -11034,7 +11034,7 @@
                 "undifferentiated": {
                     "recruits": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 974.5466647342465
                             ],
@@ -11129,7 +11129,7 @@
                     },
                     "spawning_stock_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 10010.495044102763
                             ],
@@ -11224,7 +11224,7 @@
                     },
                     "numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     976.0384892098216,
@@ -11709,7 +11709,7 @@
                     },
                     "abundance": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 5384.468164253544
                             ],
@@ -11804,7 +11804,7 @@
                     },
                     "biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 21313.70201248244
                             ],
@@ -11899,7 +11899,7 @@
                     },
                     "catch_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     2.1177178299365999,
@@ -12384,7 +12384,7 @@
                     },
                     "catch_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     1.1237786632622189,
@@ -12869,7 +12869,7 @@
                     },
                     "survey_numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.09063139064207182,
@@ -13354,7 +13354,7 @@
                     },
                     "survey_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.09063139064207182,
@@ -13838,7 +13838,7 @@
                         ]
                     },
                     "fishing_mortality": {
-                        "values": [
+                        "value": [
                             [
                                 0.008911530769239236
                             ],
@@ -13939,7 +13939,7 @@
                         "females": {
                             "initial_f": 0.0087738037109375,
                             "length_at_season_start": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             36.336668567417408,
@@ -14423,7 +14423,7 @@
                                 ]
                             },
                             "length_at_spawning": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             36.336668567417408,
@@ -14907,7 +14907,7 @@
                                 ]
                             },
                             "length_at_catch": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             36.336668567417408,
@@ -15391,7 +15391,7 @@
                                 ]
                             },
                             "length_at_survey": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             36.336668567417408,
@@ -15875,7 +15875,7 @@
                                 ]
                             },
                             "length_at_season_start": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.530655523307306,
@@ -16359,7 +16359,7 @@
                                 ]
                             },
                             "length_at_spawning": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.530655523307306,
@@ -16845,7 +16845,7 @@
                             "unfished_spawning_biomass_equilibrium": 10168.153907301466,
                             "initial_numbers_equilibrium": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     991.410468114866,
                                     811.6982391690788,
                                     664.5623106269717,
@@ -16862,7 +16862,7 @@
                             },
                             "initial_numbers": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     488.0192446049108,
                                     399.5563636519265,
                                     327.12908250984176,
@@ -16879,7 +16879,7 @@
                             },
                             "recruits": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         487.27333236712328
                                     ],
@@ -16974,7 +16974,7 @@
                             },
                             "abundance": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         0.0
                                     ],
@@ -17069,7 +17069,7 @@
                             },
                             "biomass": {
                                 "units": "mt",
-                                "values": [
+                                "value": [
                                     [
                                         0.0
                                     ],
@@ -17164,7 +17164,7 @@
                             },
                             "spawning_stock_biomass": {
                                 "units": "mt",
-                                "values": [
+                                "value": [
                                     [
                                         5005.247522051382
                                     ],
@@ -17259,7 +17259,7 @@
                             },
                             "redistributed_recruits": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         0.0
                                     ],
@@ -17354,7 +17354,7 @@
                             },
                             "numbers_at_age": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             488.0192446049108,
@@ -17839,7 +17839,7 @@
                             },
                             "catch_at_age": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             1.0588589149682999,
@@ -18324,7 +18324,7 @@
                             },
                             "catch_biomass_at_age": {
                                 "units": "mt",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.5618893316311094,
@@ -18809,7 +18809,7 @@
                             },
                             "survey_numbers_at_age": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.04531569532103591,
@@ -19294,7 +19294,7 @@
                             },
                             "survey_biomass": {
                                 "units": "mt",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.04531569532103591,
@@ -19778,7 +19778,7 @@
                                 ]
                             },
                             "fishing_mortality": {
-                                "values": [
+                                "value": [
                                     [
                                         0.008911530769239236
                                     ],
@@ -19875,7 +19875,7 @@
                         "males": {
                             "initial_f": 0.0087738037109375,
                             "length_at_season_start": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             36.336668567417408,
@@ -20359,7 +20359,7 @@
                                 ]
                             },
                             "length_at_spawning": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             36.336668567417408,
@@ -20843,7 +20843,7 @@
                                 ]
                             },
                             "length_at_catch": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             36.336668567417408,
@@ -21327,7 +21327,7 @@
                                 ]
                             },
                             "length_at_survey": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             36.336668567417408,
@@ -21811,7 +21811,7 @@
                                 ]
                             },
                             "length_at_season_start": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.530655523307306,
@@ -22295,7 +22295,7 @@
                                 ]
                             },
                             "length_at_spawning": {
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.530655523307306,
@@ -22781,7 +22781,7 @@
                             "unfished_spawning_biomass_equilibrium": 10168.153907301466,
                             "initial_numbers_equilibrium": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     991.410468114866,
                                     811.6982391690788,
                                     664.5623106269717,
@@ -22798,7 +22798,7 @@
                             },
                             "initial_numbers": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     488.0192446049108,
                                     399.5563636519265,
                                     327.12908250984176,
@@ -22815,7 +22815,7 @@
                             },
                             "recruits": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         487.27333236712328
                                     ],
@@ -22910,7 +22910,7 @@
                             },
                             "abundance": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         0.0
                                     ],
@@ -23005,7 +23005,7 @@
                             },
                             "biomass": {
                                 "units": "mt",
-                                "values": [
+                                "value": [
                                     [
                                         0.0
                                     ],
@@ -23100,7 +23100,7 @@
                             },
                             "spawning_stock_biomass": {
                                 "units": "mt",
-                                "values": [
+                                "value": [
                                     [
                                         5005.247522051382
                                     ],
@@ -23195,7 +23195,7 @@
                             },
                             "redistributed_recruits": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         0.0
                                     ],
@@ -23290,7 +23290,7 @@
                             },
                             "numbers_at_age": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             488.0192446049108,
@@ -23775,7 +23775,7 @@
                             },
                             "catch_at_age": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             1.0588589149682999,
@@ -24260,7 +24260,7 @@
                             },
                             "catch_biomass": {
                                 "units": "mt",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.5618893316311094,
@@ -24745,7 +24745,7 @@
                             },
                             "survey_numbers_at_age": {
                                 "units": "1000 fish",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.04531569532103591,
@@ -25230,7 +25230,7 @@
                             },
                             "survey_biomass": {
                                 "units": "mt",
-                                "values": [
+                                "value": [
                                     [
                                         [
                                             0.04531569532103591,
@@ -25714,7 +25714,7 @@
                                 ]
                             },
                             "fishing_mortality": {
-                                "values": [
+                                "value": [
                                     [
                                         0.008911530769239236
                                     ],
@@ -25818,7 +25818,7 @@
                 "females": {
                     "catch_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     1.0588589149682999,
@@ -26302,7 +26302,7 @@
                         ]
                     },
                     "catch_proportion_at_age": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.065764121770568,
@@ -26787,7 +26787,7 @@
                     },
                     "catch_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.5618893316311094,
@@ -27272,7 +27272,7 @@
                     },
                     "catch_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 79.4964737880348
                             ],
@@ -27369,7 +27369,7 @@
                 "males": {
                     "catch_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     1.0588589149682999,
@@ -27853,7 +27853,7 @@
                         ]
                     },
                     "catch_proportion_at_age": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.065764121770568,
@@ -28338,7 +28338,7 @@
                     },
                     "catch_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.5618893316311094,
@@ -28823,7 +28823,7 @@
                     },
                     "catch_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 79.4964737880348
                             ],
@@ -28920,7 +28920,7 @@
                 "undifferentiated": {
                     "catch_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     2.1177178299365999,
@@ -29404,7 +29404,7 @@
                         ]
                     },
                     "catch_proportion_at_age": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.065764121770568,
@@ -29889,7 +29889,7 @@
                     },
                     "catch_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     1.1237786632622189,
@@ -30374,7 +30374,7 @@
                     },
                     "catch_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 158.9929375760696
                             ],
@@ -30471,7 +30471,7 @@
                 "observed": {
                     "fleet_biomass": {
                         "sex": "undifferentiated",
-                        "values": [
+                        "value": [
                             [
                                 158.97992580905223
                             ],
@@ -30566,7 +30566,7 @@
                     },
                     "fleet_proportion_at_age": {
                         "sex": "undifferentiated",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.07,
@@ -31058,7 +31058,7 @@
                 "females": {
                     "survey_numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -31542,7 +31542,7 @@
                         ]
                     },
                     "survey_proportion_at_age": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0593757523639872,
@@ -32027,7 +32027,7 @@
                     },
                     "survey_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -32512,7 +32512,7 @@
                     },
                     "survey_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 0.7632020398367356
                             ],
@@ -32609,7 +32609,7 @@
                 "males": {
                     "survey_numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -33093,7 +33093,7 @@
                         ]
                     },
                     "survey_proportion_at_age": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0593757523639872,
@@ -33578,7 +33578,7 @@
                     },
                     "survey_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -34063,7 +34063,7 @@
                     },
                     "survey_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 0.7632020398367356
                             ],
@@ -34160,7 +34160,7 @@
                 "undifferentiated": {
                     "survey_numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.09063139064207182,
@@ -34644,7 +34644,7 @@
                         ]
                     },
                     "survey_proportion_at_age": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0593757523639872,
@@ -35129,7 +35129,7 @@
                     },
                     "survey_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.09063139064207182,
@@ -35614,7 +35614,7 @@
                     },
                     "survey_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 1.5264040796734713
                             ],
@@ -35711,7 +35711,7 @@
                 "observed": {
                     "survey_biomass": {
                         "sex": "undifferentiated",
-                        "values": [
+                        "value": [
                             [
                                 1.35658410312583
                             ],
@@ -35806,7 +35806,7 @@
                     },
                     "survey_proportion_at_age": {
                         "sex": "undifferentiated",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.07,
@@ -36298,7 +36298,7 @@
                 "females": {
                     "recruits": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 487.27333236712328
                             ],
@@ -36393,7 +36393,7 @@
                     },
                     "spawning_stock_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 5005.247522051382
                             ],
@@ -36488,7 +36488,7 @@
                     },
                     "numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     488.0192446049108,
@@ -36973,7 +36973,7 @@
                     },
                     "abundance": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 0.0
                             ],
@@ -37068,7 +37068,7 @@
                     },
                     "biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 0.0
                             ],
@@ -37163,7 +37163,7 @@
                     },
                     "catch_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     1.0588589149682999,
@@ -37648,7 +37648,7 @@
                     },
                     "catch_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.5618893316311094,
@@ -38133,7 +38133,7 @@
                     },
                     "survey_numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -38618,7 +38618,7 @@
                     },
                     "survey_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -39105,7 +39105,7 @@
                 "males": {
                     "recruits": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 487.27333236712328
                             ],
@@ -39200,7 +39200,7 @@
                     },
                     "spawning_stock_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 5005.247522051382
                             ],
@@ -39295,7 +39295,7 @@
                     },
                     "numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     488.0192446049108,
@@ -39780,7 +39780,7 @@
                     },
                     "abundance": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 0.0
                             ],
@@ -39875,7 +39875,7 @@
                     },
                     "biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 0.0
                             ],
@@ -39970,7 +39970,7 @@
                     },
                     "catch_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     1.0588589149682999,
@@ -40455,7 +40455,7 @@
                     },
                     "catch_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.5618893316311094,
@@ -40940,7 +40940,7 @@
                     },
                     "survey_numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -41425,7 +41425,7 @@
                     },
                     "survey_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.04531569532103591,
@@ -41912,7 +41912,7 @@
                 "undifferentiated": {
                     "recruits": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 974.5466647342465
                             ],
@@ -42007,7 +42007,7 @@
                     },
                     "spawning_stock_biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 10010.495044102763
                             ],
@@ -42102,7 +42102,7 @@
                     },
                     "numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     976.0384892098216,
@@ -42587,7 +42587,7 @@
                     },
                     "abundance": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 0.0
                             ],
@@ -42682,7 +42682,7 @@
                     },
                     "biomass": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 0.0
                             ],
@@ -42777,7 +42777,7 @@
                     },
                     "catch_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     2.1177178299365999,
@@ -43262,7 +43262,7 @@
                     },
                     "catch_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     1.1237786632622189,
@@ -43747,7 +43747,7 @@
                     },
                     "survey_numbers_at_age": {
                         "units": "1000 fish",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.09063139064207182,
@@ -44232,7 +44232,7 @@
                     },
                     "survey_biomass_at_age": {
                         "units": "mt",
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.09063139064207182,

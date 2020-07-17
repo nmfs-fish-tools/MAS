@@ -14,9 +14,9 @@
         ],
         "sex": "undifferentiated",
         "units": "MT",
-        "missing_values": -999,
+        "missing_value": -999,
 	"comments": "the observation_error was originally 0.01 and was changed to 0.1",
-        "values": [
+        "value": [
             [
                 82.2
             ],
@@ -153,8 +153,8 @@
         ],
         "sex": "undifferentiated",
         "units": "MT",
-        "missing_values": 0,
-        "values": [
+        "missing_value": 0,
+        "value": [
             [
                 728.0
             ],
@@ -291,8 +291,8 @@
         ],
         "sex": "undifferentiated",
         "units": "MT",
-        "missing_values": 0,
-        "values": [
+        "missing_value": 0,
+        "value": [
             [
                 5.0
             ],
@@ -428,8 +428,8 @@
         ],
         "sex": "undifferentiated",
         "units": "NA",
-        "missing_values": 0,
-        "values": [
+        "missing_value": 0,
+        "value": [
             [
                 [
                     0.04,
@@ -1067,8 +1067,8 @@
         ],
         "sex": "undifferentiated",
         "units": "NA",
-        "missing_values": 0,
-        "values": [
+        "missing_value": 0,
+        "value": [
             [
                 [
                     0.0,

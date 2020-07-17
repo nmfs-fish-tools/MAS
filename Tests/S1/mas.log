@@ -1,15 +1,17 @@
-MAS Run: Thu May  7 12:05:35 2020
+MAS Run: Fri Jul 17 11:45:55 2020
 
 Configuration Warning: Recruitment model "Beverton-Holt" does not define "rho". Model will use the default value of 0 and "rho" will not be estimated.
 Configuration Warning: Recruitment model "Beverton-Holt" does not define "sigma_r". Model will use the default value of 1 and "alpha" will not be estimated.
 Configuration Warning: Recruitment model "Beverton-Holt" does not define "sigma_r". Model will use the default value of 1 and "beta" will not be estimated.
-Configuration Warning: Recruitment model "Von Bertalannfy" does not define "k". Model will use the default value of 0 and "k" will not be estimated.
-Configuration Warning: Recruitment model "Von Bertalannfy" does not define "l_inf". Model will use the default value of 0 and "l_inf" will not be estimated.
 Configuration Warning: Population has no Harvest Control Rule selected
 Configuration Warning: No "sigma" defined for selectivity model "1". Default is set to 0.5.
 Configuration Warning: No "sigma" defined for selectivity model "2". Default is set to 0.5.
 Configuration Warning: No "sigma" defined for selectivity model "3". Default is set to 0.5.
+Data Warning: Data Object has no "missing_values" specified.
+Data Warning: Data Object has no "missing_values" specified.
 Data Warning: Data Object has no "cv" specified.
+Data Warning: Data Object has no "missing_values" specified.
+Data Warning: Data Object has no "missing_values" specified.
 Data Warning: Data Object has no "cv" specified.
 survey_q_1						3.48998e-07						1
 
@@ -58,7 +60,6 @@ Selectivity:
 Movement:
 
 Natural Mortality:
-fishing_mortality[0][0]_1						0.00945917						1
 fishing_mortality[2][0]_1						0.045922						1
 fishing_mortality[3][0]_1						0.0622979						1
 fishing_mortality[4][0]_1						0.0496748						1
@@ -87,4 +88,5 @@ fishing_mortality[26][0]_1						0.315902						1
 fishing_mortality[27][0]_1						0.442795						1
 fishing_mortality[28][0]_1						0.336434						1
 fishing_mortality[29][0]_1						0.512488						1
+fishing_mortality[0][0]_1						0.00945917						1
 fishing_mortality[1][0]_1						0.0276962						1

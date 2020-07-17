@@ -25,7 +25,7 @@
             "gradient_value": 0.0
         },
         "standard_deviation": {
-            "values": [
+            "value": [
                 0.0014271091709620115,
                 0.0005594573917352023,
                 0.0002678146280658195,
@@ -33,7 +33,7 @@
             ]
         },
         "variance_covariance": {
-            "values": [
+            "value": [
                 [
                     0.0000020366405858438799,
                     4.3302249416752899e-7,
@@ -68,7 +68,7 @@
                 "id": 1,
                 "females": {
                     "length_at_season_start": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -492,7 +492,7 @@
                         ]
                     },
                     "length_at_spawning": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -916,7 +916,7 @@
                         ]
                     },
                     "length_at_catch": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -1340,7 +1340,7 @@
                         ]
                     },
                     "length_at_survey": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     10.806721959134969,
@@ -1764,7 +1764,7 @@
                         ]
                     },
                     "length_at_season_start": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -2188,7 +2188,7 @@
                         ]
                     },
                     "length_at_spawning": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -2614,7 +2614,7 @@
                     "unfished_spawning_biomass_equilibrium": 87177585.93117994,
                     "initial_f": 0.0002288818359375,
                     "initial_numbers_equilibrium": {
-                        "values": [
+                        "value": [
                             5000000.0,
                             3032653.298563167,
                             2246644.8205861079,
@@ -2628,7 +2628,7 @@
                         ]
                     },
                     "initial_numbers": {
-                        "values": [
+                        "value": [
                             4412484.512922977,
                             2676307.142594951,
                             1982657.0953749642,
@@ -2642,7 +2642,7 @@
                         ]
                     },
                     "recruits": {
-                        "values": [
+                        "value": [
                             [
                                 5000000.0
                             ],
@@ -2736,7 +2736,7 @@
                         ]
                     },
                     "redistributed_recruits": {
-                        "values": [
+                        "value": [
                             [
                                 0.0
                             ],
@@ -2830,7 +2830,7 @@
                         ]
                     },
                     "N": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     4412484.512922977,
@@ -3254,7 +3254,7 @@
                         ]
                     },
                     "C": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.00040288569257480714,
@@ -3678,7 +3678,7 @@
                         ]
                     },
                     "CB": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -4102,7 +4102,7 @@
                         ]
                     },
                     "SN": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     8.09055573111455,
@@ -4526,7 +4526,7 @@
                         ]
                     },
                     "SNB": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -4952,7 +4952,7 @@
                 },
                 "males": {
                     "length_at_season_start": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -5376,7 +5376,7 @@
                         ]
                     },
                     "length_at_spawning": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -5800,7 +5800,7 @@
                         ]
                     },
                     "length_at_catch": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -6224,7 +6224,7 @@
                         ]
                     },
                     "length_at_survey": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     10.806721959134969,
@@ -6648,7 +6648,7 @@
                         ]
                     },
                     "length_at_season_start": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -7072,7 +7072,7 @@
                         ]
                     },
                     "length_at_spawning": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -7498,7 +7498,7 @@
                     "unfished_spawning_biomass_equilibrium": 0.0,
                     "initial_f": 0.0002288818359375,
                     "initial_numbers_equilibrium": {
-                        "values": [
+                        "value": [
                             5000000.0,
                             3032653.298563167,
                             2246644.8205861079,
@@ -7512,7 +7512,7 @@
                         ]
                     },
                     "initial_numbers": {
-                        "values": [
+                        "value": [
                             4412484.512922977,
                             2676307.142594951,
                             1982657.0953749642,
@@ -7526,7 +7526,7 @@
                         ]
                     },
                     "recruits": {
-                        "values": [
+                        "value": [
                             [
                                 5000000.0
                             ],
@@ -7620,7 +7620,7 @@
                         ]
                     },
                     "redistributed_recruits": {
-                        "values": [
+                        "value": [
                             [
                                 0.0
                             ],
@@ -7714,7 +7714,7 @@
                         ]
                     },
                     "N": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     4412484.512922977,
@@ -8138,7 +8138,7 @@
                         ]
                     },
                     "C": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.00040288569257480714,
@@ -8562,7 +8562,7 @@
                         ]
                     },
                     "CB": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -8986,7 +8986,7 @@
                         ]
                     },
                     "SN": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     8.09055573111455,
@@ -9410,7 +9410,7 @@
                         ]
                     },
                     "SNB": {
-                        "values": [
+                        "value": [
                             [
                                 [
                                     0.0,
@@ -9840,7 +9840,7 @@
             "id": 1,
             "catch_biomass_total": {
                 "sex": "undifferentiated",
-                "values": [
+                "value": [
                     [
                         22225761.541930625
                     ],
