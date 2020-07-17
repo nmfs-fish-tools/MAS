@@ -978,6 +978,7 @@
     <itemPath>HarvestControlRule.hpp</itemPath>
     <itemPath>Information.hpp</itemPath>
     <itemPath>MAS.hpp</itemPath>
+    <itemPath>docs/MAS_SDD.pdf</itemPath>
     <itemPath>Makefile</itemPath>
     <itemPath>MakefileEnesemble</itemPath>
     <itemPath>Mortality.hpp</itemPath>
@@ -1326,6 +1327,8 @@
       <item path="Tests/NLL/mas.log" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tests/NLL/results.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="docs/MAS_SDD.pdf" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles">
         <linkerTool>
@@ -5608,6 +5611,8 @@
       <item path="Tests/NLL/mas.log" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Tests/NLL/results.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="docs/MAS_SDD.pdf" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles">
         <linkerTool>
