@@ -13,7 +13,7 @@ CXX = g++
 
 BASICOPTS =   -O3  -s -m64
 CCFLAGS = -std=c++14
-CXXFLAGS = -Wunreachable-code -DMAS_COMMAND_TOOL -O3  -pthread -std=c++14 $(EXTRA_CXXFLAGS)
+CXXFLAGS = -w -DMAS_COMMAND_TOOL -O3  -pthread -std=c++14 $(EXTRA_CXXFLAGS)
 CCADMIN = 
 # Define the target directories.
 TARGETDIR_mas=bin
