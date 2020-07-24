@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: get_atl
-      run: ./get_atl.sh ../ make
+      run: cd third_party ./get_atl.sh ../ make
