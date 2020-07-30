@@ -1,3 +1,6 @@
+
+![C/C++ CI](https://github.com/nmfs-fish-tools/MAS/workflows/C/C++%20CI/badge.svg)
+
 # README
 
 ## Metapopulation Assessment System (MAS)
