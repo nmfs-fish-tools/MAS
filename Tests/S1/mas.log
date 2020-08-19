@@ -1,4 +1,4 @@
-MAS Run: Fri Jul 17 14:26:19 2020
+MAS Run: Tue Jul 21 13:50:42 2020
 
 Configuration Warning: Recruitment model "Beverton-Holt" does not define "rho". Model will use the default value of 0 and "rho" will not be estimated.
 Configuration Warning: Recruitment model "Beverton-Holt" does not define "sigma_r". Model will use the default value of 1 and "alpha" will not be estimated.

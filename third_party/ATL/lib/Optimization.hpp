@@ -2283,7 +2283,7 @@ namespace atl {
                             this->parameters_m[j]->GetInternalValue()) * this->gradient[j];
                 }
 
-                if ((i % this->print_interval) == 0 || i == 0) {
+                if ((i % this->print_interval) == 0 ) {
                     std::cout << "Iteration " << i << "\n";
                     std::cout << "Phase = " << this->phase_m << "\n";
 

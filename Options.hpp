@@ -161,6 +161,10 @@ namespace mas {
             if (args[i] == "-max_ls" && args.size() > (i + 1)) {
                 options.max_ls = util::StringToNumber<int>(args[i + 1]);
             }
+            
+             if (args[i] == "-iprint" && args.size() > (i + 1)) {
+                options.iprint = util::StringToNumber<int>(args[i + 1]);
+            }
         }
 
     }

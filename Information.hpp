@@ -104,9 +104,9 @@ namespace mas {
         std::unordered_map<int, std::shared_ptr<mas::Population<REAL_T> > > populations;
         std::unordered_map<int, std::shared_ptr<mas::FishingMortality<REAL_T> > > fishing_mortality_models;
         std::unordered_map<int, std::shared_ptr<mas::SelectivityBase<REAL_T> > > selectivity_models;
+        
         std::unordered_map<int, std::shared_ptr<mas::Fleet<REAL_T> > > fleets;
 
-        // NOTE:  why isn't survey_models similar to fleets?
         std::unordered_map<int, std::shared_ptr<mas::Survey<REAL_T> > > survey_models;
 
         // per population
@@ -622,15 +622,7 @@ namespace mas {
                 model->CV = (*rit).value.GetDouble();
             }
 
-            //            rit = (*survey_model).value.FindMember("population");
-            //            if (rit == (*survey_model).value.MemberEnd()) {
-            //                std::cout << "Configuration Error: Survey is required to have a population identifier\n";
-            //                mas::mas_log << "Configuration Error: Survey is required to have a population identifier\n";
-            //                this->valid_configuration = false;
-            //            } else {
-            //                model->population = (*rit).value.GetInt();
-            //            }
-
+          
             rit = (*survey_model).value.FindMember("selectivity");
 
             if (rit != (*survey_model).value.MemberEnd()) {
