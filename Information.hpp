@@ -32,6 +32,7 @@
 
 #ifndef MAS_INFORMATION_HPP
 #define MAS_INFORMATION_HPP
+
 #include "Common.hpp"
 #include "Area.hpp"
 #include "Population.hpp"
