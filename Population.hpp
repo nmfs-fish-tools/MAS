@@ -1197,15 +1197,11 @@ namespace mas {
             std::vector<REAL_T> L_eq(F.size()); //equilibrium landings at F
             std::vector<REAL_T> D_eq(F.size()); //equilibrium dead discards at F
             std::vector<REAL_T> E_eq(F.size()); //equilibrium exploitation rate at F (landings only)
-            std::valarray<REAL_T> L_eq_mt(F.size());
             std::valarray<REAL_T> L_eq_knum(F.size());
             std::valarray<REAL_T> SSB_eq(F.size());
 
             REAL_T spr_F0 = 0.0;
-            //            REAL_T steep = this->recruitment_model->h;
-            //            REAL_T sigma = this->recruitment_model->sigma_r;
-            //            REAL_T R0 = std::exp(this->recruitment_model->log_R0) * this->sex_fraction_value;
-            //            REAL_T BC = std::exp(std::pow(sigma, 2.0) / 2.0);
+       
 
             std::vector<REAL_T> N0(this->ages.size(), 1.0);
             for (int iage = 1; iage < nages; iage++) {
@@ -1336,59 +1332,7 @@ namespace mas {
                     F40_out = i;
                 }
             }
-
-//
-//            std::valarray<REAL_T> Z_age_msy(this->ages.size());
-//            std::valarray<REAL_T> F_L_age_msy(this->ages.size());
-//            std::valarray<REAL_T> sel_wgted_L(this->ages.size());
-//            std::valarray<REAL_T> N_age_msy(this->ages.size());
-//            std::valarray<REAL_T> N_age_msy_spawn(this->ages.size());
-//            std::valarray<REAL_T> L_age_msy(this->ages.size());
-//            std::valarray<REAL_T> SSB_eq(F.size());
-//            std::valarray<REAL_T> B_Eq(F.size());
-//            std::valarray<REAL_T> L_eq_mt(F.size());
-//            std::valarray<REAL_T> L_eq_knum(F.size());
-//            //
-//            for (int i = 0; i < nages; i++) {
-//                sel_wgted_L[i] = this->P[i];
-//            }
-//
-//            for (int i = 0; i < F.size(); i++) {
-//                Z_age_msy = 0.0;
-//                F_L_age_msy = 0.0;
-//
-//                F_L_age_msy = F[i] * sel_wgted_L;
-//                Z_age_msy = M_age + F_L_age_msy;
-//
-//                N_age_msy[0] = 1.0;
-//                for (int iage = 1; iage < nages; iage++) {
-//                    N_age_msy[iage] = N_age_msy[iage - 1] * std::exp(-1.0 * Z_age_msy[iage - 1]);
-//                }
-//                N_age_msy[nages - 1] = N_age_msy[nages - 1] / (1.0 - std::exp(-1. * Z_age_msy[nages - 1]));
-//
-//                N_age_msy_spawn = (N_age_msy *
-//                        std::exp((-1.0 * Z_age_msy * this->spawning_season_offset.GetValue())));
-//
-//                N_age_msy_spawn[nages - 1] = (N_age_msy_spawn[nages - 2]*(std::exp(-1. * (Z_age_msy[nages - 2]*(1.0 - this->spawning_season_offset.GetValue()) +
-//                        Z_age_msy[nages - 1] * this->spawning_season_offset.GetValue())))) / (1.0 - std::exp(-1. * Z_age_msy[nages - 1]));
-//
-//                N_age_msy *= R_eq[i];
-//                N_age_msy_spawn *= R_eq[i];
-//
-//                for (int iage = 0; iage < nages; iage++) {
-//                    L_age_msy[iage] = N_age_msy[iage]*(F_L_age_msy[iage] / Z_age_msy[iage])*
-//                            (1.0 - std::exp(-1.0 * Z_age_msy[iage]));
-//                }
-//
-//                SSB_eq[i] = sum((N_age_msy_spawn * reprod));
-//                B_Eq[i] = sum((N_age_msy * 1000.0));
-//                L_eq_mt[i] = sum((L_age_msy * 1000.0)); //in whole weight
-//                L_eq_knum[i] = (sum(L_age_msy) / 1000.0);
-//
-//            }
-
-            REAL_T msy_mt_out = max;//this->max(L_eq_mt); //msy in whole weight 
-            std::cout << "MAX MT OUT = " << msy_mt_out << std::endl;
+            REAL_T msy_mt_out = max; //msy in whole weight 
             REAL_T SSB_msy_out;
             REAL_T B_msy_out;
             REAL_T R_msy_out;
@@ -1408,7 +1352,7 @@ namespace mas {
                     index_m = i;
                 }
             }
-            //
+            
             this->msy.msy = msy_mt_out*this->sex_fraction_value;
             this->msy.spr_F0 = spr_F0;
             this->msy.F_msy = F_msy_out;
