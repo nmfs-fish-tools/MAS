@@ -14,7 +14,8 @@ CXX = g++
 
 BASICOPTS =   -g  -s -m64
 CCFLAGS = -std=c++14
-CXXFLAGS = -DMAS_COMMAND_TOOL -g  -pthread -std=c++14 $(EXTRA_CXXFLAGS)
+CXXFLAGS = -DMAS_COMMAND_TOOL -O3  -pthread -std=c++14 $(EXTRA_CXXFLAGS)
+CXXFLAGS =  -w -DMAS_COMMAND_TOOL -O3  -pthread -std=c++14 $(EXTRA_CXXFLAGS)
 CCADMIN = 
 # Define the target directories.
 TARGETDIR_mas=bin
