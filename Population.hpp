@@ -1244,8 +1244,11 @@ namespace mas {
                 //std::valarray<REAL_T> FD_age = F[i] * selD;
                 std::valarray<REAL_T> Z_age = M_age + F[i] * selZ;
 
-                std::valarray<REAL_T> N_age(1.0, nages);
+                std::valarray<REAL_T> N_age(nages);
                 std::valarray<REAL_T> N_age_spawn(nages);
+                
+                N_age[0] = 1.0;
+                
                 for (int iage = 1; iage < nages; iage++) {
                     N_age[iage] = N_age[iage - 1] * std::exp(-1.0 * Z_age[iage - 1]);
                 }
@@ -1266,8 +1269,9 @@ namespace mas {
                 //                                                R_eq[i] = (R0 / ((5.0 * steep - 1.0) * spr[i]))*
                 //                                                        (BC * 4.0 * steep * spr[i] - spr_F0 * (1.0 - steep));
                 R_eq[i] = this->recruitment_model->CalculateEquilibriumRecruitment(
-                        this->recruitment_model->CalculateEquilibriumSpawningBiomass(spr[i]));
+                        this->recruitment_model->CalculateEquilibriumSpawningBiomass(spr[i]));//*1000*this->sex_fraction_value;
 
+                
 
                 if (R_eq[i] < 0.0000001) {
                     R_eq[i] = 0.0000001;
@@ -1345,7 +1349,7 @@ namespace mas {
 
                     SSB_msy_out = SSB_eq[i];
                     B_msy_out = B_eq[i] * this->sex_fraction_value;
-                    R_msy_out = R_eq[i];
+                    R_msy_out = R_eq[i]*1000.0* this->sex_fraction_value;
                     msy_knum_out = L_eq_knum[i];
                     F_msy_out = F[i];
                     spr_msy_out = spr[i];
@@ -1387,7 +1391,7 @@ namespace mas {
             this->msy.B_F40_msy = B_eq[F40_out];
             this->msy.E_F40_msy = E_eq[F40_out];
 
-            //            std::cout<<std::scientific;
+                      std::cout<<std::scientific;
             //
             std::cout << "\n\nFmax: " << maxF << "\n";
             std::cout << "Step: " << step << "\n";
