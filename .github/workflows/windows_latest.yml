@@ -15,5 +15,5 @@ jobs:
     - uses: actions/checkout@v2
     - name: get_atl
       run: cd third_party 
-           get_atl.bat
-           ../ make
+      run: get_atl.bat
+      run: ../ make
